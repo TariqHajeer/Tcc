@@ -1339,9 +1339,8 @@ namespace System.Controllers
         [HttpGet("StudntCabableToDownload")]
         public IActionResult StudntCabableToDownload()
         {
-            var p1 = (int)StudyYearEnum.FirstYear;
-            var p2=  (int)StudentStateEnum.successful;
-            var registrations= _abstractUnitOfWork.Repository<Registrations>().GetIQueryable(c=>c.StudyYearId.Equals(p1)&&c.StudentStateId.Equals(p2)).GroupBy(c=>c.Ssn).Select(c=>c.Last()).ToList();
+            
+            var registrations= _abstractUnitOfWork.Repository<Registrations>().GetIQueryable(c=>c.StudyYearId.Equals((int)StudyYearEnum.FirstYear)&&c.StudentStateId.Equals((int)StudentStateEnum.successful)).GroupBy(c=>c.Ssn).Select(c=>c.Last()).ToList();
             var SSNs= registrations.Select(c=>c.Ssn).ToList();
            var students= _abstractUnitOfWork.Repository<Students>().GetIQueryable(c=>SSNs.Contains(c.Ssn))
            .Include(c=>c.StudentSubject)
