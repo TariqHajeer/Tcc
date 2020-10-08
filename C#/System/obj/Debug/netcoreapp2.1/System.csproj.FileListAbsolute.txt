@@ -1,0 +1,304 @@
+C:\Users\tarek\source\repos\Tcc\System\bin\Debug\netcoreapp2.1\System.deps.json
+C:\Users\tarek\source\repos\Tcc\System\bin\Debug\netcoreapp2.1\System.runtimeconfig.json
+C:\Users\tarek\source\repos\Tcc\System\bin\Debug\netcoreapp2.1\System.runtimeconfig.dev.json
+C:\Users\tarek\source\repos\Tcc\System\bin\Debug\netcoreapp2.1\System.dll
+C:\Users\tarek\source\repos\Tcc\System\bin\Debug\netcoreapp2.1\System.pdb
+C:\Users\tarek\source\repos\Tcc\System\bin\Debug\netcoreapp2.1\DAL.dll
+C:\Users\tarek\source\repos\Tcc\System\bin\Debug\netcoreapp2.1\DAL.pdb
+C:\Users\tarek\source\repos\Tcc\System\obj\Debug\netcoreapp2.1\System.csprojAssemblyReference.cache
+C:\Users\tarek\source\repos\Tcc\System\obj\Debug\netcoreapp2.1\System.csproj.CoreCompileInputs.cache
+C:\Users\tarek\source\repos\Tcc\System\obj\Debug\netcoreapp2.1\System.RazorAssemblyInfo.cache
+C:\Users\tarek\source\repos\Tcc\System\obj\Debug\netcoreapp2.1\System.RazorAssemblyInfo.cs
+C:\Users\tarek\source\repos\Tcc\System\obj\Debug\netcoreapp2.1\System.AssemblyInfoInputs.cache
+C:\Users\tarek\source\repos\Tcc\System\obj\Debug\netcoreapp2.1\System.AssemblyInfo.cs
+C:\Users\tarek\source\repos\Tcc\System\obj\Debug\netcoreapp2.1\System.RazorTargetAssemblyInfo.cache
+C:\Users\tarek\source\repos\Tcc\System\obj\Debug\netcoreapp2.1\System.csproj.CopyComplete
+C:\Users\tarek\source\repos\Tcc\System\obj\Debug\netcoreapp2.1\System.dll
+C:\Users\tarek\source\repos\Tcc\System\obj\Debug\netcoreapp2.1\System.pdb
+C:\Users\tarek\source\repos\Tcc\System\bin\Debug\netcoreapp2.1\Static.dll
+C:\Users\tarek\source\repos\Tcc\System\bin\Debug\netcoreapp2.1\Static.pdb
+C:\Users\jawad\Desktop\Tcc\System\bin\Debug\netcoreapp2.1\System.deps.json
+C:\Users\jawad\Desktop\Tcc\System\bin\Debug\netcoreapp2.1\System.runtimeconfig.json
+C:\Users\jawad\Desktop\Tcc\System\bin\Debug\netcoreapp2.1\System.runtimeconfig.dev.json
+C:\Users\jawad\Desktop\Tcc\System\bin\Debug\netcoreapp2.1\System.dll
+C:\Users\jawad\Desktop\Tcc\System\bin\Debug\netcoreapp2.1\System.pdb
+C:\Users\jawad\Desktop\Tcc\System\bin\Debug\netcoreapp2.1\DAL.dll
+C:\Users\jawad\Desktop\Tcc\System\bin\Debug\netcoreapp2.1\Static.dll
+C:\Users\jawad\Desktop\Tcc\System\bin\Debug\netcoreapp2.1\DAL.pdb
+C:\Users\jawad\Desktop\Tcc\System\bin\Debug\netcoreapp2.1\Static.pdb
+C:\Users\jawad\Desktop\Tcc\System\obj\Debug\netcoreapp2.1\System.csprojAssemblyReference.cache
+C:\Users\jawad\Desktop\Tcc\System\obj\Debug\netcoreapp2.1\System.csproj.CoreCompileInputs.cache
+C:\Users\jawad\Desktop\Tcc\System\obj\Debug\netcoreapp2.1\System.RazorAssemblyInfo.cache
+C:\Users\jawad\Desktop\Tcc\System\obj\Debug\netcoreapp2.1\System.RazorAssemblyInfo.cs
+C:\Users\jawad\Desktop\Tcc\System\obj\Debug\netcoreapp2.1\System.AssemblyInfoInputs.cache
+C:\Users\jawad\Desktop\Tcc\System\obj\Debug\netcoreapp2.1\System.AssemblyInfo.cs
+C:\Users\jawad\Desktop\Tcc\System\obj\Debug\netcoreapp2.1\System.RazorTargetAssemblyInfo.cache
+C:\Users\jawad\Desktop\Tcc\System\obj\Debug\netcoreapp2.1\System.csproj.CopyComplete
+C:\Users\jawad\Desktop\Tcc\System\obj\Debug\netcoreapp2.1\System.dll
+C:\Users\jawad\Desktop\Tcc\System\obj\Debug\netcoreapp2.1\System.pdb
+C:\Users\tarek\Desktop\Tcc (2)\Tcc\System\bin\Debug\netcoreapp2.1\System.deps.json
+C:\Users\tarek\Desktop\Tcc (2)\Tcc\System\bin\Debug\netcoreapp2.1\System.runtimeconfig.json
+C:\Users\tarek\Desktop\Tcc (2)\Tcc\System\bin\Debug\netcoreapp2.1\System.runtimeconfig.dev.json
+C:\Users\tarek\Desktop\Tcc (2)\Tcc\System\bin\Debug\netcoreapp2.1\System.dll
+C:\Users\tarek\Desktop\Tcc (2)\Tcc\System\bin\Debug\netcoreapp2.1\System.pdb
+C:\Users\tarek\Desktop\Tcc (2)\Tcc\System\bin\Debug\netcoreapp2.1\DAL.dll
+C:\Users\tarek\Desktop\Tcc (2)\Tcc\System\bin\Debug\netcoreapp2.1\Static.dll
+C:\Users\tarek\Desktop\Tcc (2)\Tcc\System\bin\Debug\netcoreapp2.1\DAL.pdb
+C:\Users\tarek\Desktop\Tcc (2)\Tcc\System\bin\Debug\netcoreapp2.1\Static.pdb
+C:\Users\tarek\Desktop\Tcc (2)\Tcc\System\obj\Debug\netcoreapp2.1\System.csprojAssemblyReference.cache
+C:\Users\tarek\Desktop\Tcc (2)\Tcc\System\obj\Debug\netcoreapp2.1\System.csproj.CoreCompileInputs.cache
+C:\Users\tarek\Desktop\Tcc (2)\Tcc\System\obj\Debug\netcoreapp2.1\System.RazorAssemblyInfo.cache
+C:\Users\tarek\Desktop\Tcc (2)\Tcc\System\obj\Debug\netcoreapp2.1\System.RazorAssemblyInfo.cs
+C:\Users\tarek\Desktop\Tcc (2)\Tcc\System\obj\Debug\netcoreapp2.1\System.AssemblyInfoInputs.cache
+C:\Users\tarek\Desktop\Tcc (2)\Tcc\System\obj\Debug\netcoreapp2.1\System.AssemblyInfo.cs
+C:\Users\tarek\Desktop\Tcc (2)\Tcc\System\obj\Debug\netcoreapp2.1\System.RazorTargetAssemblyInfo.cache
+C:\Users\tarek\Desktop\Tcc (2)\Tcc\System\obj\Debug\netcoreapp2.1\System.csproj.CopyComplete
+C:\Users\tarek\Desktop\Tcc (2)\Tcc\System\obj\Debug\netcoreapp2.1\System.dll
+C:\Users\tarek\Desktop\Tcc (2)\Tcc\System\obj\Debug\netcoreapp2.1\System.pdb
+C:\Users\jawad\Desktop\Tcc (2)\Tcc\System\bin\Debug\netcoreapp2.1\System.deps.json
+C:\Users\jawad\Desktop\Tcc (2)\Tcc\System\bin\Debug\netcoreapp2.1\System.runtimeconfig.json
+C:\Users\jawad\Desktop\Tcc (2)\Tcc\System\bin\Debug\netcoreapp2.1\System.runtimeconfig.dev.json
+C:\Users\jawad\Desktop\Tcc (2)\Tcc\System\bin\Debug\netcoreapp2.1\System.dll
+C:\Users\jawad\Desktop\Tcc (2)\Tcc\System\bin\Debug\netcoreapp2.1\System.pdb
+C:\Users\jawad\Desktop\Tcc (2)\Tcc\System\bin\Debug\netcoreapp2.1\DAL.dll
+C:\Users\jawad\Desktop\Tcc (2)\Tcc\System\bin\Debug\netcoreapp2.1\Static.dll
+C:\Users\jawad\Desktop\Tcc (2)\Tcc\System\bin\Debug\netcoreapp2.1\DAL.pdb
+C:\Users\jawad\Desktop\Tcc (2)\Tcc\System\bin\Debug\netcoreapp2.1\Static.pdb
+C:\Users\jawad\Desktop\Tcc (2)\Tcc\System\obj\Debug\netcoreapp2.1\System.csprojAssemblyReference.cache
+C:\Users\jawad\Desktop\Tcc (2)\Tcc\System\obj\Debug\netcoreapp2.1\System.csproj.CoreCompileInputs.cache
+C:\Users\jawad\Desktop\Tcc (2)\Tcc\System\obj\Debug\netcoreapp2.1\System.RazorAssemblyInfo.cache
+C:\Users\jawad\Desktop\Tcc (2)\Tcc\System\obj\Debug\netcoreapp2.1\System.RazorAssemblyInfo.cs
+C:\Users\jawad\Desktop\Tcc (2)\Tcc\System\obj\Debug\netcoreapp2.1\System.AssemblyInfoInputs.cache
+C:\Users\jawad\Desktop\Tcc (2)\Tcc\System\obj\Debug\netcoreapp2.1\System.AssemblyInfo.cs
+C:\Users\jawad\Desktop\Tcc (2)\Tcc\System\obj\Debug\netcoreapp2.1\System.RazorTargetAssemblyInfo.cache
+C:\Users\jawad\Desktop\Tcc (2)\Tcc\System\obj\Debug\netcoreapp2.1\System.csproj.CopyComplete
+C:\Users\jawad\Desktop\Tcc (2)\Tcc\System\obj\Debug\netcoreapp2.1\System.dll
+C:\Users\jawad\Desktop\Tcc (2)\Tcc\System\obj\Debug\netcoreapp2.1\System.pdb
+C:\Users\tarek\Desktop\Tcc (3)\Tcc\System\bin\Debug\netcoreapp2.1\System.deps.json
+C:\Users\tarek\Desktop\Tcc (3)\Tcc\System\bin\Debug\netcoreapp2.1\System.runtimeconfig.json
+C:\Users\tarek\Desktop\Tcc (3)\Tcc\System\bin\Debug\netcoreapp2.1\System.runtimeconfig.dev.json
+C:\Users\tarek\Desktop\Tcc (3)\Tcc\System\bin\Debug\netcoreapp2.1\System.dll
+C:\Users\tarek\Desktop\Tcc (3)\Tcc\System\bin\Debug\netcoreapp2.1\System.pdb
+C:\Users\tarek\Desktop\Tcc (3)\Tcc\System\bin\Debug\netcoreapp2.1\DAL.dll
+C:\Users\tarek\Desktop\Tcc (3)\Tcc\System\bin\Debug\netcoreapp2.1\Static.dll
+C:\Users\tarek\Desktop\Tcc (3)\Tcc\System\bin\Debug\netcoreapp2.1\DAL.pdb
+C:\Users\tarek\Desktop\Tcc (3)\Tcc\System\bin\Debug\netcoreapp2.1\Static.pdb
+C:\Users\tarek\Desktop\Tcc (3)\Tcc\System\obj\Debug\netcoreapp2.1\System.csprojAssemblyReference.cache
+C:\Users\tarek\Desktop\Tcc (3)\Tcc\System\obj\Debug\netcoreapp2.1\System.csproj.CoreCompileInputs.cache
+C:\Users\tarek\Desktop\Tcc (3)\Tcc\System\obj\Debug\netcoreapp2.1\System.RazorAssemblyInfo.cache
+C:\Users\tarek\Desktop\Tcc (3)\Tcc\System\obj\Debug\netcoreapp2.1\System.RazorAssemblyInfo.cs
+C:\Users\tarek\Desktop\Tcc (3)\Tcc\System\obj\Debug\netcoreapp2.1\System.AssemblyInfoInputs.cache
+C:\Users\tarek\Desktop\Tcc (3)\Tcc\System\obj\Debug\netcoreapp2.1\System.AssemblyInfo.cs
+C:\Users\tarek\Desktop\Tcc (3)\Tcc\System\obj\Debug\netcoreapp2.1\System.RazorTargetAssemblyInfo.cache
+C:\Users\tarek\Desktop\Tcc (3)\Tcc\System\obj\Debug\netcoreapp2.1\System.csproj.CopyComplete
+C:\Users\tarek\Desktop\Tcc (3)\Tcc\System\obj\Debug\netcoreapp2.1\System.dll
+C:\Users\tarek\Desktop\Tcc (3)\Tcc\System\obj\Debug\netcoreapp2.1\System.pdb
+C:\Users\tarek\Desktop\Tcc\Tcc\System\obj\Debug\netcoreapp2.1\System.csprojAssemblyReference.cache
+C:\Users\tarek\Desktop\Tcc\Tcc\System\obj\Debug\netcoreapp2.1\System.csproj.CoreCompileInputs.cache
+C:\Users\tarek\Desktop\Tcc\Tcc\System\obj\Debug\netcoreapp2.1\System.RazorAssemblyInfo.cache
+C:\Users\tarek\Desktop\Tcc\Tcc\System\obj\Debug\netcoreapp2.1\System.RazorAssemblyInfo.cs
+C:\Users\tarek\Desktop\Tcc\Tcc\System\obj\Debug\netcoreapp2.1\System.AssemblyInfoInputs.cache
+C:\Users\tarek\Desktop\Tcc\Tcc\System\obj\Debug\netcoreapp2.1\System.AssemblyInfo.cs
+C:\Users\tarek\Desktop\Tcc\Tcc\System\obj\Debug\netcoreapp2.1\System.dll
+C:\Users\tarek\Desktop\Tcc\Tcc\System\obj\Debug\netcoreapp2.1\System.pdb
+C:\Users\tarek\Desktop\Tcc\Tcc\System\bin\Debug\netcoreapp2.1\System.deps.json
+C:\Users\tarek\Desktop\Tcc\Tcc\System\bin\Debug\netcoreapp2.1\System.runtimeconfig.json
+C:\Users\tarek\Desktop\Tcc\Tcc\System\bin\Debug\netcoreapp2.1\System.runtimeconfig.dev.json
+C:\Users\tarek\Desktop\Tcc\Tcc\System\bin\Debug\netcoreapp2.1\System.dll
+C:\Users\tarek\Desktop\Tcc\Tcc\System\bin\Debug\netcoreapp2.1\System.pdb
+C:\Users\tarek\Desktop\Tcc\Tcc\System\bin\Debug\netcoreapp2.1\DAL.dll
+C:\Users\tarek\Desktop\Tcc\Tcc\System\bin\Debug\netcoreapp2.1\Static.dll
+C:\Users\tarek\Desktop\Tcc\Tcc\System\bin\Debug\netcoreapp2.1\DAL.pdb
+C:\Users\tarek\Desktop\Tcc\Tcc\System\bin\Debug\netcoreapp2.1\Static.pdb
+C:\Users\tarek\Desktop\Tcc\Tcc\System\obj\Debug\netcoreapp2.1\System.RazorTargetAssemblyInfo.cache
+C:\Users\tarek\Desktop\Tcc\Tcc\System\obj\Debug\netcoreapp2.1\System.csproj.CopyComplete
+C:\Users\tarek\Desktop\AllTcc\Tcc\Tcc\System\bin\Debug\netcoreapp2.1\System.deps.json
+C:\Users\tarek\Desktop\AllTcc\Tcc\Tcc\System\bin\Debug\netcoreapp2.1\System.runtimeconfig.json
+C:\Users\tarek\Desktop\AllTcc\Tcc\Tcc\System\bin\Debug\netcoreapp2.1\System.runtimeconfig.dev.json
+C:\Users\tarek\Desktop\AllTcc\Tcc\Tcc\System\bin\Debug\netcoreapp2.1\System.dll
+C:\Users\tarek\Desktop\AllTcc\Tcc\Tcc\System\bin\Debug\netcoreapp2.1\System.pdb
+C:\Users\tarek\Desktop\AllTcc\Tcc\Tcc\System\bin\Debug\netcoreapp2.1\DAL.dll
+C:\Users\tarek\Desktop\AllTcc\Tcc\Tcc\System\bin\Debug\netcoreapp2.1\Static.dll
+C:\Users\tarek\Desktop\AllTcc\Tcc\Tcc\System\bin\Debug\netcoreapp2.1\DAL.pdb
+C:\Users\tarek\Desktop\AllTcc\Tcc\Tcc\System\bin\Debug\netcoreapp2.1\Static.pdb
+C:\Users\tarek\Desktop\AllTcc\Tcc\Tcc\System\obj\Debug\netcoreapp2.1\System.csprojAssemblyReference.cache
+C:\Users\tarek\Desktop\AllTcc\Tcc\Tcc\System\obj\Debug\netcoreapp2.1\System.csproj.CoreCompileInputs.cache
+C:\Users\tarek\Desktop\AllTcc\Tcc\Tcc\System\obj\Debug\netcoreapp2.1\System.RazorAssemblyInfo.cache
+C:\Users\tarek\Desktop\AllTcc\Tcc\Tcc\System\obj\Debug\netcoreapp2.1\System.RazorAssemblyInfo.cs
+C:\Users\tarek\Desktop\AllTcc\Tcc\Tcc\System\obj\Debug\netcoreapp2.1\System.AssemblyInfoInputs.cache
+C:\Users\tarek\Desktop\AllTcc\Tcc\Tcc\System\obj\Debug\netcoreapp2.1\System.AssemblyInfo.cs
+C:\Users\tarek\Desktop\AllTcc\Tcc\Tcc\System\obj\Debug\netcoreapp2.1\System.RazorTargetAssemblyInfo.cache
+C:\Users\tarek\Desktop\AllTcc\Tcc\Tcc\System\obj\Debug\netcoreapp2.1\System.csproj.CopyComplete
+C:\Users\tarek\Desktop\AllTcc\Tcc\Tcc\System\obj\Debug\netcoreapp2.1\System.dll
+C:\Users\tarek\Desktop\AllTcc\Tcc\Tcc\System\obj\Debug\netcoreapp2.1\System.pdb
+C:\Users\tarek\Desktop\Jawad2020-4-4\Tcc\System\bin\Debug\netcoreapp2.1\System.deps.json
+C:\Users\tarek\Desktop\Jawad2020-4-4\Tcc\System\bin\Debug\netcoreapp2.1\System.runtimeconfig.json
+C:\Users\tarek\Desktop\Jawad2020-4-4\Tcc\System\bin\Debug\netcoreapp2.1\System.runtimeconfig.dev.json
+C:\Users\tarek\Desktop\Jawad2020-4-4\Tcc\System\bin\Debug\netcoreapp2.1\System.dll
+C:\Users\tarek\Desktop\Jawad2020-4-4\Tcc\System\bin\Debug\netcoreapp2.1\System.pdb
+C:\Users\tarek\Desktop\Jawad2020-4-4\Tcc\System\bin\Debug\netcoreapp2.1\DAL.dll
+C:\Users\tarek\Desktop\Jawad2020-4-4\Tcc\System\bin\Debug\netcoreapp2.1\Static.dll
+C:\Users\tarek\Desktop\Jawad2020-4-4\Tcc\System\bin\Debug\netcoreapp2.1\DAL.pdb
+C:\Users\tarek\Desktop\Jawad2020-4-4\Tcc\System\bin\Debug\netcoreapp2.1\Static.pdb
+C:\Users\tarek\Desktop\Jawad2020-4-4\Tcc\System\obj\Debug\netcoreapp2.1\System.csprojAssemblyReference.cache
+C:\Users\tarek\Desktop\Jawad2020-4-4\Tcc\System\obj\Debug\netcoreapp2.1\System.csproj.CoreCompileInputs.cache
+C:\Users\tarek\Desktop\Jawad2020-4-4\Tcc\System\obj\Debug\netcoreapp2.1\System.RazorAssemblyInfo.cache
+C:\Users\tarek\Desktop\Jawad2020-4-4\Tcc\System\obj\Debug\netcoreapp2.1\System.RazorAssemblyInfo.cs
+C:\Users\tarek\Desktop\Jawad2020-4-4\Tcc\System\obj\Debug\netcoreapp2.1\System.AssemblyInfoInputs.cache
+C:\Users\tarek\Desktop\Jawad2020-4-4\Tcc\System\obj\Debug\netcoreapp2.1\System.AssemblyInfo.cs
+C:\Users\tarek\Desktop\Jawad2020-4-4\Tcc\System\obj\Debug\netcoreapp2.1\System.RazorTargetAssemblyInfo.cache
+C:\Users\tarek\Desktop\Jawad2020-4-4\Tcc\System\obj\Debug\netcoreapp2.1\System.csproj.CopyComplete
+C:\Users\tarek\Desktop\Jawad2020-4-4\Tcc\System\obj\Debug\netcoreapp2.1\System.dll
+C:\Users\tarek\Desktop\Jawad2020-4-4\Tcc\System\obj\Debug\netcoreapp2.1\System.pdb
+C:\Users\tarek\Desktop\Gawad 2020-4-6\Tcc\System\bin\Debug\netcoreapp2.1\System.deps.json
+C:\Users\tarek\Desktop\Gawad 2020-4-6\Tcc\System\bin\Debug\netcoreapp2.1\System.runtimeconfig.json
+C:\Users\tarek\Desktop\Gawad 2020-4-6\Tcc\System\bin\Debug\netcoreapp2.1\System.runtimeconfig.dev.json
+C:\Users\tarek\Desktop\Gawad 2020-4-6\Tcc\System\bin\Debug\netcoreapp2.1\System.dll
+C:\Users\tarek\Desktop\Gawad 2020-4-6\Tcc\System\bin\Debug\netcoreapp2.1\System.pdb
+C:\Users\tarek\Desktop\Gawad 2020-4-6\Tcc\System\bin\Debug\netcoreapp2.1\DAL.dll
+C:\Users\tarek\Desktop\Gawad 2020-4-6\Tcc\System\bin\Debug\netcoreapp2.1\Static.dll
+C:\Users\tarek\Desktop\Gawad 2020-4-6\Tcc\System\bin\Debug\netcoreapp2.1\DAL.pdb
+C:\Users\tarek\Desktop\Gawad 2020-4-6\Tcc\System\bin\Debug\netcoreapp2.1\Static.pdb
+C:\Users\tarek\Desktop\Gawad 2020-4-6\Tcc\System\obj\Debug\netcoreapp2.1\System.csprojAssemblyReference.cache
+C:\Users\tarek\Desktop\Gawad 2020-4-6\Tcc\System\obj\Debug\netcoreapp2.1\System.csproj.CoreCompileInputs.cache
+C:\Users\tarek\Desktop\Gawad 2020-4-6\Tcc\System\obj\Debug\netcoreapp2.1\System.RazorAssemblyInfo.cache
+C:\Users\tarek\Desktop\Gawad 2020-4-6\Tcc\System\obj\Debug\netcoreapp2.1\System.RazorAssemblyInfo.cs
+C:\Users\tarek\Desktop\Gawad 2020-4-6\Tcc\System\obj\Debug\netcoreapp2.1\System.AssemblyInfoInputs.cache
+C:\Users\tarek\Desktop\Gawad 2020-4-6\Tcc\System\obj\Debug\netcoreapp2.1\System.AssemblyInfo.cs
+C:\Users\tarek\Desktop\Gawad 2020-4-6\Tcc\System\obj\Debug\netcoreapp2.1\System.RazorTargetAssemblyInfo.cache
+C:\Users\tarek\Desktop\Gawad 2020-4-6\Tcc\System\obj\Debug\netcoreapp2.1\System.csproj.CopyComplete
+C:\Users\tarek\Desktop\Gawad 2020-4-6\Tcc\System\obj\Debug\netcoreapp2.1\System.dll
+C:\Users\tarek\Desktop\Gawad 2020-4-6\Tcc\System\obj\Debug\netcoreapp2.1\System.pdb
+C:\Users\tarek\Desktop\2020-4-8\Tcc\System\bin\Debug\netcoreapp2.1\System.deps.json
+C:\Users\tarek\Desktop\2020-4-8\Tcc\System\bin\Debug\netcoreapp2.1\System.runtimeconfig.json
+C:\Users\tarek\Desktop\2020-4-8\Tcc\System\bin\Debug\netcoreapp2.1\System.runtimeconfig.dev.json
+C:\Users\tarek\Desktop\2020-4-8\Tcc\System\bin\Debug\netcoreapp2.1\System.dll
+C:\Users\tarek\Desktop\2020-4-8\Tcc\System\bin\Debug\netcoreapp2.1\System.pdb
+C:\Users\tarek\Desktop\2020-4-8\Tcc\System\bin\Debug\netcoreapp2.1\DAL.dll
+C:\Users\tarek\Desktop\2020-4-8\Tcc\System\bin\Debug\netcoreapp2.1\Static.dll
+C:\Users\tarek\Desktop\2020-4-8\Tcc\System\bin\Debug\netcoreapp2.1\DAL.pdb
+C:\Users\tarek\Desktop\2020-4-8\Tcc\System\bin\Debug\netcoreapp2.1\Static.pdb
+C:\Users\tarek\Desktop\2020-4-8\Tcc\System\obj\Debug\netcoreapp2.1\System.csprojAssemblyReference.cache
+C:\Users\tarek\Desktop\2020-4-8\Tcc\System\obj\Debug\netcoreapp2.1\System.csproj.CoreCompileInputs.cache
+C:\Users\tarek\Desktop\2020-4-8\Tcc\System\obj\Debug\netcoreapp2.1\System.RazorAssemblyInfo.cache
+C:\Users\tarek\Desktop\2020-4-8\Tcc\System\obj\Debug\netcoreapp2.1\System.RazorAssemblyInfo.cs
+C:\Users\tarek\Desktop\2020-4-8\Tcc\System\obj\Debug\netcoreapp2.1\System.AssemblyInfoInputs.cache
+C:\Users\tarek\Desktop\2020-4-8\Tcc\System\obj\Debug\netcoreapp2.1\System.AssemblyInfo.cs
+C:\Users\tarek\Desktop\2020-4-8\Tcc\System\obj\Debug\netcoreapp2.1\System.RazorTargetAssemblyInfo.cache
+C:\Users\tarek\Desktop\2020-4-8\Tcc\System\obj\Debug\netcoreapp2.1\System.csproj.CopyComplete
+C:\Users\tarek\Desktop\2020-4-8\Tcc\System\obj\Debug\netcoreapp2.1\System.dll
+C:\Users\tarek\Desktop\2020-4-8\Tcc\System\obj\Debug\netcoreapp2.1\System.pdb
+C:\Users\tarek\Desktop\Tcc\C#\System\bin\Debug\netcoreapp2.1\System.deps.json
+C:\Users\tarek\Desktop\Tcc\C#\System\bin\Debug\netcoreapp2.1\System.runtimeconfig.json
+C:\Users\tarek\Desktop\Tcc\C#\System\bin\Debug\netcoreapp2.1\System.runtimeconfig.dev.json
+C:\Users\tarek\Desktop\Tcc\C#\System\bin\Debug\netcoreapp2.1\System.dll
+C:\Users\tarek\Desktop\Tcc\C#\System\bin\Debug\netcoreapp2.1\System.pdb
+C:\Users\tarek\Desktop\Tcc\C#\System\bin\Debug\netcoreapp2.1\DAL.dll
+C:\Users\tarek\Desktop\Tcc\C#\System\bin\Debug\netcoreapp2.1\Static.dll
+C:\Users\tarek\Desktop\Tcc\C#\System\bin\Debug\netcoreapp2.1\DAL.pdb
+C:\Users\tarek\Desktop\Tcc\C#\System\bin\Debug\netcoreapp2.1\Static.pdb
+C:\Users\tarek\Desktop\Tcc\C#\System\obj\Debug\netcoreapp2.1\System.csprojAssemblyReference.cache
+C:\Users\tarek\Desktop\Tcc\C#\System\obj\Debug\netcoreapp2.1\System.csproj.CoreCompileInputs.cache
+C:\Users\tarek\Desktop\Tcc\C#\System\obj\Debug\netcoreapp2.1\System.RazorAssemblyInfo.cache
+C:\Users\tarek\Desktop\Tcc\C#\System\obj\Debug\netcoreapp2.1\System.RazorAssemblyInfo.cs
+C:\Users\tarek\Desktop\Tcc\C#\System\obj\Debug\netcoreapp2.1\System.AssemblyInfoInputs.cache
+C:\Users\tarek\Desktop\Tcc\C#\System\obj\Debug\netcoreapp2.1\System.AssemblyInfo.cs
+C:\Users\tarek\Desktop\Tcc\C#\System\obj\Debug\netcoreapp2.1\System.RazorTargetAssemblyInfo.cache
+C:\Users\tarek\Desktop\Tcc\C#\System\obj\Debug\netcoreapp2.1\System.csproj.CopyComplete
+C:\Users\tarek\Desktop\Tcc\C#\System\obj\Debug\netcoreapp2.1\System.dll
+C:\Users\tarek\Desktop\Tcc\C#\System\obj\Debug\netcoreapp2.1\System.pdb
+C:\Users\tarek\Desktop\C#\System\obj\Debug\netcoreapp2.1\System.csprojAssemblyReference.cache
+C:\Users\tarek\Desktop\C#\System\obj\Debug\netcoreapp2.1\System.csproj.CoreCompileInputs.cache
+C:\Users\tarek\Desktop\C#\System\obj\Debug\netcoreapp2.1\System.RazorAssemblyInfo.cache
+C:\Users\tarek\Desktop\C#\System\obj\Debug\netcoreapp2.1\System.RazorAssemblyInfo.cs
+C:\Users\tarek\Desktop\C#\System\obj\Debug\netcoreapp2.1\System.AssemblyInfoInputs.cache
+C:\Users\tarek\Desktop\C#\System\obj\Debug\netcoreapp2.1\System.AssemblyInfo.cs
+C:\Users\tarek\Desktop\C#\System\obj\Debug\netcoreapp2.1\System.dll
+C:\Users\tarek\Desktop\C#\System\obj\Debug\netcoreapp2.1\System.pdb
+C:\Users\tarek\Desktop\C#\System\bin\Debug\netcoreapp2.1\System.deps.json
+C:\Users\tarek\Desktop\C#\System\bin\Debug\netcoreapp2.1\System.runtimeconfig.json
+C:\Users\tarek\Desktop\C#\System\bin\Debug\netcoreapp2.1\System.runtimeconfig.dev.json
+C:\Users\tarek\Desktop\C#\System\bin\Debug\netcoreapp2.1\System.dll
+C:\Users\tarek\Desktop\C#\System\bin\Debug\netcoreapp2.1\System.pdb
+C:\Users\tarek\Desktop\C#\System\bin\Debug\netcoreapp2.1\DAL.dll
+C:\Users\tarek\Desktop\C#\System\bin\Debug\netcoreapp2.1\Static.dll
+C:\Users\tarek\Desktop\C#\System\bin\Debug\netcoreapp2.1\DAL.pdb
+C:\Users\tarek\Desktop\C#\System\bin\Debug\netcoreapp2.1\Static.pdb
+C:\Users\tarek\Desktop\C#\System\obj\Debug\netcoreapp2.1\System.RazorTargetAssemblyInfo.cache
+C:\Users\tarek\Desktop\C#\System\obj\Debug\netcoreapp2.1\System.csproj.CopyComplete
+C:\Users\jawad\Desktop\C#\System\bin\Debug\netcoreapp2.1\System.deps.json
+C:\Users\jawad\Desktop\C#\System\bin\Debug\netcoreapp2.1\System.runtimeconfig.json
+C:\Users\jawad\Desktop\C#\System\bin\Debug\netcoreapp2.1\System.runtimeconfig.dev.json
+C:\Users\jawad\Desktop\C#\System\bin\Debug\netcoreapp2.1\System.dll
+C:\Users\jawad\Desktop\C#\System\bin\Debug\netcoreapp2.1\System.pdb
+C:\Users\jawad\Desktop\C#\System\bin\Debug\netcoreapp2.1\DAL.dll
+C:\Users\jawad\Desktop\C#\System\bin\Debug\netcoreapp2.1\Static.dll
+C:\Users\jawad\Desktop\C#\System\bin\Debug\netcoreapp2.1\DAL.pdb
+C:\Users\jawad\Desktop\C#\System\bin\Debug\netcoreapp2.1\Static.pdb
+C:\Users\jawad\Desktop\C#\System\obj\Debug\netcoreapp2.1\System.csprojAssemblyReference.cache
+C:\Users\jawad\Desktop\C#\System\obj\Debug\netcoreapp2.1\System.csproj.CoreCompileInputs.cache
+C:\Users\jawad\Desktop\C#\System\obj\Debug\netcoreapp2.1\System.RazorAssemblyInfo.cache
+C:\Users\jawad\Desktop\C#\System\obj\Debug\netcoreapp2.1\System.RazorAssemblyInfo.cs
+C:\Users\jawad\Desktop\C#\System\obj\Debug\netcoreapp2.1\System.AssemblyInfoInputs.cache
+C:\Users\jawad\Desktop\C#\System\obj\Debug\netcoreapp2.1\System.AssemblyInfo.cs
+C:\Users\jawad\Desktop\C#\System\obj\Debug\netcoreapp2.1\System.RazorTargetAssemblyInfo.cache
+C:\Users\jawad\Desktop\C#\System\obj\Debug\netcoreapp2.1\System.csproj.CopyComplete
+C:\Users\jawad\Desktop\C#\System\obj\Debug\netcoreapp2.1\System.dll
+C:\Users\jawad\Desktop\C#\System\obj\Debug\netcoreapp2.1\System.pdb
+C:\Users\jawad\Dropbox\C#\System\bin\Debug\netcoreapp2.1\System.deps.json
+C:\Users\jawad\Dropbox\C#\System\bin\Debug\netcoreapp2.1\System.runtimeconfig.json
+C:\Users\jawad\Dropbox\C#\System\bin\Debug\netcoreapp2.1\System.runtimeconfig.dev.json
+C:\Users\jawad\Dropbox\C#\System\bin\Debug\netcoreapp2.1\System.dll
+C:\Users\jawad\Dropbox\C#\System\bin\Debug\netcoreapp2.1\System.pdb
+C:\Users\jawad\Dropbox\C#\System\bin\Debug\netcoreapp2.1\DAL.dll
+C:\Users\jawad\Dropbox\C#\System\bin\Debug\netcoreapp2.1\Static.dll
+C:\Users\jawad\Dropbox\C#\System\bin\Debug\netcoreapp2.1\DAL.pdb
+C:\Users\jawad\Dropbox\C#\System\bin\Debug\netcoreapp2.1\Static.pdb
+C:\Users\jawad\Dropbox\C#\System\obj\Debug\netcoreapp2.1\System.csproj.CoreCompileInputs.cache
+C:\Users\jawad\Dropbox\C#\System\obj\Debug\netcoreapp2.1\System.RazorAssemblyInfo.cache
+C:\Users\jawad\Dropbox\C#\System\obj\Debug\netcoreapp2.1\System.RazorAssemblyInfo.cs
+C:\Users\jawad\Dropbox\C#\System\obj\Debug\netcoreapp2.1\System.AssemblyInfoInputs.cache
+C:\Users\jawad\Dropbox\C#\System\obj\Debug\netcoreapp2.1\System.AssemblyInfo.cs
+C:\Users\jawad\Dropbox\C#\System\obj\Debug\netcoreapp2.1\System.RazorTargetAssemblyInfo.cache
+C:\Users\jawad\Dropbox\C#\System\obj\Debug\netcoreapp2.1\System.csproj.CopyComplete
+C:\Users\jawad\Dropbox\C#\System\obj\Debug\netcoreapp2.1\System.dll
+C:\Users\jawad\Dropbox\C#\System\obj\Debug\netcoreapp2.1\System.pdb
+C:\Users\Bayan\Dropbox\C#\system\bin\Debug\netcoreapp2.1\System.deps.json
+C:\Users\Bayan\Dropbox\C#\system\bin\Debug\netcoreapp2.1\System.runtimeconfig.json
+C:\Users\Bayan\Dropbox\C#\system\bin\Debug\netcoreapp2.1\System.runtimeconfig.dev.json
+C:\Users\Bayan\Dropbox\C#\system\bin\Debug\netcoreapp2.1\System.dll
+C:\Users\Bayan\Dropbox\C#\system\bin\Debug\netcoreapp2.1\System.pdb
+C:\Users\Bayan\Dropbox\C#\system\bin\Debug\netcoreapp2.1\DAL.dll
+C:\Users\Bayan\Dropbox\C#\system\bin\Debug\netcoreapp2.1\Static.dll
+C:\Users\Bayan\Dropbox\C#\system\bin\Debug\netcoreapp2.1\DAL.pdb
+C:\Users\Bayan\Dropbox\C#\system\bin\Debug\netcoreapp2.1\Static.pdb
+C:\Users\Bayan\Dropbox\C#\system\obj\Debug\netcoreapp2.1\System.csprojAssemblyReference.cache
+C:\Users\Bayan\Dropbox\C#\system\obj\Debug\netcoreapp2.1\System.csproj.CoreCompileInputs.cache
+C:\Users\Bayan\Dropbox\C#\system\obj\Debug\netcoreapp2.1\System.RazorAssemblyInfo.cache
+C:\Users\Bayan\Dropbox\C#\system\obj\Debug\netcoreapp2.1\System.RazorAssemblyInfo.cs
+C:\Users\Bayan\Dropbox\C#\system\obj\Debug\netcoreapp2.1\System.AssemblyInfoInputs.cache
+C:\Users\Bayan\Dropbox\C#\system\obj\Debug\netcoreapp2.1\System.AssemblyInfo.cs
+C:\Users\Bayan\Dropbox\C#\system\obj\Debug\netcoreapp2.1\System.RazorTargetAssemblyInfo.cache
+C:\Users\Bayan\Dropbox\C#\system\obj\Debug\netcoreapp2.1\System.csproj.CopyComplete
+C:\Users\Bayan\Dropbox\C#\system\obj\Debug\netcoreapp2.1\System.dll
+C:\Users\Bayan\Dropbox\C#\system\obj\Debug\netcoreapp2.1\System.pdb
+C:\Users\jawad\Dropbox\C#\System\obj\Debug\netcoreapp2.1\System.csprojAssemblyReference.cache
+C:\Users\tarek\Dropbox\C#\System\bin\Debug\netcoreapp2.1\System.deps.json
+C:\Users\tarek\Dropbox\C#\System\bin\Debug\netcoreapp2.1\System.runtimeconfig.json
+C:\Users\tarek\Dropbox\C#\System\bin\Debug\netcoreapp2.1\System.runtimeconfig.dev.json
+C:\Users\tarek\Dropbox\C#\System\bin\Debug\netcoreapp2.1\System.dll
+C:\Users\tarek\Dropbox\C#\System\bin\Debug\netcoreapp2.1\System.pdb
+C:\Users\tarek\Dropbox\C#\System\bin\Debug\netcoreapp2.1\DAL.dll
+C:\Users\tarek\Dropbox\C#\System\bin\Debug\netcoreapp2.1\Static.dll
+C:\Users\tarek\Dropbox\C#\System\bin\Debug\netcoreapp2.1\DAL.pdb
+C:\Users\tarek\Dropbox\C#\System\bin\Debug\netcoreapp2.1\Static.pdb
+C:\Users\tarek\Dropbox\C#\System\obj\Debug\netcoreapp2.1\System.csprojAssemblyReference.cache
+C:\Users\tarek\Dropbox\C#\System\obj\Debug\netcoreapp2.1\System.csproj.CoreCompileInputs.cache
+C:\Users\tarek\Dropbox\C#\System\obj\Debug\netcoreapp2.1\System.RazorAssemblyInfo.cache
+C:\Users\tarek\Dropbox\C#\System\obj\Debug\netcoreapp2.1\System.RazorAssemblyInfo.cs
+C:\Users\tarek\Dropbox\C#\System\obj\Debug\netcoreapp2.1\System.AssemblyInfoInputs.cache
+C:\Users\tarek\Dropbox\C#\System\obj\Debug\netcoreapp2.1\System.AssemblyInfo.cs
+C:\Users\tarek\Dropbox\C#\System\obj\Debug\netcoreapp2.1\System.RazorTargetAssemblyInfo.cache
+C:\Users\tarek\Dropbox\C#\System\obj\Debug\netcoreapp2.1\System.csproj.CopyComplete
+C:\Users\tarek\Dropbox\C#\System\obj\Debug\netcoreapp2.1\System.dll
+C:\Users\tarek\Dropbox\C#\System\obj\Debug\netcoreapp2.1\System.pdb

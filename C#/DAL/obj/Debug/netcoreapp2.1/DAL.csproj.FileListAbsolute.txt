@@ -1,0 +1,176 @@
+C:\Users\tarek\source\repos\Tcc\DAL\bin\Debug\netcoreapp2.1\DAL.deps.json
+C:\Users\tarek\source\repos\Tcc\DAL\bin\Debug\netcoreapp2.1\DAL.dll
+C:\Users\tarek\source\repos\Tcc\DAL\obj\Debug\netcoreapp2.1\DAL.csproj.CoreCompileInputs.cache
+C:\Users\tarek\source\repos\Tcc\DAL\obj\Debug\netcoreapp2.1\DAL.AssemblyInfoInputs.cache
+C:\Users\tarek\source\repos\Tcc\DAL\obj\Debug\netcoreapp2.1\DAL.AssemblyInfo.cs
+C:\Users\tarek\source\repos\Tcc\DAL\obj\Debug\netcoreapp2.1\DAL.csprojAssemblyReference.cache
+C:\Users\tarek\source\repos\Tcc\DAL\bin\Debug\netcoreapp2.1\DAL.runtimeconfig.json
+C:\Users\tarek\source\repos\Tcc\DAL\bin\Debug\netcoreapp2.1\DAL.runtimeconfig.dev.json
+C:\Users\tarek\source\repos\Tcc\DAL\bin\Debug\netcoreapp2.1\DAL.pdb
+C:\Users\tarek\source\repos\Tcc\DAL\obj\Debug\netcoreapp2.1\DAL.dll
+C:\Users\tarek\source\repos\Tcc\DAL\obj\Debug\netcoreapp2.1\DAL.pdb
+C:\Users\jawad\Desktop\Tcc\DAL\bin\Debug\netcoreapp2.1\DAL.deps.json
+C:\Users\jawad\Desktop\Tcc\DAL\bin\Debug\netcoreapp2.1\DAL.runtimeconfig.json
+C:\Users\jawad\Desktop\Tcc\DAL\bin\Debug\netcoreapp2.1\DAL.runtimeconfig.dev.json
+C:\Users\jawad\Desktop\Tcc\DAL\bin\Debug\netcoreapp2.1\DAL.dll
+C:\Users\jawad\Desktop\Tcc\DAL\bin\Debug\netcoreapp2.1\DAL.pdb
+C:\Users\jawad\Desktop\Tcc\DAL\obj\Debug\netcoreapp2.1\DAL.csprojAssemblyReference.cache
+C:\Users\jawad\Desktop\Tcc\DAL\obj\Debug\netcoreapp2.1\DAL.csproj.CoreCompileInputs.cache
+C:\Users\jawad\Desktop\Tcc\DAL\obj\Debug\netcoreapp2.1\DAL.AssemblyInfoInputs.cache
+C:\Users\jawad\Desktop\Tcc\DAL\obj\Debug\netcoreapp2.1\DAL.AssemblyInfo.cs
+C:\Users\jawad\Desktop\Tcc\DAL\obj\Debug\netcoreapp2.1\DAL.dll
+C:\Users\jawad\Desktop\Tcc\DAL\obj\Debug\netcoreapp2.1\DAL.pdb
+C:\Users\tarek\Desktop\Tcc (2)\Tcc\DAL\bin\Debug\netcoreapp2.1\DAL.deps.json
+C:\Users\tarek\Desktop\Tcc (2)\Tcc\DAL\bin\Debug\netcoreapp2.1\DAL.runtimeconfig.json
+C:\Users\tarek\Desktop\Tcc (2)\Tcc\DAL\bin\Debug\netcoreapp2.1\DAL.runtimeconfig.dev.json
+C:\Users\tarek\Desktop\Tcc (2)\Tcc\DAL\bin\Debug\netcoreapp2.1\DAL.dll
+C:\Users\tarek\Desktop\Tcc (2)\Tcc\DAL\bin\Debug\netcoreapp2.1\DAL.pdb
+C:\Users\tarek\Desktop\Tcc (2)\Tcc\DAL\obj\Debug\netcoreapp2.1\DAL.csprojAssemblyReference.cache
+C:\Users\tarek\Desktop\Tcc (2)\Tcc\DAL\obj\Debug\netcoreapp2.1\DAL.csproj.CoreCompileInputs.cache
+C:\Users\tarek\Desktop\Tcc (2)\Tcc\DAL\obj\Debug\netcoreapp2.1\DAL.AssemblyInfoInputs.cache
+C:\Users\tarek\Desktop\Tcc (2)\Tcc\DAL\obj\Debug\netcoreapp2.1\DAL.AssemblyInfo.cs
+C:\Users\tarek\Desktop\Tcc (2)\Tcc\DAL\obj\Debug\netcoreapp2.1\DAL.dll
+C:\Users\tarek\Desktop\Tcc (2)\Tcc\DAL\obj\Debug\netcoreapp2.1\DAL.pdb
+C:\Users\jawad\Desktop\Tcc (2)\Tcc\DAL\bin\Debug\netcoreapp2.1\DAL.deps.json
+C:\Users\jawad\Desktop\Tcc (2)\Tcc\DAL\bin\Debug\netcoreapp2.1\DAL.runtimeconfig.json
+C:\Users\jawad\Desktop\Tcc (2)\Tcc\DAL\bin\Debug\netcoreapp2.1\DAL.runtimeconfig.dev.json
+C:\Users\jawad\Desktop\Tcc (2)\Tcc\DAL\bin\Debug\netcoreapp2.1\DAL.dll
+C:\Users\jawad\Desktop\Tcc (2)\Tcc\DAL\bin\Debug\netcoreapp2.1\DAL.pdb
+C:\Users\jawad\Desktop\Tcc (2)\Tcc\DAL\obj\Debug\netcoreapp2.1\DAL.csprojAssemblyReference.cache
+C:\Users\jawad\Desktop\Tcc (2)\Tcc\DAL\obj\Debug\netcoreapp2.1\DAL.csproj.CoreCompileInputs.cache
+C:\Users\jawad\Desktop\Tcc (2)\Tcc\DAL\obj\Debug\netcoreapp2.1\DAL.AssemblyInfoInputs.cache
+C:\Users\jawad\Desktop\Tcc (2)\Tcc\DAL\obj\Debug\netcoreapp2.1\DAL.AssemblyInfo.cs
+C:\Users\jawad\Desktop\Tcc (2)\Tcc\DAL\obj\Debug\netcoreapp2.1\DAL.dll
+C:\Users\jawad\Desktop\Tcc (2)\Tcc\DAL\obj\Debug\netcoreapp2.1\DAL.pdb
+C:\Users\tarek\Desktop\Tcc (3)\Tcc\DAL\bin\Debug\netcoreapp2.1\DAL.deps.json
+C:\Users\tarek\Desktop\Tcc (3)\Tcc\DAL\bin\Debug\netcoreapp2.1\DAL.runtimeconfig.json
+C:\Users\tarek\Desktop\Tcc (3)\Tcc\DAL\bin\Debug\netcoreapp2.1\DAL.runtimeconfig.dev.json
+C:\Users\tarek\Desktop\Tcc (3)\Tcc\DAL\bin\Debug\netcoreapp2.1\DAL.dll
+C:\Users\tarek\Desktop\Tcc (3)\Tcc\DAL\bin\Debug\netcoreapp2.1\DAL.pdb
+C:\Users\tarek\Desktop\Tcc (3)\Tcc\DAL\obj\Debug\netcoreapp2.1\DAL.csprojAssemblyReference.cache
+C:\Users\tarek\Desktop\Tcc (3)\Tcc\DAL\obj\Debug\netcoreapp2.1\DAL.csproj.CoreCompileInputs.cache
+C:\Users\tarek\Desktop\Tcc (3)\Tcc\DAL\obj\Debug\netcoreapp2.1\DAL.AssemblyInfoInputs.cache
+C:\Users\tarek\Desktop\Tcc (3)\Tcc\DAL\obj\Debug\netcoreapp2.1\DAL.AssemblyInfo.cs
+C:\Users\tarek\Desktop\Tcc (3)\Tcc\DAL\obj\Debug\netcoreapp2.1\DAL.dll
+C:\Users\tarek\Desktop\Tcc (3)\Tcc\DAL\obj\Debug\netcoreapp2.1\DAL.pdb
+C:\Users\tarek\Desktop\Tcc\Tcc\DAL\bin\Debug\netcoreapp2.1\DAL.deps.json
+C:\Users\tarek\Desktop\Tcc\Tcc\DAL\bin\Debug\netcoreapp2.1\DAL.runtimeconfig.json
+C:\Users\tarek\Desktop\Tcc\Tcc\DAL\bin\Debug\netcoreapp2.1\DAL.runtimeconfig.dev.json
+C:\Users\tarek\Desktop\Tcc\Tcc\DAL\bin\Debug\netcoreapp2.1\DAL.dll
+C:\Users\tarek\Desktop\Tcc\Tcc\DAL\bin\Debug\netcoreapp2.1\DAL.pdb
+C:\Users\tarek\Desktop\Tcc\Tcc\DAL\obj\Debug\netcoreapp2.1\DAL.csprojAssemblyReference.cache
+C:\Users\tarek\Desktop\Tcc\Tcc\DAL\obj\Debug\netcoreapp2.1\DAL.csproj.CoreCompileInputs.cache
+C:\Users\tarek\Desktop\Tcc\Tcc\DAL\obj\Debug\netcoreapp2.1\DAL.AssemblyInfoInputs.cache
+C:\Users\tarek\Desktop\Tcc\Tcc\DAL\obj\Debug\netcoreapp2.1\DAL.AssemblyInfo.cs
+C:\Users\tarek\Desktop\Tcc\Tcc\DAL\obj\Debug\netcoreapp2.1\DAL.dll
+C:\Users\tarek\Desktop\Tcc\Tcc\DAL\obj\Debug\netcoreapp2.1\DAL.pdb
+C:\Users\tarek\Desktop\AllTcc\Tcc\Tcc\DAL\bin\Debug\netcoreapp2.1\DAL.deps.json
+C:\Users\tarek\Desktop\AllTcc\Tcc\Tcc\DAL\bin\Debug\netcoreapp2.1\DAL.runtimeconfig.json
+C:\Users\tarek\Desktop\AllTcc\Tcc\Tcc\DAL\bin\Debug\netcoreapp2.1\DAL.runtimeconfig.dev.json
+C:\Users\tarek\Desktop\AllTcc\Tcc\Tcc\DAL\bin\Debug\netcoreapp2.1\DAL.dll
+C:\Users\tarek\Desktop\AllTcc\Tcc\Tcc\DAL\bin\Debug\netcoreapp2.1\DAL.pdb
+C:\Users\tarek\Desktop\AllTcc\Tcc\Tcc\DAL\obj\Debug\netcoreapp2.1\DAL.csprojAssemblyReference.cache
+C:\Users\tarek\Desktop\AllTcc\Tcc\Tcc\DAL\obj\Debug\netcoreapp2.1\DAL.csproj.CoreCompileInputs.cache
+C:\Users\tarek\Desktop\AllTcc\Tcc\Tcc\DAL\obj\Debug\netcoreapp2.1\DAL.AssemblyInfoInputs.cache
+C:\Users\tarek\Desktop\AllTcc\Tcc\Tcc\DAL\obj\Debug\netcoreapp2.1\DAL.AssemblyInfo.cs
+C:\Users\tarek\Desktop\AllTcc\Tcc\Tcc\DAL\obj\Debug\netcoreapp2.1\DAL.dll
+C:\Users\tarek\Desktop\AllTcc\Tcc\Tcc\DAL\obj\Debug\netcoreapp2.1\DAL.pdb
+C:\Users\tarek\Desktop\Jawad2020-4-4\Tcc\DAL\bin\Debug\netcoreapp2.1\DAL.deps.json
+C:\Users\tarek\Desktop\Jawad2020-4-4\Tcc\DAL\bin\Debug\netcoreapp2.1\DAL.runtimeconfig.json
+C:\Users\tarek\Desktop\Jawad2020-4-4\Tcc\DAL\bin\Debug\netcoreapp2.1\DAL.runtimeconfig.dev.json
+C:\Users\tarek\Desktop\Jawad2020-4-4\Tcc\DAL\bin\Debug\netcoreapp2.1\DAL.dll
+C:\Users\tarek\Desktop\Jawad2020-4-4\Tcc\DAL\bin\Debug\netcoreapp2.1\DAL.pdb
+C:\Users\tarek\Desktop\Jawad2020-4-4\Tcc\DAL\obj\Debug\netcoreapp2.1\DAL.csprojAssemblyReference.cache
+C:\Users\tarek\Desktop\Jawad2020-4-4\Tcc\DAL\obj\Debug\netcoreapp2.1\DAL.csproj.CoreCompileInputs.cache
+C:\Users\tarek\Desktop\Jawad2020-4-4\Tcc\DAL\obj\Debug\netcoreapp2.1\DAL.AssemblyInfoInputs.cache
+C:\Users\tarek\Desktop\Jawad2020-4-4\Tcc\DAL\obj\Debug\netcoreapp2.1\DAL.AssemblyInfo.cs
+C:\Users\tarek\Desktop\Jawad2020-4-4\Tcc\DAL\obj\Debug\netcoreapp2.1\DAL.dll
+C:\Users\tarek\Desktop\Jawad2020-4-4\Tcc\DAL\obj\Debug\netcoreapp2.1\DAL.pdb
+C:\Users\tarek\Desktop\Gawad 2020-4-6\Tcc\DAL\bin\Debug\netcoreapp2.1\DAL.deps.json
+C:\Users\tarek\Desktop\Gawad 2020-4-6\Tcc\DAL\bin\Debug\netcoreapp2.1\DAL.runtimeconfig.json
+C:\Users\tarek\Desktop\Gawad 2020-4-6\Tcc\DAL\bin\Debug\netcoreapp2.1\DAL.runtimeconfig.dev.json
+C:\Users\tarek\Desktop\Gawad 2020-4-6\Tcc\DAL\bin\Debug\netcoreapp2.1\DAL.dll
+C:\Users\tarek\Desktop\Gawad 2020-4-6\Tcc\DAL\bin\Debug\netcoreapp2.1\DAL.pdb
+C:\Users\tarek\Desktop\Gawad 2020-4-6\Tcc\DAL\obj\Debug\netcoreapp2.1\DAL.csprojAssemblyReference.cache
+C:\Users\tarek\Desktop\Gawad 2020-4-6\Tcc\DAL\obj\Debug\netcoreapp2.1\DAL.csproj.CoreCompileInputs.cache
+C:\Users\tarek\Desktop\Gawad 2020-4-6\Tcc\DAL\obj\Debug\netcoreapp2.1\DAL.AssemblyInfoInputs.cache
+C:\Users\tarek\Desktop\Gawad 2020-4-6\Tcc\DAL\obj\Debug\netcoreapp2.1\DAL.AssemblyInfo.cs
+C:\Users\tarek\Desktop\Gawad 2020-4-6\Tcc\DAL\obj\Debug\netcoreapp2.1\DAL.dll
+C:\Users\tarek\Desktop\Gawad 2020-4-6\Tcc\DAL\obj\Debug\netcoreapp2.1\DAL.pdb
+C:\Users\tarek\Desktop\2020-4-8\Tcc\DAL\bin\Debug\netcoreapp2.1\DAL.deps.json
+C:\Users\tarek\Desktop\2020-4-8\Tcc\DAL\bin\Debug\netcoreapp2.1\DAL.runtimeconfig.json
+C:\Users\tarek\Desktop\2020-4-8\Tcc\DAL\bin\Debug\netcoreapp2.1\DAL.runtimeconfig.dev.json
+C:\Users\tarek\Desktop\2020-4-8\Tcc\DAL\bin\Debug\netcoreapp2.1\DAL.dll
+C:\Users\tarek\Desktop\2020-4-8\Tcc\DAL\bin\Debug\netcoreapp2.1\DAL.pdb
+C:\Users\tarek\Desktop\2020-4-8\Tcc\DAL\obj\Debug\netcoreapp2.1\DAL.csprojAssemblyReference.cache
+C:\Users\tarek\Desktop\2020-4-8\Tcc\DAL\obj\Debug\netcoreapp2.1\DAL.csproj.CoreCompileInputs.cache
+C:\Users\tarek\Desktop\2020-4-8\Tcc\DAL\obj\Debug\netcoreapp2.1\DAL.AssemblyInfoInputs.cache
+C:\Users\tarek\Desktop\2020-4-8\Tcc\DAL\obj\Debug\netcoreapp2.1\DAL.AssemblyInfo.cs
+C:\Users\tarek\Desktop\2020-4-8\Tcc\DAL\obj\Debug\netcoreapp2.1\DAL.dll
+C:\Users\tarek\Desktop\2020-4-8\Tcc\DAL\obj\Debug\netcoreapp2.1\DAL.pdb
+C:\Users\tarek\Desktop\Tcc\C#\DAL\bin\Debug\netcoreapp2.1\DAL.deps.json
+C:\Users\tarek\Desktop\Tcc\C#\DAL\bin\Debug\netcoreapp2.1\DAL.runtimeconfig.json
+C:\Users\tarek\Desktop\Tcc\C#\DAL\bin\Debug\netcoreapp2.1\DAL.runtimeconfig.dev.json
+C:\Users\tarek\Desktop\Tcc\C#\DAL\bin\Debug\netcoreapp2.1\DAL.dll
+C:\Users\tarek\Desktop\Tcc\C#\DAL\bin\Debug\netcoreapp2.1\DAL.pdb
+C:\Users\tarek\Desktop\Tcc\C#\DAL\obj\Debug\netcoreapp2.1\DAL.csprojAssemblyReference.cache
+C:\Users\tarek\Desktop\Tcc\C#\DAL\obj\Debug\netcoreapp2.1\DAL.csproj.CoreCompileInputs.cache
+C:\Users\tarek\Desktop\Tcc\C#\DAL\obj\Debug\netcoreapp2.1\DAL.AssemblyInfoInputs.cache
+C:\Users\tarek\Desktop\Tcc\C#\DAL\obj\Debug\netcoreapp2.1\DAL.AssemblyInfo.cs
+C:\Users\tarek\Desktop\Tcc\C#\DAL\obj\Debug\netcoreapp2.1\DAL.dll
+C:\Users\tarek\Desktop\Tcc\C#\DAL\obj\Debug\netcoreapp2.1\DAL.pdb
+C:\Users\tarek\Desktop\C#\DAL\bin\Debug\netcoreapp2.1\DAL.deps.json
+C:\Users\tarek\Desktop\C#\DAL\bin\Debug\netcoreapp2.1\DAL.runtimeconfig.json
+C:\Users\tarek\Desktop\C#\DAL\bin\Debug\netcoreapp2.1\DAL.runtimeconfig.dev.json
+C:\Users\tarek\Desktop\C#\DAL\bin\Debug\netcoreapp2.1\DAL.dll
+C:\Users\tarek\Desktop\C#\DAL\bin\Debug\netcoreapp2.1\DAL.pdb
+C:\Users\tarek\Desktop\C#\DAL\obj\Debug\netcoreapp2.1\DAL.csprojAssemblyReference.cache
+C:\Users\tarek\Desktop\C#\DAL\obj\Debug\netcoreapp2.1\DAL.csproj.CoreCompileInputs.cache
+C:\Users\tarek\Desktop\C#\DAL\obj\Debug\netcoreapp2.1\DAL.AssemblyInfoInputs.cache
+C:\Users\tarek\Desktop\C#\DAL\obj\Debug\netcoreapp2.1\DAL.AssemblyInfo.cs
+C:\Users\tarek\Desktop\C#\DAL\obj\Debug\netcoreapp2.1\DAL.dll
+C:\Users\tarek\Desktop\C#\DAL\obj\Debug\netcoreapp2.1\DAL.pdb
+C:\Users\jawad\Desktop\C#\DAL\bin\Debug\netcoreapp2.1\DAL.deps.json
+C:\Users\jawad\Desktop\C#\DAL\bin\Debug\netcoreapp2.1\DAL.runtimeconfig.json
+C:\Users\jawad\Desktop\C#\DAL\bin\Debug\netcoreapp2.1\DAL.runtimeconfig.dev.json
+C:\Users\jawad\Desktop\C#\DAL\bin\Debug\netcoreapp2.1\DAL.dll
+C:\Users\jawad\Desktop\C#\DAL\bin\Debug\netcoreapp2.1\DAL.pdb
+C:\Users\jawad\Desktop\C#\DAL\obj\Debug\netcoreapp2.1\DAL.csprojAssemblyReference.cache
+C:\Users\jawad\Desktop\C#\DAL\obj\Debug\netcoreapp2.1\DAL.csproj.CoreCompileInputs.cache
+C:\Users\jawad\Desktop\C#\DAL\obj\Debug\netcoreapp2.1\DAL.AssemblyInfoInputs.cache
+C:\Users\jawad\Desktop\C#\DAL\obj\Debug\netcoreapp2.1\DAL.AssemblyInfo.cs
+C:\Users\jawad\Desktop\C#\DAL\obj\Debug\netcoreapp2.1\DAL.dll
+C:\Users\jawad\Desktop\C#\DAL\obj\Debug\netcoreapp2.1\DAL.pdb
+C:\Users\jawad\Dropbox\C#\DAL\bin\Debug\netcoreapp2.1\DAL.deps.json
+C:\Users\jawad\Dropbox\C#\DAL\bin\Debug\netcoreapp2.1\DAL.runtimeconfig.json
+C:\Users\jawad\Dropbox\C#\DAL\bin\Debug\netcoreapp2.1\DAL.runtimeconfig.dev.json
+C:\Users\jawad\Dropbox\C#\DAL\bin\Debug\netcoreapp2.1\DAL.dll
+C:\Users\jawad\Dropbox\C#\DAL\bin\Debug\netcoreapp2.1\DAL.pdb
+C:\Users\jawad\Dropbox\C#\DAL\obj\Debug\netcoreapp2.1\DAL.csprojAssemblyReference.cache
+C:\Users\jawad\Dropbox\C#\DAL\obj\Debug\netcoreapp2.1\DAL.csproj.CoreCompileInputs.cache
+C:\Users\jawad\Dropbox\C#\DAL\obj\Debug\netcoreapp2.1\DAL.AssemblyInfoInputs.cache
+C:\Users\jawad\Dropbox\C#\DAL\obj\Debug\netcoreapp2.1\DAL.AssemblyInfo.cs
+C:\Users\jawad\Dropbox\C#\DAL\obj\Debug\netcoreapp2.1\DAL.dll
+C:\Users\jawad\Dropbox\C#\DAL\obj\Debug\netcoreapp2.1\DAL.pdb
+C:\Users\Bayan\Dropbox\C#\DAL\bin\Debug\netcoreapp2.1\DAL.deps.json
+C:\Users\Bayan\Dropbox\C#\DAL\bin\Debug\netcoreapp2.1\DAL.runtimeconfig.json
+C:\Users\Bayan\Dropbox\C#\DAL\bin\Debug\netcoreapp2.1\DAL.runtimeconfig.dev.json
+C:\Users\Bayan\Dropbox\C#\DAL\bin\Debug\netcoreapp2.1\DAL.dll
+C:\Users\Bayan\Dropbox\C#\DAL\bin\Debug\netcoreapp2.1\DAL.pdb
+C:\Users\Bayan\Dropbox\C#\DAL\obj\Debug\netcoreapp2.1\DAL.csproj.CoreCompileInputs.cache
+C:\Users\Bayan\Dropbox\C#\DAL\obj\Debug\netcoreapp2.1\DAL.AssemblyInfoInputs.cache
+C:\Users\Bayan\Dropbox\C#\DAL\obj\Debug\netcoreapp2.1\DAL.AssemblyInfo.cs
+C:\Users\Bayan\Dropbox\C#\DAL\obj\Debug\netcoreapp2.1\DAL.dll
+C:\Users\Bayan\Dropbox\C#\DAL\obj\Debug\netcoreapp2.1\DAL.pdb
+C:\Users\Bayan\Dropbox\C#\DAL\obj\Debug\netcoreapp2.1\DAL.csprojAssemblyReference.cache
+C:\Users\tarek\Dropbox\C#\DAL\bin\Debug\netcoreapp2.1\DAL.deps.json
+C:\Users\tarek\Dropbox\C#\DAL\bin\Debug\netcoreapp2.1\DAL.runtimeconfig.json
+C:\Users\tarek\Dropbox\C#\DAL\bin\Debug\netcoreapp2.1\DAL.runtimeconfig.dev.json
+C:\Users\tarek\Dropbox\C#\DAL\bin\Debug\netcoreapp2.1\DAL.dll
+C:\Users\tarek\Dropbox\C#\DAL\bin\Debug\netcoreapp2.1\DAL.pdb
+C:\Users\tarek\Dropbox\C#\DAL\obj\Debug\netcoreapp2.1\DAL.csproj.CoreCompileInputs.cache
+C:\Users\tarek\Dropbox\C#\DAL\obj\Debug\netcoreapp2.1\DAL.AssemblyInfoInputs.cache
+C:\Users\tarek\Dropbox\C#\DAL\obj\Debug\netcoreapp2.1\DAL.AssemblyInfo.cs
+C:\Users\tarek\Dropbox\C#\DAL\obj\Debug\netcoreapp2.1\DAL.dll
+C:\Users\tarek\Dropbox\C#\DAL\obj\Debug\netcoreapp2.1\DAL.pdb
+C:\Users\tarek\Dropbox\C#\DAL\obj\Debug\netcoreapp2.1\DAL.csprojAssemblyReference.cache

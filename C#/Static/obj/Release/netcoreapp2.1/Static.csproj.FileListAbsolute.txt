@@ -1,0 +1,9 @@
+C:\Users\tarek\source\repos\TCC\Static\bin\Release\netcoreapp2.1\Static.deps.json
+C:\Users\tarek\source\repos\TCC\Static\bin\Release\netcoreapp2.1\Static.dll
+C:\Users\tarek\source\repos\TCC\Static\bin\Release\netcoreapp2.1\Static.pdb
+C:\Users\tarek\source\repos\TCC\Static\obj\Release\netcoreapp2.1\Static.csprojAssemblyReference.cache
+C:\Users\tarek\source\repos\TCC\Static\obj\Release\netcoreapp2.1\Static.csproj.CoreCompileInputs.cache
+C:\Users\tarek\source\repos\TCC\Static\obj\Release\netcoreapp2.1\Static.AssemblyInfoInputs.cache
+C:\Users\tarek\source\repos\TCC\Static\obj\Release\netcoreapp2.1\Static.AssemblyInfo.cs
+C:\Users\tarek\source\repos\TCC\Static\obj\Release\netcoreapp2.1\Static.dll
+C:\Users\tarek\source\repos\TCC\Static\obj\Release\netcoreapp2.1\Static.pdb
