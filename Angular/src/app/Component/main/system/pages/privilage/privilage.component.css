@@ -1,0 +1,25 @@
+table {
+  width: 100%;
+}
+th.mat-header-cell {
+  color: black;
+  text-align: center;
+  padding-right: 40%;
+}
+.mat-header-cell {
+  color: black;
+  padding:20px;
+  display:flex;
+  justify-content:center;
+ }
+.mat-form-field {
+  font-size: 16px;
+  width: 100%;
+}
+td{text-align: center;}
+th{text-align: center;}
+
+active-cyan-2 input.form-control[type=text]:focus:not([readonly]) {
+border-bottom: 1px solid #4dd0e1;
+box-shadow: 0 1px 0 0 #4dd0e1;
+}

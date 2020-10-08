@@ -1,0 +1,9 @@
+.SuccessClass{
+    color: rgb(9, 163, 9);
+}
+.ErrorClass{
+    color: red;
+}
+mat-expansion-panel{
+    border-color: blue;
+}

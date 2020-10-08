@@ -1,0 +1,117 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~ngx-toastr/toastr.css';
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@font-face {
+    font-family: "AL-Mohanad Bold";
+    src: url("src\assets\sidebar\fonts\AL-Mohanad Bold.TTF");
+
+    }
+    
+     h3{
+         text-align: right;
+        
+     }
+     
+    th{
+      text-align: center;
+        font-size: 16px;
+    }
+    th.mat-sort-header-sorted {
+        color: black;
+        text-align: center;
+        padding-right: 10px;
+        font-size: 18px;
+      }
+      .mat-form-field {
+        font-size: 16px;
+        width: 100%;
+      }
+      label{
+        font-size: 18px;
+      }
+      p{
+        font-size: 18px;
+        text-align: right;
+      }
+      .mat-header-cell{
+        font-size: 16px;
+          }
+          .mat-cell{
+            font-size: 16px;
+          }
+          .navbar-dark .navbar-nav .nav-link{
+            color: white;
+            font-size: 20px;
+          }
+          h1{
+            color: #3f51b5;
+            text-align: right;
+            padding-right: 0;
+          }
+          button.close{
+            text-align: left;
+            padding-left: 0;
+          }
+          .font-weight-bold{
+            color: #3f51b5;
+            text-align: right;
+            padding-right: 0;
+            font-size: 25px;
+          }
+          .cdk-global-overlay-wrapper, .cdk-overlay-container {
+            z-index: 99999 !important;
+         }
+         .btn[disabled]{
+          cursor: not-allowed;
+         }
+         select,option{
+           text-align: center;
+           
+         }
+         .matInput[disabled]{
+color: black;
+         }
+          .mat-badge-content {
+        font-size: 16px;
+           background-color: red;
+            text-align: center;
+            align-items: center;
+            padding-right:1;
+           
+          
+          }
+          table {
+            width: 100%;
+          }
+          th.mat-sort-header-sorted {
+            color: hsl(0, 0%, 0%);
+            
+          }
+          .mat-form-field {
+            font-size: 14px;
+            width: 100%;
+          }
+          td{text-align: center;
+          margin: 5px;
+          }
+          
+          
+          active-cyan-2 input.form-control[type=text]:focus:not([readonly]) {
+          border-bottom: 1px solid #4dd0e1;
+          box-shadow: 0 1px 0 0 #4dd0e1;
+          }
+         
+          .mat-cell{
+            font-size: 16px;
+          }
+          .mat-header-cell {
+            font-size: 18px;
+            color: black;
+           
+           }
+           ::ng-deep .mat-sort-header-container {
+            color: hsl(0, 0%, 0%);
+            display:flex;
+            justify-content:center;
+          }

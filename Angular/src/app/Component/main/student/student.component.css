@@ -1,0 +1,29 @@
+
+.mat-form-field {
+  margin-top: 16px;
+}
+mat-form-field{
+  width: 70%;
+}
+.example-h2 {
+  margin: 10px;
+}
+.mat-spinner {
+  position: relative;
+  margin-left: 50%;
+  margin-right: 50%;
+}
+.example-section {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 60px;
+}
+a.star{
+  color: red;
+  padding: 5px;
+}
+.example-margin {
+  margin: 0 10px;
+}
+

@@ -1,0 +1,63 @@
+<div class="panel-body mat-elevation-z8">
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-lg-6" style="text-align:right;">
+<h1>الشهادة</h1>
+          </div>
+          <div class="col-lg-6" >
+            <button class="btn btn-outline-primary"[hidden]="showEdit"(click)="ClickEdit(StudentInformation.StudentDegree)">تعديل</button>
+                  <button class="btn btn-outline-primary"[hidden]="!showEdit" (click)="EditStudentDegree(StudentInformation.StudentDegree)">حفظ </button>&nbsp;
+                  <button class="btn btn-outline-dark"[hidden]="!showEdit" (click)="CancelEditStudentDegree(StudentInformation.StudentDegree)">الغاء</button>
+             
+          </div>
+        </div>
+     
+        <div class="row">
+          <div class="col-lg-3">
+            <mat-form-field style="width: 150px;">
+              <h4>نوع الشهادة</h4>
+            
+              <mat-select [(ngModel)]="StudentInformation.StudentDegree.DegreeId" name="DegreeId"
+              [disabled]="!showEdit"  >
+                <mat-option *ngFor="let item of StudentInformation.DegreeService.degreeall" [value]="item.Id">{{item.Name}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-lg-3">
+            <mat-form-field style="width: 150px;">
+              <h4>مصدر الشهادة</h4>
+              
+              <mat-select [(ngModel)]="StudentInformation.StudentDegree.Source" name="Source" [disabled]="!showEdit"  >
+                <mat-option *ngFor="let item of StudentInformation.CountryServic.maincountryall " [value]="item.Id">{{item.Name}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div class="col-lg-3">
+            <mat-form-field style="width: 150px;">
+              <h4>سنة اصدار الشهادة</h4>
+             
+              <mat-select [(ngModel)]="StudentInformation.StudentDegree.Date" name="Date" [disabled]="!showEdit"  >
+                <mat-option *ngFor="let item of StudentInformation.YearService.years" [value]="item.Id">
+                  {{item.FirstYear}}\{{item.SecondYear}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-lg-3">
+            <mat-form-field style="width: 150px;">
+              <h4>المجموع</h4>
+            
+              <input matInput type="text"  InputRange  [minValue]="'0'"  [(ngModel)]="StudentInformation.StudentDegree.Degree" name="Degree"  maxlength="50"
+              [disabled]="!showEdit"   >
+
+            </mat-form-field>
+          </div>
+        </div>
+    
+        </div>
+        </div>
+        </div>

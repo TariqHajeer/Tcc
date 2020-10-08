@@ -1,0 +1,52 @@
+<h1>اضافة مادة معتمدة</h1>
+<form>
+<div class="row">
+  <div class="col-lg-6">
+   
+      <select [(ngModel)]="DependOnSubjectSelectSemester" name="SelectSemester"
+        class="form-control" (ngModelChange)="DependOnSubjectSelectSemester">
+        <option
+          *ngFor="let studySemesters of ShowStudyPlan.StudySemester"
+          [ngValue]="studySemesters">
+        السنة {{studySemesters.StudyYear.Name}} الفصل &nbsp; {{studySemesters.Number==1?'الأول':'الثاني'}}
+        </option>
+      </select>
+      <br>
+     
+  </div>
+  <div class="col-lg-6">
+   
+      <select [(ngModel)]="DependOnSubjectselect" name="subjectId"
+        class="form-control">
+          <option
+            *ngFor="let studySemestersSubjects of GetSubject()"
+            [ngValue]="studySemestersSubjects">
+            {{studySemestersSubjects.Name}}
+          </option>
+      
+      </select>
+      <br>
+      <button class="btn btn-outline-primary"
+        (click)="AddDependOnSubject()">+</button>
+        <br>
+  
+  </div>
+</div>
+</form>
+<table class="table" style="width: 100%;">
+  <thead>
+    <th>كود المادة</th>
+    <th>اسم المادة</th>
+    <th></th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let DependOnSubject of  ShowStudyPlan.GetDependOnSubject">
+      <td>{{DependOnSubject.SubjectCode}}</td>
+      <td>{{DependOnSubject.Name}}</td>
+      <td><button class="btn btn-dark"
+          (click)="DeleteDependOnSubject(DependOnSubject)">x</button>
+      </td>
+
+    </tr>
+  </tbody>
+</table>

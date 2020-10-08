@@ -1,0 +1,226 @@
+<p class="font-weight-bold" style="text-align: right; ">   نوع المادة </p>
+
+
+<div class="panel-body mat-elevation-z8" *ngIf="roleservic.CanAddSubjectType()">
+  <div class="card">
+    <div class="card-body">
+      <form ngForm="form" #myform="ngForm">
+        <div class="form-row">
+          <div class="col-md-4 mb-3">
+            <h3 for="Name">نوع المادة</h3>
+            <input type="text" class="form-control" [(ngModel)]="service.SubjectType.Name" name="Name" #Name="ngModel"
+              [class.is-invalid]="Name.invalid && Name.touched" maxlength="50" (keyup)="GetSimilarForAdd(service.SubjectType)"
+              placeholder="" value="" required autocomplete="off">
+            <a [routerLink]="['/routePath']" routerLinkActive="router-link-active" *ngIf="semelar!=null"> يوجد مشابه و هي : {{semelar.Name}}</a>
+            <small class="text-danger" [class.d-none]="Name.valid || Name.untouched">ادخل الاسم</small>
+            <br>
+            <small *ngIf="error()" style="color:red;">{{errorMessage}} </small>
+          </div>
+      
+          <div class="col-md-4 mb-3">
+            <div class="form-group">
+              <div class="form-check">
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input " id="add"  checked [(ngModel)]="service.SubjectType.IsEnabled"
+                    name="IsEnabled">
+                  <label class="custom-control-label" for="add">فعالة</label>
+                </div>
+
+              </div>
+            </div>
+          </div>
+     
+
+        </div>
+<div class="form-row">
+  <div class="col-md-3 ">
+    <h3 for="Name">درجة العملي</h3>
+    <input type="text"  InputRange  [minValue]="'0'"  class="form-control" [(ngModel)]="service.SubjectType.PracticalDegree" name="PracticalDegree" #PracticalDegree="ngModel"
+       maxlength="2"
+      placeholder="" value="" required autocomplete="off">
+   <small class="text-danger" [class.d-none]="PracticalDegree.valid || PracticalDegree.untouched">ادخل رقم</small>
+   
+  </div>
+  <div class="col-md-3 ">
+    <h3 for="NominateDegree">درجة الترشح</h3>
+    <input type="text"  InputRange  [minValue]="'0'"  class="form-control" [(ngModel)]="service.SubjectType.NominateDegree" name="NominateDegree" #NominateDegree="ngModel"
+       maxlength="2"
+      placeholder="" value="" required autocomplete="off">
+   <small class="text-danger" [class.d-none]="NominateDegree.valid || NominateDegree.untouched">ادخل رقم</small>
+  </div>
+  <div class="col-md-3">
+    <h3 for="TheoreticalDegree">درجة النظري</h3>
+    <input type="text"  InputRange  [minValue]="'0'"  class="form-control" [(ngModel)]="service.SubjectType.TheoreticalDegree" name="TheoreticalDegree" #TheoreticalDegree="ngModel"
+       maxlength="3"
+      placeholder="" value="" required autocomplete="off">
+   <small class="text-danger" [class.d-none]="TheoreticalDegree.valid || TheoreticalDegree.untouched">ادخل رقم</small>
+  </div>
+  <div class="col-md-3 ">
+    <h3 for="SuccessDegree">درجة النجاح</h3>
+    <input type="text"  InputRange  [minValue]="'0'"  class="form-control" [(ngModel)]="service.SubjectType.SuccessDegree" name="SuccessDegree" #SuccessDegree="ngModel"
+       maxlength="2"
+      placeholder="" value="" required autocomplete="off">
+   <small class="text-danger" [class.d-none]="SuccessDegree.valid || SuccessDegree.untouched">ادخل رقم</small>
+  </div>
+</div>
+        <button class="btn btn-outline-primary" (click)="submit(myform)" [disabled]="error()">اضافة</button>
+      </form>
+    </div>
+  </div>
+
+</div>
+
+<br> <br> <br>
+<mat-form-field>
+  <mat-h3></mat-h3>
+  <input matInput (keyup)="applyFilter($event)" placeholder="البحث" class="form-control" aria-label="Search"
+    *ngIf="roleservic.CanShowDegree()">
+</mat-form-field>
+
+
+
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8"
+*ngIf="roleservic.CanShowSubjectType()">
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="Name">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> الاسم </th>
+    <td mat-cell *matCellDef="let element"> {{element.Name}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="IsEnabled">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> فعالة </th>
+    <td mat-cell *matCellDef="let element">
+      <!-- The checkbox -->
+
+      <div class="custom-control custom-checkbox " style="margin-right: -10px;">
+        <input type="checkbox" class="custom-control-input" [(ngModel)]="element.IsEnabled" name="IsEnabled">
+              <label class="custom-control-label" for="IsEnabled"></label>
+
+      </div>
+
+    </td>
+  </ng-container>
+
+  <!--  Column -->
+  <ng-container matColumnDef="Created">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> تاريخ الإنشاء </th>
+    <td mat-cell *matCellDef="let element"> {{element.Created | date: 'yyyy/MM/dd'}} </td>
+  </ng-container>
+
+  <!--  Column -->
+  <ng-container matColumnDef="CreatedBy">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> تم الانشاء بواسطة </th>
+    <td mat-cell *matCellDef="let element"> {{element.CreatedBy }} </td>
+  </ng-container>
+  <!--  Column -->
+  <ng-container matColumnDef="Modified">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> تاريخ التعديل </th>
+    <td mat-cell *matCellDef="let element"> {{element.Modified | date: 'yyyy/MM/dd'}} </td>
+  </ng-container>
+
+  <!--  Column -->
+  <ng-container matColumnDef="ModifiedBy">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> تم التعديل بواسطة </th>
+    <td mat-cell *matCellDef="let element"> {{element.ModifiedBy}} </td>
+  </ng-container>
+  <!--  Column -->
+  <ng-container matColumnDef="More">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> خيارات </th>
+    <td mat-cell *matCellDef="let element;let i = index"> <button type="button" class="btn btn-outline-primary"
+        data-toggle="modal" (click)="fillData(element)" data-target="#Edit" *ngIf="roleservic.CanUpdateSubjectType()">
+        تعديل
+      </button>
+      <div class="modal fade" id="Edit" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+      
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <button type="button" class="close" (click)=closeModal() data-dismiss="modal">&times;</button>
+            </div>
+      
+            <!-- Modal body -->
+            <div class="modal-body">
+              <h1 class="modal-title">تعديل نوع المادة</h1>
+
+              <form ngForm="form" #myform="ngForm">
+                <div class="form-row">
+                  <div class="col-md-4 mb-3">
+                    <h3 for="name">نوع المادة</h3>
+                    <input type="text" class="form-control" [(ngModel)]="service.SubjectType.Name" name="name"
+                    (keyup)="GetSimilarForUpdate(service.SubjectType)"
+                      #name="ngModel" [class.is-invalid]="name.invalid && name.touched" maxlength="50" required
+                      (keyup)="GetSimilarForUpdate(service.SubjectType)"> 
+                    <small class="text-danger" [class.d-none]="name.valid || name.untouched ">ادخل الاسم</small>
+                    <a [routerLink]="['/routePath']" routerLinkActive="router-link-active" *ngIf="semelar!=null">
+                      يوجد مشابه و هي : {{semelar.Name}}</a>
+                  </div>
+             
+                  <div class="col-md-4 mb-3">
+                    <div class="form-group">
+                      <div class="form-check">
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input "
+                            [(ngModel)]="service.SubjectType.IsEnabled"  (keyup)="GetSimilarForUpdate(service.SubjectType)"
+                            name="IsEnabled">
+                         
+                            <label class="custom-control-label" for="add">فعالة</label>
+                        </div>
+        
+                      </div>
+                    </div>
+                  </div>
+             
+        
+                </div>
+        <div class="form-row">
+          <div class="col-md-3 ">
+            <h3 for="Name">درجة العملي</h3>
+            <input type="text"  InputRange  [minValue]="'0'"  class="form-control" [(ngModel)]="service.SubjectType.PracticalDegree" name="PracticalDegree" #PracticalDegree="ngModel"
+               maxlength="2"
+              placeholder="" value="" required autocomplete="off">
+           <small class="text-danger" [class.d-none]="PracticalDegree.valid || PracticalDegree.untouched">ادخل رقم</small>
+           
+          </div>
+          <div class="col-md-3 ">
+            <h3 for="NominateDegree">درجة الترشح</h3>
+            <input type="text"  InputRange  [minValue]="'0'"  class="form-control" [(ngModel)]="service.SubjectType.NominateDegree" name="NominateDegree" #NominateDegree="ngModel"
+               maxlength="2"
+              placeholder="" value="" required autocomplete="off">
+           <small class="text-danger" [class.d-none]="NominateDegree.valid || NominateDegree.untouched">ادخل رقم</small>
+          </div>
+          <div class="col-md-3">
+            <h3 for="TheoreticalDegree">درجة النظري</h3>
+            <input type="text"  InputRange  [minValue]="'0'"  class="form-control" [(ngModel)]="service.SubjectType.TheoreticalDegree" name="TheoreticalDegree" #TheoreticalDegree="ngModel"
+               maxlength="2"
+              placeholder="" value="" required autocomplete="off">
+           <small class="text-danger" [class.d-none]="TheoreticalDegree.valid || TheoreticalDegree.untouched">ادخل رقم</small>
+          </div>
+          <div class="col-md-3 ">
+            <h3 for="SuccessDegree">درجة النجاح</h3>
+            <input type="text"  InputRange  [minValue]="'0'"  class="form-control" [(ngModel)]="service.SubjectType.SuccessDegree" name="SuccessDegree" #SuccessDegree="ngModel"
+               maxlength="2"
+              placeholder="" value="" required autocomplete="off">
+           <small class="text-danger" [class.d-none]="SuccessDegree.valid || SuccessDegree.untouched">ادخل رقم</small>
+          </div>
+        </div>
+        <button class="btn btn-outline-primary" (click)="edit(myform)"[disabled]="!UpdateValidation(service.SubjectType)" data-dismiss="modal" [disabled]="!UpdateValidation(service.SubjectType)">حفظ </button>
+           
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      &nbsp;
+      <button class="btn btn-outline-danger" (click)="delete(element.Id)" *ngIf="roleservic. CanDeleteSubjectType()">حذف </button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<h2 *ngIf="HiddenMessage" style="margin: 10px;text-align: center;"> {{NoDataFound}}</h2>
+
+<mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>

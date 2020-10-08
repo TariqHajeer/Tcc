@@ -1,0 +1,84 @@
+
+<div class=" d-flex align-items-stretch" >
+    <nav id="sidebar">
+        <div class="p-4 pt-5">
+          <a href="#" class="img logo rounded-circle mb-5" style="background-image: url(assets/sidebar/images/damascus_university_logo.jpg);"></a>
+    <ul class="list-unstyled components mb-5">
+     
+        <li>
+            <a routerLink="user" *ngIf="roleservic.CanAddUser()||roleservic.CanShowUser()">المستخدمون</a>
+        </li>
+        <li>
+            <a routerLink="privilage" *ngIf="roleservic.CanShowPrivilage()">الصلاحيات</a>
+        </li>
+        <li>
+            <a routerLink="group" *ngIf="roleservic.CanShowGroup()||roleservic.CanAddGroup()">المجموعات</a>
+        </li>
+        <li>
+            <a routerLink="city" *ngIf="roleservic.CanAddcity()||roleservic.CanShowcity()">محافظات</a>
+        </li>
+        <li>
+            <a routerLink="country" *ngIf="roleservic.CanAddCountry()||roleservic.CanShowCountry()">بلدان</a>
+        </li>
+      <li>
+      <a routerLink="degree" *ngIf="roleservic.CanAddDegree()||roleservic.CanShowDegree()">الشهادات</a>
+      </li>
+      
+      <li>
+        <a routerLink="honesty" *ngIf="roleservic.CanAddHonesty()||roleservic.CanShowHonesty()">الأمانة</a>
+        </li>
+        <li>
+          <a routerLink="constains" *ngIf="roleservic.CanAddConstraint()||roleservic.CanShowConstraint()">القيد</a>
+          </li>
+        <li>
+          <a routerLink="phonetype" *ngIf="roleservic.CanAddPhoneType()||roleservic.CanShowPhoneType()">نوع الهاتف</a>
+          </li>
+        <li>
+          <a routerLink="language" *ngIf="roleservic.CanAddLanguages()||roleservic.CanShowLanguages()">اللغات</a>
+          </li>
+          <li>
+            <a routerLink="colleges" *ngIf="roleservic.CanAddCollege()||roleservic.CanShowCollege()">الجامعات</a>
+            </li>
+            <li>
+              <a routerLink="specialzation" *ngIf="roleservic.CanAddSpecialization()||roleservic.CanShowSpecialization()">الاختصاص</a>
+              </li>
+              <li>
+                <a routerLink="nathionalty" *ngIf="roleservic.CanAddNationality()||roleservic.CanShowNationality()">الجنسية</a>
+                </li>
+                <li>
+                  <a routerLink="attachment" *ngIf="roleservic.CanAddAttachment()||roleservic.CanShowAttachment()">انواع المرفقات</a>
+                  </li>
+                  <li>
+                    <a routerLink="typeofregister" *ngIf="roleservic.CanAddTypeOfRegistar()||roleservic.CanShowTypeOfRegistar()">نوع التسجيل</a>
+                    </li>
+                    <li>
+                      <a routerLink="socialstate" *ngIf="roleservic.CanAddSocialState()||roleservic.CanShowSocialState()">الحالة الاجتماعية</a>
+                      </li>
+                      <li>
+                        <a routerLink="yearsystem" *ngIf="roleservic.CanAddYearSystem()||roleservic.CanShowYearSystem()">نظام السنة</a>
+                        </li>
+                        <li>
+                          <a routerLink="examSystem" *ngIf="roleservic.CanAddYearSystem()||roleservic.CanAddYearSystem()">نظام الامتحان</a>
+                          </li>
+                        <li>
+                          <a routerLink="year" *ngIf="roleservic.CanAddYear()||roleservic.CanShowYear()"> عام دراسي</a>
+                          </li>
+                          <li>
+                            <a routerLink="subjectType" *ngIf="roleservic.CanAddSubjectType()||roleservic.CanShowSubjectType()">نوع المادة </a>
+                            </li>
+                          
+    </ul>
+
+    <div class="footer">
+           </div>
+
+  </div>
+</nav>
+
+<!-- Page Content  -->
+<div id="content" class="p-4 p-md-5">
+ 
+ <!-- <p class="font-weight-bold"> <a routerLink="/home/system" style="text-align: right;">{{system}}</a> </p>
+-->  <router-outlet></router-outlet>
+</div>
+</div>

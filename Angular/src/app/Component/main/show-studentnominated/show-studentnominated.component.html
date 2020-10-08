@@ -1,0 +1,31 @@
+<div class="panel-body mat-elevation-z8">
+  
+    <div class="card">
+      <div class="card-body">
+        <p class="font-weight-bold" style="text-align: center; "> عرض الطلاب المترشحين للمادة </p>
+<div class="row">
+    <div class="col-lg-4">
+        <mat-form-field>
+          <mat-lable>الاختصاص</mat-lable>
+          <mat-select  name="ProvinceId" maxlength="3" required>
+            <mat-option *ngFor="let item of []" [value]="item.Id">
+              {{item.Name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-lg-4">
+        <mat-form-field>
+          <mat-lable>المادة</mat-lable>
+          <mat-select name="ProvinceId" maxlength="3" required>
+            <mat-option *ngFor="let item of []" [value]="item.Id">
+              {{item.Name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+   
+      </div>
+    </div>
+  </div>

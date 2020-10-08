@@ -1,0 +1,183 @@
+<div class="panel-body mat-elevation-z8">
+  <div class="card">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-lg-6" style="text-align:right;">
+          <h1>علامات الطالب</h1>
+        </div>
+        <div class="col-lg-6">
+
+        </div>
+      </div>
+
+      <table>
+        <thead>
+          <th><h1 style="text-align: center;">العام الدراسي</h1></th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let year of years;index as z">
+
+            <td>
+              <br>
+            <h3 style="text-align: center;">  {{year.FullYear}}</h3>
+
+              <ul *ngFor="let semester of year.SemesterSubjectCollection;index as x">
+                <li>
+                  <mat-accordion style="width: 99%;">
+                    <mat-expansion-panel  (opened)="panelOpenState(x+z);" InputRange
+                      (ngInit)="CounterSubjects(semester)">
+                      <mat-expansion-panel-header>
+                        <mat-panel-title>
+                        <h4  style="padding: 10px;">
+                          {{semester.SemesterNumber==1?"الدورة الأولى":""}}
+                          {{semester.SemesterNumber==2?"الدورة الثانية":""}}
+                          {{semester.SemesterNumber==3?"الدورة الثالث":""}}
+                        </h4>  
+                        </mat-panel-title>
+                        <h4 style="text-align: center;color: blue; padding: 10px;"> مواد غير مضافة : {{semester.CountSubjectIsNull}}</h4>
+                        <h4 style="text-align: center;color: red;padding: 10px;">عدد مواد الرسوب : {{semester.CountSubjectFailure}}</h4>
+                        <h4 style="text-align: center;color: green;padding: 10px;">عدد مواد النجاح : {{semester.CountSubjectSuccess}}</h4>
+                        <h4 style="text-align: center;padding: 10px;">اجمالي المواد : {{semester.CountSubject}}</h4>
+                      </mat-expansion-panel-header>
+
+                      <table class="table">
+          
+                        <thead>
+                          <th>كود المادة</th>
+                          <th> اسم المادة</th>
+                          <th>علامة العملي</th>
+                          <th>علامة النظري</th>
+                          <th>المجموع</th>
+                          <th>علامة المساعدة</th>
+                          
+                          <th>علامة النجاح</th>
+
+                          <th>ملاحظة</th>
+                          <th>ملاحظات النظام</th>
+                          <th>تاريخ الاضافة</th>
+                          <th>تمت الاضافة بواسطة</th>
+                          <th>تاريخ التعديل</th>
+                          <th>تم التعديل بواسطة</th>
+                          <th>تعديل</th>
+                        </thead>
+                        <tbody>
+                         
+
+                          <tr *ngFor="let subject of semester.Subject">
+                           
+                            <td>
+
+                              <h4>{{subject.Subject.SubjectCode}}</h4>
+                            </td>
+                            <td>
+
+                              <h4 [ngClass]="RowClass(subject)">
+                                {{subject.Subject.Name}}</h4>
+                            </td>
+                            <td>
+                              <h4 [hidden]="subject.showEdit" [ngClass]="RowClass(subject)">
+                                {{subject.PracticalDegree}}
+                                <abbr *ngIf="subject.PracticalDegree==null" title="يجب وضع علامة">
+                                  لم يتم وضع العلامة
+                                </abbr>
+                              </h4>
+
+                              <input class="form-control" type="text" InputRange
+                                [maxValue]="subject.Subject.SubjectType.PracticalDegree" [minValue]="'0'"
+                                [(ngModel)]="subject.PracticalDegree" name="PracticalDegree"
+                                style="width: 60px;" [hidden]="!subject.showEdit"[disabled]="DisabledPracticalDegree(subject)||subject.disabledPracticalDegree"
+                                (ngModelChange)="DisabledTheoreticlaDegree(subject)"
+                                (ngInit)="DisabledTheoreticlaDegree(subject)">
+                            </td>
+                            <td>
+                              <h4 [hidden]="subject.showEdit" [ngClass]="RowClass(subject)">
+                                {{subject.TheoreticlaDegree}}
+                                <abbr *ngIf="subject.TheoreticlaDegree==null" title="يجب وضع علامة">
+                                  لم يتم وضع العلامة
+                                </abbr>
+                              </h4>
+                              
+                              <input class="form-control" type="text" InputRange
+                                [maxValue]="subject.Subject.SubjectType.TheoreticalDegree" [minValue]="'0'"
+                                [(ngModel)]="subject.TheoreticlaDegree" name="TheoreticlaDegree" (ngModelChange)="DisabledTheoreticlaDegree(subject)"
+                                style="width:60px;" [hidden]="!subject.showEdit"[disabled]="subject.disabledTheoreticlaDegree">
+                            </td>
+                            <td>
+                              <h4 [ngClass]="RowClass(subject)">
+                                {{Total(subject)}}
+                              </h4>
+
+                            </td>
+                            <td>
+
+
+                              <input type="checkbox" class="custom-checkbox" name="test"
+                                [(ngModel)]="subject.HelpDegree" [disabled]="true">
+                              <h4 [ngClass]="RowClass(subject)" *ngIf="subject.HelpDegree">
+                                {{studentSubjectDTOService.HelpDgree(subject)}}
+                              </h4>
+                              
+                            </td>
+                                
+                            <td>
+                              {{subject.Subject.SubjectType.SuccessDegree}}
+
+                            </td>
+                            <td>
+                              <h4 [hidden]="subject.showEdit">{{subject.Note}}</h4>
+                              <mat-form-field class="example-full-width " style="width: 100px;"
+                                [hidden]="!subject.showEdit">
+                                <mat-lable>ملاحظة</mat-lable>
+                                <textarea matInput [(ngModel)]="subject.Note" name="Note">
+                                </textarea>
+                              </mat-form-field>
+                              <input type="text"[(ngModel)]="subject.Note" name="Note" >
+                            </td>
+                            <td>
+
+                              <h4>{{subject.SystemNote}}</h4>
+                            </td>
+                            <td>
+
+                              <h4>{{subject.Created| date: 'yyyy/MM/dd'}}</h4>
+                            </td>
+                            <td>
+
+                              <h4>{{subject.CreatedBy}}</h4>
+                            </td>
+                            <td>
+
+                              <h4>{{subject.Modified| date: 'yyyy/MM/dd'}}</h4>
+                            </td>
+                            <td>
+
+                              <h4>{{subject.ModifiedBy}}</h4>
+                            </td>
+
+                            <td>
+                              <button class="btn btn-outline-primary" [hidden]="subject.showEdit"
+                                [disabled]="!subject.Updateable" (click)="ClickEdit(subject)">تعديل</button>
+                              <button class="btn btn-outline-primary" [hidden]="!subject.showEdit"
+                                (click)="EditStudentSubject(subject,semester)">حفظ </button>&nbsp;
+                              <button class="btn btn-outline-dark" [hidden]="!subject.showEdit"
+                                (click)="CancelEditStudentSubject(subject)">الغاء</button>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </mat-expansion-panel>
+                  </mat-accordion>
+                </li>
+              </ul>
+
+            </td>
+          </tr>
+        </tbody>
+      </table>
+     
+      <h2 *ngIf="StudentInformation.HiddenMessage" style="margin: 10px;text-align: center;"> {{StudentInformation.NoDataFound}}</h2>
+
+
+    </div>
+  </div>
+</div>

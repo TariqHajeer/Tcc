@@ -1,0 +1,115 @@
+<div class="panel-body mat-elevation-z8">
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-lg-6" style="text-align:right;">
+<h1>الأشقاء</h1>
+          </div>
+          <div class="col-lg-6" >
+            <a style="text-align: left;" 
+            data-toggle="modal"     data-target="#addSiblings" >
+            <img src="assets/img/plus.png" style="width: 40px;">
+          </a>
+          </div>
+        </div>
+         <!--add GetSiblings-->
+         <div class="modal fade" id="addSiblings" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+          <div class="modal-content">
+          <div class="modal-header">
+         
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          </button>
+          </div>
+          <div class="modal-body">
+            <h1 class="modal-title" id="exampleModalScrollableTitle">اضافة شقيق</h1>
+            
+                <div class="row">
+                  <div class="col-lg-6">
+                    <mat-form-field style="width: 85%;">
+                      <h2>الاسم</h2>
+                      <input matInput [(ngModel)]="AddSiblings.Name" (ngModelChange)="AddSiblings.Name"
+                        name="NameSiblings" maxlength="50" >
+                    </mat-form-field>
+                  </div>
+                  <div class="col-lg-6">
+                    <mat-form-field style="width: 85%;">
+                      <h2>العنوان</h2>
+                      <input matInput [(ngModel)]="AddSiblings.Address" [disabled]="checkWriteSiblingsName()"
+                        (ngModelChange)="AddSiblings.Address" name="Address" maxlength="50" >
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-6">
+                    <mat-form-field style="width: 85%;">
+                      <h2>العمل</h2>
+                      <input matInput [(ngModel)]="AddSiblings.Work" name="Work"
+                        [disabled]="checkWriteSiblingsName()" (ngModelChange)="AddSiblings.Address"
+                        maxlength="50" >
+                    </mat-form-field>
+                  </div>
+
+                  <div class="col-lg-6">
+                      <mat-form-field >
+                        <h2>الحالة الاجتماعية</h2>
+                        <mat-select [(ngModel)]="AddSiblings.getSocialState" [disabled]="checkWriteSiblingsName()" 
+                        (ngModelChange)="AddSiblings.getSocialState"  name="getSocialState" >
+                          <mat-option *ngFor="let item of StudentInformation.SocialStateServic.socialstateall" [value]="item">{{item.Name}}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                  
+                    <br>
+                    <small style="color: red;" *ngIf="checkAddSiblings()">{{StudentInformation.errormessage}}</small>
+                    <button type="button" (click)="AddSibling()" [disabled]="checkAddSiblings()"
+                      class="btn btn-outline-primary">
+                      +
+                    </button>
+
+                  </div>
+                </div>
+           
+          
+          </div>
+          <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          
+          </div>
+          </div>
+          </div>
+          </div>
+         <!--end add GetSiblings-->
+         <table class="table">
+          <thead>
+            <th>اسم </th>
+            <th>العنوان</th>
+            <th>العمل</th>
+            <th>الحالة الاجتماعية</th>
+            <th></th>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of StudentInformation.GetSiblings">
+              <td>
+                {{item.Name}}
+              </td>
+              <td>
+                {{item.Address}}
+              </td>
+              <td>
+                {{item.Work}}
+              </td>
+              <td>
+                {{item.getSocialState.Name}}
+              </td>
+              <td>
+                <button class="btn btn-dark" (click)="DeleteSibling(item)">X</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <h2 *ngIf="StudentInformation.HiddenMessage" style="margin: 10px;text-align: center;"> {{StudentInformation.NoDataFound}}</h2>
+      </div>
+    </div>
+  </div>

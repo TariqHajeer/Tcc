@@ -1,0 +1,138 @@
+<br>
+
+<div class="container">
+ 
+<div class="panel-body mat-elevation-z8">
+  <div class="card">
+    <div class="card-body">  
+      <p class="font-weight-bold" style="text-align: center; "> &nbsp; عرض الطلاب  </p><br>
+      <h1>بحث على حسب</h1> 
+<div class="row">
+
+<div class="col-lg-2">
+  <mat-form-field>
+    <mat-lable>الاسم الاول</mat-lable>
+    <input matInput [(ngModel)]="firstName" (keyup)="allFilter()"  class="form-control" 
+    aria-label="Search">
+  </mat-form-field>
+</div>
+<div class="col-lg-2">
+  <mat-form-field>
+    <mat-lable>اسم الاب</mat-lable>
+    <input matInput [(ngModel)]="fatherName" (keyup)="allFilter()"  class="form-control" 
+    aria-label="Search">
+  </mat-form-field>
+</div>
+<div class="col-lg-2">
+  <mat-form-field>
+    <mat-lable>الاسم الاخير</mat-lable>
+    <input matInput  [(ngModel)]="lastName" (keyup)="allFilter()" class="form-control" 
+    aria-label="Search">
+  </mat-form-field>
+</div>
+<div class="col-lg-2">
+  <mat-form-field>
+    <mat-lable>رقم الطالب</mat-lable>
+    <input matInput  [(ngModel)]="ssn" (keyup)="allFilter()"  class="form-control" 
+    aria-label="Search">
+  </mat-form-field>
+</div>
+<div class="col-lg-2">
+ 
+  <mat-form-field >
+    <mat-lable>الاختصاص</mat-lable>
+    <mat-select [(ngModel)]="SpecializationId" name="SpecializationId" 
+    (ngModelChange)="allFilter()" style="padding-top: 20px;" >
+      <mat-option *ngFor="let item of SpecializationService.specialall" [value]="item.Id">
+        {{item.Name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+<div class="col-lg-2">
+  <mat-form-field>
+    <mat-lable>عام التسجيل</mat-lable>
+    <input matInput type="text" [(ngModel)]="date"
+    (ngModelChange)="allFilter()"   class="form-control" >
+  
+  </mat-form-field>
+</div>
+</div>
+
+<mat-form-field>
+    <mat-lable>بحث</mat-lable>
+    <input matInput (keyup)="applyFilter($event)" placeholder="" class="form-control" 
+    aria-label="Search">
+  </mat-form-field>
+
+  <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8"
+  
+  (onPageSwitch)="switchPage($event)">
+    <ng-container matColumnDef="SSN">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> رقم الطالب </th>
+      <td mat-cell *matCellDef="let element"> {{element.Ssn}}</td>
+    </ng-container>
+    <ng-container matColumnDef="FirstName">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> اسم الطالب </th>
+      <td mat-cell *matCellDef="let element"> {{element.FirstName}}</td>
+    </ng-container>
+    <ng-container matColumnDef="FatherName">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> اسم الاب </th>
+      <td mat-cell *matCellDef="let element">  {{element.FatherName}} </td>
+    </ng-container>
+    <ng-container matColumnDef="LastName">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> الاسم الاخير  </th>
+      <td mat-cell *matCellDef="let element">{{element.LastName}}</td>
+    </ng-container>
+    <ng-container matColumnDef="specialaztion">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> اختصاص الطالب </th>
+      <td mat-cell *matCellDef="let element">{{element.SpecializationName}} </td>
+    </ng-container>
+    <ng-container matColumnDef="regesterDate">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> تاريخ اول تسجيل </th>
+      <td mat-cell *matCellDef="let element">{{element.EnrollmentDate| date:'yyyy-MM-dd'}}</td>
+    </ng-container>
+    <ng-container matColumnDef="CurrentYear">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>  السنة الحالية </th>
+      <td mat-cell *matCellDef="let element"> 
+        {{element.ActuallyStudyYear==1?"سنة أولى":""}}
+        {{element.ActuallyStudyYear==2?"سنة ثانية":""}}
+       </td>
+    </ng-container>
+    <ng-container matColumnDef="CurrentState">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>  تسجيل الطالب </th>
+      <td mat-cell *matCellDef="let element"> 
+        {{element.CurrentYear==1?"سنة أولى":""}}
+        {{element.CurrentYear==2?"سنة ثانية":""}}
+        {{element.CurrentState}} 
+      </td>
+    </ng-container>
+   
+    <ng-container matColumnDef="FinalState">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> وضع الطالب</th>
+      <td mat-cell *matCellDef="let element">{{element.FinalState}}</td>
+    </ng-container>
+    <ng-container matColumnDef="More">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>  </th>
+        <td mat-cell *matCellDef="let element"> 
+        <a (click)=" showStudentInfo(element.Ssn)" style="color: blue;cursor: pointer;">معلومات الطالب >></a>  &nbsp;
+        </td>
+      </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <h2 *ngIf="HiddenMessage" style="margin: 10px;text-align: center;"> {{NoDataFound}}</h2>
+
+  <mat-paginator showFirstLastButtons
+  [length]="totalCount"
+    [pageSize]="paging.RowCount"
+    [pageSizeOptions]="paging.selectItemsPerPage" 
+    (page)="switchPage($event)"></mat-paginator>
+
+</div>
+</div>
+</div>
+</div>
+<router-outlet></router-outlet>

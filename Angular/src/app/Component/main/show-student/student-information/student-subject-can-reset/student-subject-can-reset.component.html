@@ -1,0 +1,49 @@
+<div class="panel-body mat-elevation-z8">
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-lg-6" style="text-align:right;">
+<h1>علامات الطالب</h1>
+          </div>
+          <div class="col-lg-6" >
+           
+          </div>
+        </div>
+        
+         <table class="table">
+          <thead>
+          <th>المادة</th>
+          <th>علامة العملي</th>
+          <th>ملاحظة</th>
+          <th></th>
+          </thead>
+          <tbody>
+          <tr *ngFor="let subject of getSubjectCanReset">
+              <td>
+          
+          <h2>{{subject.Subject.Name}}</h2>
+              </td>
+              <td>
+                  <h2>{{subject.PracticalDegree}}</h2>
+                   </td>
+             
+              <td>
+                
+                  <mat-form-field class="example-full-width " style="width: 100%;">
+                      <mat-lable >ملاحظة</mat-lable>
+                      <textarea matInput [(ngModel)]="subject.Note" name="Note">
+                          
+                      </textarea>
+                    </mat-form-field>
+              </td>
+              <td>
+                <button class="btn btn-outline-primary" (click)="resetSubject(subject)">تصفير المادة</button>&nbsp;
+                  </td>
+          </tr>
+          </tbody>
+             </table>
+             <h2 *ngIf="StudentInformation.HiddenMessage" style="margin: 10px;text-align: center;"> {{StudentInformation.NoDataFound}}</h2>
+
+      </div>
+    </div>
+  </div>

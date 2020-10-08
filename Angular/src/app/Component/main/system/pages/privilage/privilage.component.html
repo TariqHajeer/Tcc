@@ -1,0 +1,25 @@
+<p class="font-weight-bold"> الصلاحيات	  </p>
+<mat-form-field>
+  <mat-h3></mat-h3>
+  <input matInput (keyup)="applyFilter($event)" placeholder="البحث" class="form-control" 
+  aria-label="Search" *ngIf="roleservic.CanShowPrivilage()">
+</mat-form-field>
+
+
+ 
+  <table mat-table [dataSource]="dataSource"  class="mat-elevation-z8" *ngIf="roleservic.CanShowPrivilage()">
+      
+    <!-- Position Column -->
+    <ng-container matColumnDef="Description">
+      <th mat-header-cell *matHeaderCellDef > الصلاحيات </th>
+      <td mat-cell *matCellDef="let element"> {{element.Description}} </td>
+    </ng-container>
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" ></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons ></mat-paginator>
+  
+

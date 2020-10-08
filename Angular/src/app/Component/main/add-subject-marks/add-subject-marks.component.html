@@ -1,0 +1,96 @@
+<div class="panel panel-default  mat-elevation-z8">
+    <div class="card">
+        <div class="card-body">
+            <div class="panel-heading">
+                <p class="font-weight-bold">اضافة علمات مادة</p>
+                <hr style="border: 1px solid rgba(30, 5, 145, 0.719);">  <br>
+            </div>
+            <div class="panel-body ">
+                <div class="row">
+                   
+                    <div class="col-lg-2">
+                        <mat-form-field><h1>الاختصاص</h1>
+                        <mat-select  name="SpecializationIdget"
+                        [(ngModel)]="getSpecializtionId"
+                        (ngModelChange)="ChangeSpecialization()" >
+                       
+                        <mat-option *ngFor="let item of SpecialzationService.specialall" [value]="item.Id">
+                            {{item.Name}}
+                        </mat-option>
+                    </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-lg-2">
+                        <mat-form-field>    <h1 for="SpecializationId">العام الدراسي</h1>
+                            <mat-select  name="YearId" [(ngModel)]="subjectinfo.year"
+                            (ngModelChange)= "ChangeYear()"   >
+                                <mat-option *ngFor="let item of YearService.yearall"
+                                [value]="item">
+                                    {{item.FirstYear}}/ {{item.SecondYear}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                       </div>
+                   <div class="col-lg-2">
+                    <mat-form-field><h1>السنة الدراسية</h1>
+                    <mat-select   name="selectyear" 
+                    [(ngModel)]="selectyear"(ngModelChange)= "ChangeStudyYear()">
+                    <mat-option>--اختر--</mat-option>   
+                        <mat-option  value="1">أولى</mat-option>
+                        <mat-option value="2">
+                            ثانية
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                </div>
+             
+                    <div class="col-lg-2">
+                        <h1> الدورة الامتحانية</h1>
+                        
+                              <h3 style="text-align: right;">{{Studysemesters.SemesterNumber==1?"الدورة الأولى":" "}}</h3>  
+                              <h3 style="text-align: right;">{{Studysemesters.SemesterNumber==2?"الدورة الثانية":" "}}</h3>  
+                              <h3 style="text-align: right;">{{Studysemesters.SemesterNumber==3?"الدورة الثالثة":" "}}</h3>  
+                    </div>
+                    <div class="col-lg-2">
+                        <mat-form-field><h1> الفصل </h1>
+                        <mat-select  [(ngModel)]="MainSemesterNumber" name="MainSemesterNumber" (ngModelChange)="getStudySemester()"> 
+                            <mat-option>--اختر--</mat-option>
+                            <mat-option [value]="1">
+                              الفصل الاول
+                            </mat-option>
+                            <mat-option [value]="2">
+                              الفصل الثاني
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    </div>
+                    <div class="col-lg-2">
+                        <mat-form-field><h1>المواد  </h1>
+                        <mat-select  [(ngModel)]="subjectinfo.Subject" (ngModelChange)="subjectinfo.Subject" name="Subject">
+                            <mat-option>--اختر--</mat-option>
+                            <mat-option *ngFor="let subject of subjects" [value]="subject">
+                                {{subject.Name||subject.Code}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    </div>
+                   
+                </div>
+                <div class="row">
+                   
+                   
+                    <div class="col-lg-12" style="margin-top: 35px; width: 100%;">
+                       
+                        <input type="button" class="btn btn-dark" [hidden]="false"[disabled]="subjectinfo.Subject==null"
+                        (click)="addparticalOrTheorticaldegree()" value=" اضافة علامات المادة  ">
+                     <!--   <input type="button" class="btn btn-dark" (click)="print()" value=" طباعة ">-->
+                        
+                        
+                    </div>
+          
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>

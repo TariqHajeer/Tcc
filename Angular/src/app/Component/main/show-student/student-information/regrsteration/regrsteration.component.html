@@ -1,0 +1,353 @@
+<div class="panel-body mat-elevation-z8">
+  <div class="card">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-lg-6" style="text-align:right;">
+          <h1>معلومات التسجيل</h1>
+        </div>
+        <div class="col-lg-6">
+          <a style="text-align: left;" data-toggle="modal" data-target="#addRegester" (click)="ClickAdd()">
+            <img src="assets/img/plus.png" style="width: 40px;">
+          </a>
+              <!--add addRegester-->
+         <div class="modal fade" id="addRegester" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+          <div class="modal-content">
+          <div class="modal-header">
+        
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="CloseModel()">
+          <span aria-hidden="true">&times;</span>
+          </button>
+          </div>
+          <div class="modal-body">
+            <h1 >
+              اضافة تسجيل جديد
+              </h1>
+            <div class="row">
+
+        <div class="col-lg-3">
+              <mat-form-field>
+                <mat-lable>مفاضلة الطالب </mat-lable>
+                <mat-select [(ngModel)]="Registration.TypeOfRegistarId" name="RegistrationTypeOfRegistarId" > 
+                  <mat-option *ngFor="let item of StudentInformation.TypeOfRegesterService.typeofregisterall" [value]="item.Id">
+                    {{item.Name}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+          
+          
+                    </div>
+                  
+              <div class="col-lg-3">
+                <mat-form-field>
+                  <mat-lable>رقم الإيصال</mat-lable>
+                  <input matInput type="text" [(ngModel)]="Registration.CardNumber" name="RegistrationCardNumber"
+                    maxlength="50"   >
+                </mat-form-field>
+              </div>
+              <div class="col-lg-3">
+                <mat-form-field>
+                  <mat-lable>تاريخ الإيصال</mat-lable>
+                  <input matInput [matDatepicker]="RegistrationCardDate" [readonly]="true" 
+                    [(ngModel)]="Registration.CardDate" name="RegistrationCardDate" >
+                  <mat-datepicker-toggle matSuffix [for]="RegistrationCardDate"></mat-datepicker-toggle>
+                  <mat-datepicker #RegistrationCardDate></mat-datepicker>
+                </mat-form-field>
+              </div>
+              <div class="col-lg-3">
+                <mat-form-field [disabled]="StudentInformation.Student.Sex==1?true:false">
+                  <mat-lable>تاريخ الخدمة العسكرية</mat-lable>
+                  <input matInput [matDatepicker]="RegistrationSoldierDate" [readonly]="true"
+                    [(ngModel)]="Registration.SoldierDate"  name="RegistrationSoldierDate" [value]="RegistrationSoldierDate">
+                  <mat-datepicker-toggle matSuffix [for]="RegistrationSoldierDate"></mat-datepicker-toggle>
+                  <mat-datepicker #RegistrationSoldierDate></mat-datepicker>
+                </mat-form-field>
+              </div>
+    
+            </div>
+            <!--  <div class="row">
+    
+  
+              <div class="col-lg-3">
+                <mat-form-field style="width: 150px;">
+                  <mat-lable>العام الدراسي </mat-lable>
+                  <mat-select [(ngModel)]="Registration.YearId" name="RegistrationYearId"
+                   >
+                    <mat-option *ngFor="let item of StudentInformation.YearService.yearall" [value]="item.Id">
+                      {{item.FirstYear}}\{{item.SecondYear}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+           
+              </div>
+            -->
+             
+           <!--   <div class="col-lg-3">
+                <mat-form-field>
+                  <mat-lable> السنة الدراسية </mat-lable>
+                  <mat-select [(ngModel)]="Registration.StudyYearId" name="RegistrationTypeOfRegistarId" > 
+                    <mat-option  [value]="1">
+                    السنة الأولى
+                    </mat-option>
+                    <mat-option  [value]="2">
+                      السنة الثانية
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+            
+            
+              </div>
+             
+            
+             
+            </div>-->
+    
+    
+            <div class="row">
+              <div class="col-lg-12">
+                <mat-form-field class="example-full-width " style="width: 100%;">
+                  <mat-lable>ملاحظات</mat-lable>
+                  <textarea matInput [(ngModel)]="Registration.Note" name="RegistrationNote"></textarea>
+                </mat-form-field>
+              </div>
+            </div>
+              </div>
+          <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal"(click)=" AddRegistration()">اضافة</button>
+          
+          </div>
+          </div>
+          </div>
+          </div>
+         <!--end  addRegester-->
+        
+        </div>
+      </div>
+      <table class="table">
+        <thead>
+          <th>
+            العام الدراسي
+          </th>
+          <th>
+            مفاضلة الطالب
+          </th>      
+          <th>
+            نوع التسجيل
+          </th>        
+         
+          <th>
+            السنة الدراسية
+          </th>
+          <th>
+            رقم الإيصال
+          </th>
+          <th>
+            تاريخ الإيصال
+          </th>
+         
+          <th>
+            وضع الطالب
+          </th>
+          <th>
+            تاريخ التجنيد
+          </th>
+          <th>
+            ملاحظات
+          </th>
+        
+          <th>
+            ملاحظات النظام
+          </th>
+          <th>
+            تاريخ الإنشاء
+          </th>
+          <th>
+            تم الإنشاء بواسطة
+          </th>
+          <th>
+            تاريخ التعديل
+          </th>
+          <th>
+            تم التعديل بواسطة
+          </th>
+          <th>
+            تعديل
+          </th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let regester of StudentInformation.Regsteration;let x as index">
+            <td>
+              {{regester.Year.FirstYear}}/{{regester.Year.SecondYear}}
+            </td>
+            <td>
+             
+              {{regester.TypeOfRegistar.Name}}
+            
+            </td>
+            <td>
+              {{regester.StudyYearId==1?"سنة أولى":""}}
+              {{regester.StudyYearId==2?"سنة ثانية":""}}
+             {{regester.StudentState.Name}}
+            </td>
+            <td>
+              
+              {{regester.ActuallyStudyYear==1?"سنة أولى":""}}
+              {{regester.ActuallyStudyYear==2?"سنة ثانية":""}}
+            </td>
+            <td>
+              {{regester.CardNumber}}
+            </td>
+            <td>
+              {{regester.CardDate| date: 'yyyy/MM/dd'}}
+
+            </td>
+            <td>
+              {{regester.FinalState.Name}}
+            </td>
+            <td>
+              {{regester.SoldierDate| date: 'yyyy/MM/dd'}}
+            </td>
+            <td>
+              {{regester.Note}}
+            </td>
+           
+            <td>
+              {{regester.SystemNote}}
+            </td>
+            <td>
+              {{regester.Created| date: 'yyyy/MM/dd'}}
+            </td>
+            <td>
+              {{regester.CreatedBy}}
+            </td>
+            <td>
+              {{regester.Modified| date: 'yyyy/MM/dd'}}
+            </td>
+            <td>
+              {{regester.ModifiedBy}}
+            </td>
+            <td>
+              <button class="btn btn-outline-primary"  [disabled]="false"
+                (click)="ClickEdit(regester)"data-toggle="modal" data-target="#EditRegester">تعديل</button>
+                   <!-- EditRegester-->
+         <div class="modal fade" id="EditRegester" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+          <div class="modal-content">
+          <div class="modal-header">
+         
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"(click)="CansleEditRegesteration(regester)">
+          <span aria-hidden="true">&times;</span>
+          </button>
+          </div>
+          <div class="modal-body">
+            <h1 class="modal-title" id="exampleModalScrollableTitle">
+              تعديل تسجيل 
+              </h1>
+        <div class="row">
+          <div class="col-lg-3" >
+            <mat-form-field >
+              <mat-lable>مفاضلة الطالب </mat-lable>
+              <mat-select [(ngModel)]="regester.TypeOfRegistarId" name="TypeOfRegistarId" > 
+                <mat-option *ngFor="let item of StudentInformation.TypeOfRegesterService.typeofregisterall" [value]="item.Id">
+                  {{item.Name}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+        
+        
+          </div>
+                  <div class="col-lg-3">
+                    <mat-form-field>
+                      <mat-lable>تاريخ الخدمة العسكرية</mat-lable>
+                      <input matInput [matDatepicker]="SoldierDate" [readonly]="true"
+                        [(ngModel)]="regester.SoldierDate"  name="SoldierDate" [value]="SoldierDate">
+                      <mat-datepicker-toggle matSuffix [for]="SoldierDate"></mat-datepicker-toggle>
+                      <mat-datepicker #SoldierDate></mat-datepicker>
+                    </mat-form-field>
+                  </div>
+          <div class="col-lg-3">
+            <mat-form-field>
+              <mat-lable>رقم الإيصال</mat-lable>
+              <input matInput type="text" [(ngModel)]="regester.CardNumber" name="CardNumber"
+                maxlength="50"   (ngModelChange)="regester.CardNumber">
+            </mat-form-field>
+          </div>
+          <div class="col-lg-3">
+            <mat-form-field>
+              <mat-lable>تاريخ الإيصال</mat-lable>
+              <input matInput [matDatepicker]="CardDate" [readonly]="true" 
+                [(ngModel)]="regester.CardDate" name="CardDate"  (ngModelChange)="regester.CardDate">
+              <mat-datepicker-toggle matSuffix [for]="CardDate"></mat-datepicker-toggle>
+              <mat-datepicker #CardDate></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div class="col-lg-3">
+
+
+
+          </div>
+
+        </div>
+        <div class="row">
+
+
+    <!--      <div class="col-lg-3">
+            <mat-form-field style="width: 150px;">
+              <mat-lable>العام الدراسي </mat-lable>
+              <mat-select [(ngModel)]="regester.YearId" name="YearId"
+               >
+                <mat-option *ngFor="let item of StudentInformation.YearService.yearall" [value]="item.Id">
+                  {{item.FirstYear}}\{{item.SecondYear}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+       
+          </div>
+        <div class="col-lg-3">
+            <mat-form-field>
+              <mat-lable> السنة الدراسية </mat-lable>
+              <mat-select [(ngModel)]="regester.StudyYearId" name="TypeOfRegistarId" > 
+                <mat-option  [value]="1">
+                السنة الأولى
+                </mat-option>
+                <mat-option  [value]="2">
+                  السنة الثانية
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+        
+        
+          </div>-->
+          
+        
+         
+        </div>
+
+
+        <div class="row">
+          <div class="col-lg-12">
+            <mat-form-field class="example-full-width " style="width: 100%;">
+              <mat-lable>ملاحظات</mat-lable>
+              <textarea matInput [(ngModel)]="regester.Note" name="Note"></textarea>
+            </mat-form-field>
+          </div>
+        </div>
+          </div>
+          <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="EditRegesteration(regester)">حفظ</button>
+          
+          </div>
+          </div>
+          </div>
+          </div>
+         <!--end  EditRegester-->
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 *ngIf="StudentInformation.HiddenMessage" style="margin: 10px;text-align: center;"> {{StudentInformation.NoDataFound}}</h2>
+
+    </div>
+  </div>
+</div>

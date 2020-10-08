@@ -1,0 +1,323 @@
+<div class="panel-body mat-elevation-z8">
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-lg-6" style="text-align:right;">
+<h1>معلومات شخصيه</h1>
+          </div>
+          <div class="col-lg-6" >
+            <button class="btn btn-outline-primary"[hidden]="showEdit" (click)="ClickEdit()">تعديل</button>
+            <button class="btn btn-outline-primary"[hidden]="!showEdit" (click)="UpdateInformation()">حفظ </button>&nbsp;
+            <button class="btn btn-outline-dark" [hidden]="!showEdit" (click)="CansalUpdate()">الغاء</button>
+       
+          </div>
+        </div>
+          <!--StudentInformation.Student info-->
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="panel-body mat-elevation-z8">
+        <div class="card">
+          <div class="card-body">
+         
+            <div class="row">
+              <div class="col-lg-4">
+                <mat-form-field>
+                  <h2> الاسم الأول</h2>
+                 
+                  <input matInput [disabled]="!showEdit" [(ngModel)]="StudentInformation.Student.FirstName" name="FirstName" maxlength="50" >
+                </mat-form-field>
+              </div>
+              <div class="col-lg-4">
+                <mat-form-field>
+                  <h2>اسم الاب</h2>
+                  
+                  <input matInput [disabled]="!showEdit" [(ngModel)]="StudentInformation.Student.FatherName" name="FatherName" maxlength="50" >
+                </mat-form-field>
+              </div>
+              <div class="col-lg-4">
+                <mat-form-field>
+                  <h2>الكنية</h2>
+                
+                  <input matInput [disabled]="!showEdit" [(ngModel)]="StudentInformation.Student.LastName" name="LastName" maxlength="50" >
+                </mat-form-field>
+              </div>
+            </div>
+          
+            <br>
+            <div class="row">
+              <div class="col-lg-3">
+                <mat-form-field>
+                  <h2>مكان الولادة</h2>
+                 
+                  <input matInput [disabled]="!showEdit" [(ngModel)]="StudentInformation.Student.BirthBlace" name="BirthBlace" maxlength="50"  >
+                </mat-form-field>
+              </div>
+              <div class="col-lg-3">
+                <mat-form-field>
+                  <h2>تاريخ الولادة</h2>
+                 
+                  <input matInput [disabled]="!showEdit" [matDatepicker]="picker" [readonly]="true" [(ngModel)]="StudentInformation.Student.BirthDate"
+                    name="BirthDate" [value]="picker"  >
+                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+              </div>
+              <div class="col-lg-3">
+                <mat-form-field>
+                  <h2>القيد</h2>
+                 
+                  <mat-select [disabled]="!showEdit" [(ngModel)]="StudentInformation.Student.ConstraintId" name="ConstraintId"   >
+                    <mat-option *ngFor="let item of ConstraintService.constraintsall" [value]="item.Id">
+                      {{item.Name}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="col-lg-3">
+                <mat-form-field>
+                  <h2>رقم القيد</h2>
+                 
+                  <input matInput type="text" [disabled]="!showEdit"  InputRange  [minValue]="'0'"  [(ngModel)]="StudentInformation.Student.ConstraintNumber"
+                    name="ConstraintNumber" maxlength="50" >
+                </mat-form-field>
+              </div>
+            </div>
+
+        
+            <div class="row">
+              <div class="col-lg-3">
+                <mat-form-field>
+                  <h2>المحافظة</h2>
+                 
+                  <mat-select [disabled]="!showEdit" [(ngModel)]="StudentInformation.Student.ProvinceId" name="ProvinceId" maxlength="3" >
+                    <mat-option *ngFor="let item of cityService.countryall" [value]="item.Id">
+                      {{item.Name}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="col-lg-3">
+                <mat-form-field>
+                  <h2>الجنسية</h2>
+                  
+                  <mat-select [disabled]="!showEdit" [(ngModel)]="StudentInformation.Student.NationalityId" name="NationalityId" >
+                    <mat-option *ngFor="let item of NationaltyService.nationaltyall" [value]="item.Id">
+                      {{item.Name}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="col-lg-3">
+                <mat-form-field>
+                  <h2>الجنس</h2>
+                  
+                  <mat-select [disabled]="!showEdit" [(ngModel)]="StudentInformation.Student.Sex" name="Sex" >
+                    <mat-option [value]="0">
+                      ذكر
+                    </mat-option>
+                    <mat-option [value]="1">
+                      أنثى
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="col-lg-3 md-12">
+                <mat-form-field class="example-full-width" style="width: 100%;">
+                  <h2>العنوان الدائم</h2>
+                
+                  <textarea [disabled]="!showEdit" matInput [(ngModel)]="StudentInformation.Student.PermanentAddress" name="PermanentAddress"
+                    maxlength="100" ></textarea>
+                </mat-form-field>
+              </div>
+           
+            </div>
+       
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ <!-- end StudentInformation.Student info-->
+ <br>
+ <!--
+ <div class="panel-body">
+  <div class="card">
+    <div class="card-body" >
+<div class="row">
+  <div class="col-lg-3">
+    <mat-form-field>
+      <h2>اللغة </h2>
+      <mat-select [(ngModel)]="StudentInformation.Student.LanguageId" name="LanguageId"  (ngModelChange)="StudentInformation.Student.LanguageId">
+        <mat-option *ngFor="let item of LanguageService.languageall" [value]="item.Id">{{item.Name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="col-lg-3">
+    <mat-form-field>
+      <h2>نوع التسجيل </h2>
+      <mat-select [(ngModel)]="StudentInformation.Student.TypeOfRegistarId" name="TypeOfRegistarId"  (ngModelChange)="StudentInformation.Student.TypeOfRegistarId"> 
+        <mat-option *ngFor="let item of TypeOfRegesterService.typeofregisterall" [value]="item.Id">
+          {{item.Name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+
+  </div>
+  <div class="col-lg-3">
+    <mat-form-field >
+      <h2>الاختصاص</h2>
+      <mat-select [(ngModel)]="StudentInformation.Student.SpecializationId" name="SpecializationId"   (ngModelChange)="StudentInformation.Student.SpecializationId">
+        <mat-option *ngFor="let item of SpecializationService.specialall" [value]="item.Id">
+          {{item.Name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="col-lg-3">
+
+    <mat-form-field>
+      <h2> <small style="color: blue;" *ngIf="showMessage">(تحويل مماثل)</small>&nbsp; نقل من جامعة
+      </h2>
+      <mat-select [(ngModel)]="StudentInformation.Student.TransformedFromId"
+        (ngModelChange)="showMessage=true;"
+        name="TransformedFromId" >
+        <mat-option (click)="showMessage=false" selected>اختر جامعة</mat-option>
+        <mat-option *ngFor="let item of CollegeService.collageall" [value]="item.Id"> {{item.Name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<br>-->
+<!--moreinformation-->
+  <div class="panel-body"> 
+    <h1>معلومات اضافية</h1>
+    <div class="card">
+      <div class="card-body" >
+        <div class="row">
+          <div class="col-lg-3">
+            <mat-form-field>
+              <h2>عمل الطالب </h2>
+            
+              <input matInput [disabled]="!showEdit" [(ngModel)]="StudentInformation.MoreInformation.StudentWork" name="StudentInformation.StudentWork"
+                maxlength="50" >
+            </mat-form-field>
+          </div>
+          <div class="col-lg-3">
+            <mat-form-field>
+              <h2>عنوان مؤقت</h2>
+              
+              <input matInput [disabled]="!showEdit" [(ngModel)]="StudentInformation.MoreInformation.TemporaryAddress" name="TemporaryAddress"
+                maxlength="100" >
+            </mat-form-field>
+          </div>
+
+        </div>
+        <div class="row">
+          <div class="col-lg-3">
+
+            <mat-form-field >
+              <h2>مواليد الأب </h2>
+             
+              <input matInput [disabled]="!showEdit" [matDatepicker]="Fatherpicker" [readonly]="true" 
+                [(ngModel)]="StudentInformation.MoreInformation.FatherBirthDay" name="FatherBirthDay"
+                [value]="Fatherpicker">
+              <mat-datepicker-toggle matSuffix [for]="Fatherpicker"></mat-datepicker-toggle>
+              <mat-datepicker #Fatherpicker></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div class="col-lg-3">
+            <mat-form-field>
+              <h2>عمر الأب</h2>
+             
+              <input matInput type="text" [disabled]="!showEdit" InputRange  [minValue]="'0'"  [(ngModel)]="StudentInformation.MoreInformation.FatherAge" name="FatherAge"
+                maxlength="2" >
+            </mat-form-field>
+          </div>
+          <div class="col-lg-3">
+            <mat-form-field>
+              <h2>عمل الأب</h2>
+            
+              <input matInput [disabled]="!showEdit" [(ngModel)]="StudentInformation.MoreInformation.FatherWork" name="FatherWork"  maxlength="50"
+                >
+            </mat-form-field>
+          </div>
+          <div class="col-lg-3">
+            <mat-form-field>
+              <h2>دخل الاب</h2>
+             
+              <input matInput [disabled]="!showEdit" type="text"  InputRange  [minValue]="'0'"  [(ngModel)]="StudentInformation.MoreInformation.FatherIncome"
+                name="FatherIncome" maxlength="6" >
+            </mat-form-field>
+          </div>
+
+        </div>
+        <div class="row">
+          <div class="col-lg-3">
+            <mat-form-field>
+              <h2> اسم الام</h2>
+             
+              <input matInput [disabled]="!showEdit" [(ngModel)]="StudentInformation.MoreInformation.MotherFirstName" name="MotherFirstName"
+                maxlength="50" >
+            </mat-form-field>
+          </div>
+          <div class="col-lg-3">
+            <mat-form-field>
+              <h2> كنية الام</h2>
+            
+              <input matInput [disabled]="!showEdit" [(ngModel)]="StudentInformation.MoreInformation.MotherLastName" name="MotherLastName"
+                maxlength="50"  >
+            </mat-form-field>
+          </div>
+          <div class="col-lg-3">
+            <mat-form-field>
+              <h2>مواليد الأم</h2>
+            
+              <input matInput [matDatepicker]="Motherpicker"[disabled]="!showEdit"
+                [(ngModel)]="StudentInformation.MoreInformation.MotherBirthDay"   name="MotherBirthDay"
+                [value]="Motherpicker">
+              <mat-datepicker-toggle matSuffix [for]="Motherpicker"></mat-datepicker-toggle>
+              <mat-datepicker #Motherpicker></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div class="col-lg-3">
+
+            <mat-form-field>
+              <h2>عمر الأم</h2>
+              
+              <input matInput type="text"  InputRange  [minValue]="'0'" [disabled]="!showEdit"  [(ngModel)]="StudentInformation.MoreInformation.MotherAge" name="MotherAge"
+                maxlength="2" >
+            </mat-form-field>
+          </div>
+
+        </div>
+        <div class="row">
+          <div class="col-lg-3">
+            <mat-form-field>
+              <h2>عمل الام </h2>
+              
+              <input matInput [(ngModel)]="StudentInformation.MoreInformation.MotherWork" name="MotherWork" maxlength="50"
+              [disabled]="!showEdit"  >
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="col-lg-6" >
+          <button class="btn btn-outline-primary"[hidden]="showEdit" (click)="ClickEdit()">تعديل</button>
+          <button class="btn btn-outline-primary"[hidden]="!showEdit" (click)="UpdateInformation()">حفظ </button>&nbsp;
+          <button class="btn btn-outline-dark" [hidden]="!showEdit" (click)="CansalUpdate()">الغاء</button>
+     
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+ 
+  <!-- end moreinformation-->
+        </div>
+        </div>
+        </div>

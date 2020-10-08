@@ -1,0 +1,72 @@
+<p class="font-weight-bold" style="text-align: right; "> &nbsp; معادلة علمات الطلاب المنقولين </p>
+<div class="mat-elevation-z8 panel panel-default" style="padding-top: 3%;">
+  <h2 style="text-align: center;">
+    &nbsp; اسم الطالب :   {{student.FirstName}}&nbsp; {{student.FatherName}} &nbsp;   {{student.LastName}}
+  </h2>
+  <table class="table" style="width: 100%;">
+    <thead>
+      <th> كود المادة</th>
+      <th> المادة</th>
+      <th>علامة العملي</th>
+      <th>علامة النظري</th>
+      <th>
+        <label style="float:right;"> وضع علامات المساعدة </label>
+        <input type="checkbox" class="form-control" style="float:left"
+          [disabled]="IsStudentSucessWithoutHelpDegee()||!CanSetHelpDegree()" [(ngModel)]='HelpDegreeMode'
+          (ngModelChange)='onCheckboxChange()'>
+      </th>
+      <th>ملاحظة</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of  student.Subjects">
+        <td>
+          <!-- <h4 style="text-align: left; color: blue;"></h4> -->
+          {{item.Subject.SubjectCode}}
+        </td>
+        <td>
+          <!-- <h4 style="text-align: left; color: blue;"></h4> -->
+          {{item.Subject.Name}}
+        </td>
+        <td>
+          <!-- <h4 style="text-align: left; color: blue;"></h4> -->
+          <input class="form-control" style="width: 75%;" type="text" name="PracticalDegree" placeholder="0" 
+           [(ngModel)]="item.PracticalDegree"
+            [disabled]="item.Subject.SubjectType.NominateDegree==0||HelpDegreeMode"
+            (ngModelChange)="BalcneStudentSubject(item)" minlength="0" maxlength="2"
+            InputRange [maxValue]="item.Subject.SubjectType.PracticalDegree" [minValue]="'0'"
+            required>
+        </td>
+        <td>
+          <!-- <h4 style="text-align: left; color: blue;">{{ item.TheoreticlaDegreeMessage}}</h4> -->
+          <input class="form-control" type="text" style="width: 75%;" name="TheoreticlaDegree"
+           placeholder="{{item.message}}"
+            [(ngModel)]="item.TheoreticlaDegree" (ngModelChange)="BalcneStudentSubject(item)"
+            [disabled]="DisabledTheroricalDegree(item)||HelpDegreeMode" minlength="0" maxlength="3"
+            InputRange [maxValue]="item.Subject.SubjectType.TheoreticalDegree" [minValue]="'0'"
+            required>
+
+        </td>
+        <td>
+
+          <input type="checkbox" class="form-control" [disabled]="!HelpDegreeMode||item.disabledHelpDegree" name="test"
+            (change)='GiveOrUnGiveHelpDegree(item)' [checked]='item.HelperDegree!=0'>
+          {{item.HelperDegree}}
+
+        </td>
+        <td>
+          <!-- <h4 style="text-align: left; color: blue;"></h4> -->
+          <input class="form-control" type="text" name="Note" placeholder="ملاحظة" [(ngModel)]="item.Note">
+        </td>
+      </tr>
+
+    </tbody>
+    <!-- <button class="btn btn-outline-primary" (click)="logAllItem()">حالة الطالب</button>&nbsp; -->
+    <button class="btn btn-outline-primary" style="padding-left:10%;" (click)="save()"
+      [disabled]="!CheckStudentSubject()"> {{CheckStudentSubject()?"حفظ":"خطأ"}} </button>
+    <p *ngIf="!CheckStudentSubject()">
+      لا يمكن للطالب الراسب ان يأخذ علامات مساعدة
+    </p>
+  </table>
+  <h2 *ngIf="HiddenMessage" style="margin: 10px;text-align: center;"> {{NoDataFound}}</h2>
+
+</div>

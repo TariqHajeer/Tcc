@@ -1,0 +1,588 @@
+
+<form #addStudyPlanForm="ngForm" name="StudyPlanForm">
+    <div class="panel panel-default  mat-elevation-z8" style="width: 99%;padding-right: 1%;">
+        <div class="card">
+            <div class="card-body">
+                <p class="font-weight-bold" style="text-align: right; "> &nbsp; اضافة خطة دراسية </p>
+
+                <div class="panel-heading">
+                    <h1 style="text-align: right;">تفاصيل الخطة</h1>
+                </div>
+                <div class="panel-body ">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <h3 for="SpecializationId">الإختصاص</h3>
+                            <select class="form-control" [(ngModel)]="StudyPlaneService.StudyPlan.SpecializationId"
+                                name="SpecializationId" (change)="GetYearForStudyPlan()" [disabled]="DisabledYearAndSpecialization">
+                                <option>--اختر--</option>
+                                <option *ngFor="let item of SpecialzationService.specialall" [value]="item.Id">
+                                    {{item.Name}}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="col-lg-6">
+                            <h3>تاريخ الخطة</h3>
+                            <select class="form-control" name="YearId" [disabled]="checkSpecialazitionId||DisabledYearAndSpecialization"
+                                [(ngModel)]="StudyPlaneService.StudyPlan.YearId">
+                                <option>--اختر--</option>
+                                <option *ngFor="let item of YearService.yearResponce" [value]="item.Id">
+                                    {{item.FirstYear}}/ {{item.SecondYear}}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="panel-default panel  mat-elevation-z8" [attr.disabled]="checkYearAndSpecialization()" style="width: 99%;padding-right: 1%;">
+        <div class="card">
+            <div class="card-body">
+                <div class="panel-heading">
+                    <h1>تفاصيل المادة </h1>
+                    <h4 style="color: blue;text-align: right;">(يجب تعبئة جميع الحقول)</h4>
+                </div>
+                <div class="panel-body ">
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <h3 for="">
+                                السنة الدراسية
+                            </h3>
+                            <select class="form-control" name="StudyYearId" style="width: 150px;"
+                                [(ngModel)]="SubjectService.StudyPlaneSubject.StudyYearId" id="StudyYearId"
+                                (ngModelChange)="checkSubject();CheckdependacySubjects()">
+                                <option>--اختر--</option>
+                                <option [value]="1">سنة أولى</option>
+                                <option [value]="2">سنة ثانية</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-2">
+                            <h3 for="">
+                                الفصل
+                            </h3>
+                            <select class="form-control" name="StudySemesterNumber" id="StudySemesterNumber"
+                                [(ngModel)]="SubjectService.StudyPlaneSubject.StudySemesterNumber" style="width: 150px;"
+                                (ngModelChange)="checkSubject();CheckdependacySubjects()">
+                                <option>--اختر--</option>
+                                <option [value]="1">فصل اول</option>
+                                <option [value]="2">فصل ثاني</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="form-group">
+                                <h3>كود المادة 
+                                </h3>
+                                <input type="text" name="SubjectCode" style="width:75%;"
+                                    [(ngModel)]="SubjectService.StudyPlaneSubject.AddSubjectDTO.SubjectCode"
+                                    class="form-control" maxlength="50"[ngClass]="classCss()"
+                                    (keyup)="ChekcSubjectCode(SubjectService.StudyPlaneSubject.AddSubjectDTO.SubjectCode)">
+                                <br> <small style="color: red;text-align: right;"
+                                    [hidden]="hiddenMessage">{{errorCodeMessage}}</small>
+                                    <!-- onkeypress="return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode >= 48 && event.charCode <= 57)"
+                                   -->
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <h3 for="">
+                                اسم المادة
+                            </h3>
+
+                            <input type="text" name="Name" style="width:75%;" (ngModelChange)="checkSubject()"
+                                [(ngModel)]="SubjectService.StudyPlaneSubject.AddSubjectDTO.Name" class="form-control">
+                        </div>
+                        <div class="col-lg-2">
+                            <h3 for="" style="text-align: right;">
+                                نوع المادة
+                            </h3>
+                            <select class="form-control" name="SubjectTypeId" style="width: 150px;"
+                                (ngModelChange)="checkSubject()"
+                                [(ngModel)]="SubjectService.StudyPlaneSubject.AddSubjectDTO.SubjectType">
+                                <option>--اختر--</option>
+                                <option *ngFor="let item of SupjectTypeSerice.SubjectTypes " [ngValue]="item">
+                                    {{item.Name}}</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-2" style="margin-top: 2px;">
+                            <h3 style="padding-right: 20px;">
+                                تعتمد على مواد مضافة حالياً
+                            </h3>
+                            <mat-form-field style="text-align: right;">
+                                <mat-lable></mat-lable>
+                                <mat-select multiple name="dependacySubjectsId" [(ngModel)]="dependacySubjectsId"[disabled]="CheckdependacySubjects()">
+                                    <mat-option *ngFor="let item of GetDependancySubject()" [value]="item.TempId">
+                                        {{item.Name}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+
+                    </div>
+                    <h1>ساعات المادة</h1>
+                    <div class="row">
+
+                        <div class="col-lg-2">
+                            <h3 for="">
+                                عدد ساعات النظري
+                            </h3>
+
+                            <input type="text" name="TheoreticalTime"
+                                [(ngModel)]="SubjectService.StudyPlaneSubject.AddSubjectDTO.TheoreticalTime"
+                                InputRange [maxValue]="'50'" [minValue]="'0'" class="form-control" style="width:75%;">
+                        </div>
+                        <div class="col-lg-2">
+                            <h3 for="">
+                                عدد ساعات العملي
+                            </h3>
+
+                            <input type="text" name="PracticalTime"
+                                [(ngModel)]="SubjectService.StudyPlaneSubject.AddSubjectDTO.PracticalTime"
+                                InputRange [maxValue]="'50'" [minValue]="'0'" class="form-control" style="width:75%;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <!-- <fieldset [disabled]=[checkYearAndSpecialization()] >-->
+    <div class="panel-default panel  mat-elevation-z8"style="width: 99%;padding-right: 1%;">
+        <div class="card">
+            <div class="card-body">
+                <div class="panel-heading">
+                    <h1>المواد المكافئة </h1>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-2  mt-4">
+                            <div class="form-group">
+                                <h3 for="SpecializationId">الإختصاص</h3>
+                                <select class="form-control" name="SpecializationIdex"
+                                    [(ngModel)]="oldSelectedspechaliztion"
+                                    (ngModelChange)="GetStudyPlanForSpechaliztion()">
+                                    <option>--اختر--</option>
+                                    <option *ngFor="let item of SpecialzationService.specialall" [ngValue]="item">
+                                        {{item.Name}}
+                                    </option>
+                                </select>
+                                <br>
+                                <h3>الفصل</h3>
+                                <select [(ngModel)]="selectedoldStudySemeser" class="form-control" name="studySemester"
+                                    style="width: 150px;">
+                                    <option>--اختر--</option>
+                                    <option *ngFor="let item of GetSemestet()" [ngValue]="item">
+                                        فصل{{item.Number}} سنة {{item.StudyYear.Name}}
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-2  mt-4">
+                            <div class="form-group">
+                                <h3>تاريخ الخطة</h3>
+                                <!-- (click)="GetStudyYear()" -->
+                                <select class="form-control" name="YearIdeq" [(ngModel)]="selectedOldYear">
+                                    <option value="">-----اختر----</option>
+                                    <option *ngFor="let item of oldYears" [ngValue]="item">
+                                        {{item.FirstYear}}/ {{item.SecondYear}}
+                                    </option>
+                                </select>
+                                <br>
+                                <h3>المواد</h3>
+                                <mat-form-field>
+
+                                    <mat-select multiple [(ngModel)]="equalSubjectsId" name="equalSubjectsId">
+                                        <mat-option *ngFor="let subject of GetSubjects()" [value]="subject.Id">
+                                            {{subject.Name||subject.Code}}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="col-lg-2  mt-4">
+                            <button class="btn btn-outline-primary" [disabled]="checkEqualSubjects(equalSubjectsId)"
+                                (click)="AddEquivalentSubject()">اضافة مادة مكافئة</button>
+                        </div>
+                        <div class="col lg-6" style="height: 200px; overflow: auto;"
+                            [attr.disabled]="checkYearAndSpecialization()">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>اسم المادة</th>
+                                        <th>كود المادة</th>
+                                        <th>إختصاص</th>
+                                        <th>تاريخ الخطة</th>
+                                        <th></th>
+                                    </tr>
+                                    <tr *ngFor="let item of equivalentSubjects">
+                                        <td>
+                                            {{item.Subject.Name}}
+                                        </td>
+                                        <td>
+                                            {{item.Subject.SubjectCode}}
+                                        </td>
+                                        <td>
+                                            {{item.SpecialzationName}}
+                                        </td>
+                                        <td>
+                                            {{item.StudyPlanYear}}
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-outline-danger"
+                                                (click)="DeleteEquivalSubject(item)">x</button>
+                                        </td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <button class="btn btn-outline-primary" [disabled]="false" (click)="AddSubject()">إضافة
+                        مادة</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <div class="panel-default panel  mat-elevation-z8"style="width: 99%;padding-right: 1%;">
+        <div class="card">
+            <div class="card-body">
+                <div class="panel-heading">
+                    <h1>المواد </h1>
+                </div>
+                <div class="panel-body">
+                    <table style="width: 100%;">
+                        <thead class="table">
+                            <tr>
+                                <th>
+                                    اسم المادة
+                                </th>
+                                <th>
+                                    كود المادة
+                                </th>
+                                <th>
+                                    نوع المادة
+                                </th>
+                                <th>
+                                    السنة
+                                </th>
+                                <th>
+                                    الفصل
+                                </th>
+                                <th>
+                                    عدد ساعات النظري
+                                </th>
+                                <th>
+                                    عدد ساعات العملي
+                                </th>
+                                <th>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of StudyPlaneService.StudyPlan.Subjects;let p =index">
+                                <td>
+                                    {{item.AddSubjectDTO.Name}}
+                                </td>
+                                <td>
+                                    {{item.AddSubjectDTO.SubjectCode}}
+                                </td>
+                                <td>
+                                    {{item.AddSubjectDTO.SubjectType.Name}}
+                                </td>
+                                <td>
+                                    {{item.StudyYearId==1?"اولى":"ثانية"}}
+                                </td>
+                                <td>
+                                    {{item.StudySemesterNumber==1?"اول":"ثاني"}}
+                                </td>
+                                <td>
+                                    {{item.AddSubjectDTO.TheoreticalTime}}
+                                </td>
+                                <td>
+                                    {{item.AddSubjectDTO.PracticalTime}}
+                                </td>
+                                <td>
+                                    <button class="btn btn-outline-danger"
+                                        (click)="CheckSubjectBeforDetele(item.AddSubjectDTO)">x</button>
+                                    &nbsp; <button type="button" class="btn btn-outline-primary" data-toggle="modal"
+                                        (click)="fillData(item)" [attr.data-target]="'#'+p">
+                                        تعديل
+                                    </button>
+                                    <div class="modal fade bd-example-modal-lg" [attr.id]="p" tabindex="-1"data-backdrop="static" data-keyboard="false"
+                                        role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalScrollableTitle"></h5>
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                        (click)=closeModal() aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+
+                                                    <div class="panel-default panel  mat-elevation-z8">
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <div class="panel-heading">
+                                                                    <h1>تفاصيل المادة </h1>
+                                                                </div>
+                                                                <div class="panel-body ">
+                                                                    <div class="row">
+                                                                        <div class="col-lg-4">
+                                                                            <h3 for="">
+                                                                                السنة الدراسية
+                                                                            </h3>
+                                                                            <select class="form-control"
+                                                                                name="editSubjectStudyYearId" style="width: 150px;"
+                                                                                [(ngModel)]="editSubject.StudyYearId">
+                                                                                <option [value]="1">سنة أولى</option>
+                                                                                <option [value]="2">سنة ثانية</option>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="col-lg-4">
+                                                                            <h3 for="">
+                                                                                الفصل
+                                                                            </h3> 
+                                                                            <select class="form-control"
+                                                                                name="editSubjectStudysemester"
+                                                                             id=""   [(ngModel)]="editSubject.StudySemesterNumber"
+                                                                                style="width: 150px;" (ngModelChange)="ChangeStudySemester(editSubject)">
+                                                                                <option [value]="1">فصل اول</option>
+                                                                                <option [value]="2">فصل ثاني</option>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="col-lg-4">
+                                                                            <div class="form-group">
+                                                                                <h3>كود المادة 
+                                                                                </h3>
+                                                                                <input type="text" name="editSubjectSubjectCode"
+                                                                                    style="width:75%;"
+                                                                                    [(ngModel)]="editSubject.AddSubjectDTO.SubjectCode"
+                                                                                    class="form-control"
+                                                                                    (ngModelChange)="CheckSubjectCodeOfEdit(editSubject)">
+                                                                                <br> <small
+                                                                                    style="color: red;text-align: right;"
+                                                                                    [hidden]="hiddenMessage">{{errorCodeMessage}}</small>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-lg-4">
+                                                                            <h3 for="">
+                                                                                اسم المادة
+                                                                            </h3>
+
+                                                                            <input type="text" name="editSubjectName"
+                                                                                [(ngModel)]="editSubject.AddSubjectDTO.Name"
+                                                                                class="form-control">
+                                                                        </div>
+                                                                        <div class="col-lg-4">
+                                                                            <h3 for="">
+                                                                                نوع المادة
+                                                                            </h3>
+                                                                            <select class="form-control"
+                                                                                name="editSubjectSubjectTypeId"
+                                                                                style="width: 150px;"
+                                                                                [(ngModel)]="editSubject.AddSubjectDTO.SubjectType">
+                                                                                <option
+                                                                                    *ngFor="let item of SupjectTypeSerice.SubjectTypes "
+                                                                                    [ngValue]="item">
+                                                                                    {{item.Name}}</option>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="col-lg-4">
+                                                                            <h3 for="">
+                                                                                تعتمد على مواد مضافة حالياً
+                                                                            </h3>
+                                                                            <mat-form-field style="width: 150px;">
+                                                                                <mat-lable></mat-lable>
+                                                                                <mat-select multiple
+                                                                                    name="editSubjectdependacySubjectsId"
+                                                                                    [(ngModel)]="dependacySubjectsId">
+                                                                                    <mat-option
+                                                                                        *ngFor="let item of GetDependancySubject()"
+                                                                                        [value]="item.TempId">
+                                                                                        {{item.Name}}
+                                                                                    </mat-option>
+                                                                                </mat-select>
+                                                                            </mat-form-field>
+                                                                        </div>
+                                                                    </div>
+                                                                    <h1>ساعات المادة</h1>
+                                                                    <div class="row">
+
+                                                                        <div class="col-lg-4">
+                                                                            <h3 for="">
+                                                                                عدد ساعات النظري
+                                                                            </h3>
+
+                                                                            <input type="text" name="editSubjectTheoreticalTime"
+                                                                                [(ngModel)]="editSubject.AddSubjectDTO.TheoreticalTime"
+                                                                                class="form-control" style="width:75%;"
+                                                                                InputRange [maxValue]="'50'" [minValue]="'0'" >
+                                                                        </div>
+                                                                        <div class="col-lg-4">
+                                                                            <h3 for="">
+                                                                                عدد ساعات العملي
+                                                                            </h3>
+
+                                                                            <input type="text" name="editSubjectPracticalTime"
+                                                                                [(ngModel)]="editSubject.AddSubjectDTO.PracticalTime"
+                                                                                InputRange [maxValue]="'50'" [minValue]="'0'"   class="form-control" style="width:75%;">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <br>
+                                                    <div class="panel-default panel  mat-elevation-z8">
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <div class="panel-heading">
+                                                                    <h1>المواد المكافئة </h1>
+                                                                </div>
+                                                                <div class="panel-body">
+                                                                    <div class="row">
+                                                                        <div class="col-lg-3  mt-4">
+                                                                            <div class="form-group">
+                                                                                <h3 for="SpecializationId">الإختصاص</h3>
+                                                                                <select class="form-control"
+                                                                                    name="editSubjectSpecializationId"
+                                                                                    [(ngModel)]="oldSelectedspechaliztion"
+                                                                                    (ngModelChange)="GetStudyPlanForSpechaliztion()">
+                                                                                    <option
+                                                                                        *ngFor="let item of SpecialzationService.specialall"
+                                                                                        [ngValue]="item">
+                                                                                        {{item.Name}}
+                                                                                    </option>
+                                                                                </select>
+                                                                                <br>
+                                                                                <h3>الفصل</h3>
+                                                                                <select
+                                                                                    [(ngModel)]="selectedoldStudySemeser"
+                                                                                    class="form-control"
+                                                                                    name="editSubjectstudySemester"
+                                                                                    style="width: 150px;">
+                                                                                    <option>--اختر--</option>
+                                                                                    <option
+                                                                                        *ngFor="let item of GetSemestet()"
+                                                                                        [ngValue]="item">
+                                                                                        فصل{{item.Number}} سنة
+                                                                                        {{item.StudyYear.Name}}
+                                                                                    </option>
+                                                                                </select>
+
+                                                                                <br>
+                                                                                <button class="btn btn-outline-primary"
+                                                                                    (click)="AddEquivalentSubject()">اضافة
+                                                                                    مادة مكافئة</button>
+
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-lg-3  mt-4">
+                                                                            <div class="form-group">
+                                                                                <h3>تاريخ الخطة</h3>
+                                                                                <!-- (click)="GetStudyYear()" -->
+                                                                                <select class="form-control"
+                                                                                    name="editSubjectYearId"
+                                                                                    [(ngModel)]="selectedOldYear">
+                                                                                    <option value="">-----اختر----
+                                                                                    </option>
+                                                                                    <option
+                                                                                        *ngFor="let item of oldYears"
+                                                                                        [ngValue]="item">
+                                                                                        {{item.FirstYear}}/
+                                                                                        {{item.SecondYear}}
+                                                                                    </option>
+                                                                                </select>
+                                                                                <br>
+                                                                                <h3>المادة</h3>
+                                                                                <mat-form-field style="width: 150px;">
+                                                                                    <mat-h3>المواد</mat-h3>
+                                                                                    <mat-select multiple
+                                                                                        [(ngModel)]="equalSubjectsId"
+                                                                                        name="editSubjectequalSubjectsId"
+                                                                                        id="test">
+                                                                                        <mat-option
+                                                                                            *ngFor="let subject of GetSubjects()"
+                                                                                            [value]="subject.Id">
+                                                                                            {{subject.Name||subject.Code}}
+                                                                                        </mat-option>
+                                                                                    </mat-select>
+                                                                                </mat-form-field>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col lg-3"
+                                                                            style="height: 200px; overflow: auto;">
+                                                                            <table class="table">
+                                                                                <thead>
+                                                                                    <tr>
+                                                                                        <th>اسم المادة</th>
+                                                                                        <th>كود المادة</th>
+                                                                                        <th>إختصاص</th>
+                                                                                        <th>تاريخ الخطة</th>
+                                                                                        <th></th>
+                                                                                    </tr>
+                                                                                    <tr
+                                                                                        *ngFor="let item of equivalentSubjects">
+                                                                                        <td>
+                                                                                            {{item.Subject.Name}}
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            {{item.Subject.SubjectCode}}
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            {{item.SpecialzationName}}
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            {{item.StudyPlanYear}}
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <button
+                                                                                                class="btn btn-outline-danger"
+                                                                                                (click)="DeleteEquivalSubject(item)">x</button>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </thead>
+                                                                                <tbody>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </div>
+                                                                    </div>
+                                                                    <br>
+                                                                    <br>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button class="btn btn-outline-primary" (click)="Edit()" data-dismiss="modal">حفظ </button>
+             
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                    <abbr title="يجب ان تحوي الخطة أربعة مواد على الأقل">    <button class="btn btn-outline-primary" (click)="Save();"
+                        [disabled]="checkStudyPlaneSubject()">إضافة الخطة</button>
+                        </abbr>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</form>

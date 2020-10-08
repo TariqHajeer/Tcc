@@ -1,0 +1,111 @@
+<div class="head">
+  <div style="text-align: right;font-size: 18px;">
+   رقم {{Student.Sex==0?"الطالب":""}}  {{Student.Sex==1?"الطالبة":""}}: {{Student.Ssn}}
+   </div>
+  <div>
+    {{Student.Sex==0?"الطالب":""}}  {{Student.Sex==1?"الطالبة":""}}: {{Student.FullName}}
+  </div>
+</div>
+
+<mat-tab-group mat-align-tabs="start" [(selectedIndex)]="selectedIndex" (selectedTabChange)="tabClick($event)"
+  >
+
+  <mat-tab label="معلومات شخصيه "></mat-tab>
+  <mat-tab label="معلومات التسجيل "></mat-tab>
+  <mat-tab label="الشهادة "></mat-tab>
+  <mat-tab label="امتحانات الطالب "></mat-tab>
+  <mat-tab label=" "></mat-tab>
+  <mat-tab label="المواد اللتي تحتاج علامات مساعدة " ></mat-tab>
+  <mat-tab label="تصفير علامات الطالب " ></mat-tab>
+  <mat-tab label="المرفقات "></mat-tab>
+  <mat-tab label="ارقام الهاتف "></mat-tab>
+  <mat-tab label="الأشقاء "></mat-tab>
+  <mat-tab label="الأزواج "></mat-tab>
+  <mat-tab label="اشخاص مقربون "></mat-tab>
+  <mat-tab label="المثوبات والعقوبات "></mat-tab>
+ 
+
+</mat-tab-group>
+<router-outlet></router-outlet>
+<!--    start Reperations and Sanctions  -->
+<div *ngIf="show[12]" class="tab-pane fade show active" id="family_information" role="tabpanel"
+  aria-labelledby="family_information-tab">
+<app-reperation-and-sanctions></app-reperation-and-sanctions>
+</div>
+<!--     end  Reperations and Sanctions     -->
+<!--    start closes persone  -->
+<div *ngIf="show[11]" class="tab-pane fade show active" id="family_information" role="tabpanel"
+  aria-labelledby="family_information-tab">
+ <app-closes-persones></app-closes-persones>
+</div>
+<!--     end closes persone     -->
+<!--    start partners  -->
+<div *ngIf="show[10]" class="tab-pane fade show active" id="family_information" role="tabpanel"
+  aria-labelledby="family_information-tab">
+<app-partners></app-partners>
+</div>
+<!--brothers-->
+<div *ngIf="show[9]" class="tab-pane fade show active" id="family_information" role="tabpanel"
+  aria-labelledby="family_information-tab">
+<app-brothers></app-brothers>
+
+</div>
+<!--     end brothers     -->
+<!--    start phone  -->
+<div *ngIf="show[8]" class="tab-pane fade show active" id="family_information" role="tabpanel"
+  aria-labelledby="family_information-tab">
+<app-student-phone></app-student-phone>
+  
+</div>
+<!--     end phone     -->
+<!--    start attatchment  -->
+<div *ngIf="show[7]" class="tab-pane fade show active" id="family_information" role="tabpanel"
+  aria-labelledby="family_information-tab">
+ <app-student-attatchment></app-student-attatchment>
+</div>
+<!--     end attatchment     -->
+<!--    start reset studentmark  -->
+<div *ngIf="show[6]" class="tab-pane fade show active" id="family_information" role="tabpanel"
+  aria-labelledby="family_information-tab">
+<app-student-subject-can-reset></app-student-subject-can-reset>
+</div>
+<!--     end reste studentmark     -->
+<!--    start subjectneedhelpdegree -->
+<div *ngIf="show[5]" class="tab-pane fade show active" id="family_information" role="tabpanel"
+  aria-labelledby="family_information-tab">
+<app-student-need-help-degree></app-student-need-help-degree>
+</div>
+<!--     end subjectneedhelpdegree     -->
+<!--    start studentsubject -->
+<div *ngIf="show[4]" class="tab-pane fade show active" id="family_information" role="tabpanel"
+  aria-labelledby="family_information-tab">
+
+</div>
+<!--     end studentsubject    -->
+<!--    start studentexams  -->
+<div *ngIf="show[3]" class="tab-pane fade show active" id="family_information" role="tabpanel"
+  aria-labelledby="family_information-tab">
+ 
+  <app-student-subject></app-student-subject>
+</div>
+<!--     end studentexams     -->
+<!--    start studentdegree  -->
+<div *ngIf="show[2]" class="tab-pane fade show active" id="family_information" role="tabpanel"
+  aria-labelledby="family_information-tab">
+  <app-student-degree></app-student-degree>
+
+</div>
+<!--     end studentdegree     -->
+<!--    start regeseration  -->
+<div *ngIf="show[1]" class="tab-pane fade show active" id="family_information" role="tabpanel"
+  aria-labelledby="family_information-tab">
+<app-regrsteration></app-regrsteration>
+</div>
+<!--     end regeseration     -->
+<!--    start student info  -->
+<div *ngIf="show[0]" class="tab-pane fade show active" id="family_information" role="tabpanel"
+  aria-labelledby="family_information-tab">
+ <app-information></app-information>
+
+</div>
+<!--     end  student info      -->

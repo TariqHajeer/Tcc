@@ -1,0 +1,47 @@
+.navbar{
+    justify-content: space-between;
+   
+}
+.navbar-default {
+    background: #3f51b5;
+    width: 100%;
+    margin-right: 0;
+    color: rgb(255, 255, 255);
+    opacity: 95%;
+    margin:0px;
+    padding:0px;
+    position: relative;
+position: sticky;  top: 0;
+  }
+
+
+
+    .fixed-top {
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 1030; }
+ 
+.dropdown:hover>.dropdown-menu {
+    display: block;
+    background-color:white ;
+    color:#3f51b52a;
+    margin-top: 0px;
+  }
+ 
+ 
+.container-login100{
+justify-content: right;
+}
+a{
+ 
+  color:black;
+font-size: 18px;}
+.img{
+  filter:brightness(0) invert(1);
+  padding-right: 3px;
+}
+.badge{
+border-radius: 50%;
+}

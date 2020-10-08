@@ -1,0 +1,948 @@
+<br>
+<div class="container">
+  <div class="panel-body mat-elevation-z8">
+  
+    <div class="card">
+      <div class="card-body">
+        <p class="font-weight-bold" style="text-align: center; "> &nbsp; تسجيل طالب </p>
+<br>
+        <div class="radio" style="text-align: center;">
+          اضافة سريعة
+          <input type="radio" name="optradio"  (click)="fastRegester()" checked>
+          &nbsp;
+          اضافة وانتقال الى صفحة الطالب
+          <input type="radio" name="optradio"(click)="AddAndShowStudentProfile()">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+
+<div class="container">
+  <div class="panel-body ">
+    <mat-horizontal-stepper h3Position="bottom" #stepper>
+      <form  #myform="ngForm"  autocomplete="off" >
+      <mat-step #stepper>
+      
+        
+          <ng-template  style="color: black;">معلومات الطالب الشخصية</ng-template>
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="panel-body mat-elevation-z8">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-lg-6">
+                        <mat-form-field>
+                          <mat-lable> <a class="star">*</a>تاريخ التسجيل</mat-lable>
+                          <input matInput [matDatepicker]="picker1" [(ngModel)]="date"  name="date"
+                           [readonly]="true" required  (ngModelChange)="date">
+                          <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                          <mat-datepicker #picker1></mat-datepicker>
+                        </mat-form-field>
+
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-4">
+                        <mat-form-field>
+                          <mat-lable> <a class="star">*</a>الاسم الأول</mat-lable>
+                          <input matInput autocomplete="off" [(ngModel)]="AddStudent.FirstName" name="FirstName" maxlength="50" required
+                          (ngModelChange)="AddStudent.FirstName">
+                        </mat-form-field>
+                      </div>
+                      <div class="col-lg-4">
+                        <mat-form-field>
+                          <mat-lable> <a class="star">*</a>اسم الاب</mat-lable>
+                          <input matInput autocomplete="off"[(ngModel)]="AddStudent.FatherName" name="FatherName" maxlength="50" required
+                          (ngModelChange)="AddStudent.FatherName">
+                        </mat-form-field>
+                      </div>
+                      <div class="col-lg-4">
+                        <mat-form-field>
+                          <mat-lable><a class="star">*</a>الكنية</mat-lable>
+                          <input matInput [(ngModel)]="AddStudent.LastName" name="LastName" maxlength="50" required
+                          (ngModelChange)="AddStudent.LastName">
+                        </mat-form-field>
+                      </div>
+                    </div>
+                    <div class="row" style="padding-right: 180px;">
+
+
+                    </div>
+                    <br>
+                    <div class="row">
+                      <div class="col-lg-6">
+                        <mat-form-field>
+                          <mat-lable><a class="star">*</a>مكان الولادة</mat-lable>
+                          <input matInput [(ngModel)]="AddStudent.BirthBlace" name="BirthBlace" maxlength="50" required
+                          (ngModelChange)="AddStudent.BirthBlace">
+
+                        </mat-form-field>
+                      </div>
+                      <div class="col-lg-6">
+                        <mat-form-field>
+                          <mat-lable><a class="star">*</a>تاريخ الولادة</mat-lable>
+                          <input matInput [matDatepicker]="picker" [readonly]="true" [(ngModel)]="AddStudent.BirthDate"
+                            name="BirthDate" [value]="picker" required  (ngModelChange)="AddStudent.BirthDate">
+                          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                          <mat-datepicker #picker></mat-datepicker>
+                        </mat-form-field>
+                      </div>
+                    </div>
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="panel-body mat-elevation-z8">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-lg-6">
+                        <mat-form-field>
+                          <mat-lable>القيد</mat-lable>
+                          <mat-select [(ngModel)]="AddStudent.ConstraintId" name="ConstraintId" >
+                            <mat-option *ngFor="let item of ConstraintService.constraintsall" [value]="item.Id">
+                              {{item.Name}}
+                            </mat-option>
+                          </mat-select>
+                        </mat-form-field>
+                      </div>
+                      <div class="col-lg-6">
+                        <mat-form-field>
+                          <mat-lable>رقم القيد</mat-lable>
+                          <input matInput type="text"  InputRange  [minValue]="'0'"  [(ngModel)]="AddStudent.ConstraintNumber"
+                            name="ConstraintNumber" maxlength="50" >
+                        </mat-form-field>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-6">
+                        <mat-form-field>
+                          <mat-lable><a class="star">*</a>المحافظة</mat-lable>
+                          <mat-select [(ngModel)]="AddStudent.ProvinceId" name="ProvinceId" maxlength="3" required
+                          (ngModelChange)="AddStudent.ProvinceId">
+                            <mat-option *ngFor="let item of cityService.countryall" [value]="item.Id">
+                              {{item.Name}}
+                            </mat-option>
+                          </mat-select>
+                        </mat-form-field>
+                      </div>
+                      <div class="col-lg-6">
+                        <mat-form-field>
+                          <mat-lable><a class="star">*</a>الجنسية</mat-lable>
+                          <mat-select [(ngModel)]="AddStudent.NationalityId" name="NationalityId" required
+                          (ngModelChange)="AddStudent.NationalityId">
+                            <mat-option *ngFor="let item of NationaltyService.nationaltyall" [value]="item.Id">
+                              {{item.Name}}
+                            </mat-option>
+                          </mat-select>
+                        </mat-form-field>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-6 md-12">
+                        <mat-form-field class="example-full-width" style="width: 100%;">
+                          <mat-lable><a class="star">*</a>العنوان الدائم</mat-lable>
+                          <textarea matInput [(ngModel)]="AddStudent.PermanentAddress" name="PermanentAddress"
+                          (ngModelChange)="AddStudent.PermanentAddress"    maxlength="100" required></textarea>
+                        </mat-form-field>
+                      </div>
+                      <div class="col-lg-6">
+                        <mat-form-field>
+                          <mat-lable><a class="star">*</a>الجنس</mat-lable>
+                          <mat-select [(ngModel)]="AddStudent.Sex" name="Sex" required  (ngModelChange)="AddStudent.Sex">
+                            <mat-option [value]="0">
+                              ذكر
+                            </mat-option>
+                            <mat-option [value]="1">
+                              أنثى
+                            </mat-option>
+                          </mat-select>
+                        </mat-form-field>
+                      </div>
+                    </div>
+                    <div class="row">
+
+                      <div class="col-lg-6">
+
+
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <br>
+          <div class="row">
+            <mat-accordion style="width: 99%;">
+              <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    معلومات اضافية
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+
+                <div class="panel-body">
+                  <div class="card">
+                    <div class="card-body" >
+                      <div class="row">
+                        <div class="col-lg-3">
+                          <mat-form-field>
+                            <mat-lable>عمل الطالب </mat-lable>
+                            <input matInput [(ngModel)]="AddMoreInformation.StudentWork" name="StudentWork"
+                              maxlength="50" >
+                          </mat-form-field>
+                        </div>
+                        <div class="col-lg-3">
+                          <mat-form-field>
+                            <mat-lable>عنوان مؤقت</mat-lable>
+                            <input matInput [(ngModel)]="AddMoreInformation.TemporaryAddress" name="TemporaryAddress"
+                              maxlength="100" >
+                          </mat-form-field>
+                        </div>
+
+                      </div>
+                      <div class="row">
+                        <div class="col-lg-3">
+
+                          <mat-form-field style="width: 150px;">
+                            <mat-lable>مواليد الأب </mat-lable>
+                            <input matInput [matDatepicker]="Fatherpicker" [readonly]="true" 
+                              [(ngModel)]="AddMoreInformation.FatherBirthDay"
+                              (ngModelChange)="Age(AddMoreInformation.FatherBirthDay,'FatherAge')" name="FatherBirthDay"
+                              [value]="Fatherpicker">
+                            <mat-datepicker-toggle matSuffix [for]="Fatherpicker"></mat-datepicker-toggle>
+                            <mat-datepicker #Fatherpicker></mat-datepicker>
+                          </mat-form-field>
+                        </div>
+                        <div class="col-lg-3">
+                          <mat-form-field>
+                            <mat-lable>عمر الأب</mat-lable>
+                            <input matInput type="text"  InputRange  [minValue]="'0'"  [(ngModel)]="AddMoreInformation.FatherAge" name="FatherAge"
+                              maxlength="3" (ngModelChange)="BirthOfDate(AddMoreInformation.FatherAge,'FatherAge')">
+                          </mat-form-field>
+                        </div>
+                        <div class="col-lg-3">
+                          <mat-form-field>
+                            <mat-lable>عمل الأب</mat-lable>
+                            <input matInput [(ngModel)]="AddMoreInformation.FatherWork" name="FatherWork" maxlength="50"
+                              >
+                          </mat-form-field>
+                        </div>
+                        <div class="col-lg-3">
+                          <mat-form-field>
+                            <mat-lable>دخل الاب</mat-lable>
+                            <input matInput type="text"  InputRange  [minValue]="'0'"  [(ngModel)]="AddMoreInformation.FatherIncome"
+                              name="FatherIncome" maxlength="6" >
+                          </mat-form-field>
+                        </div>
+
+                      </div>
+                      <div class="row">
+                        <div class="col-lg-3">
+                          <mat-form-field>
+                            <mat-lable> اسم الام</mat-lable>
+                            <input matInput [(ngModel)]="AddMoreInformation.MotherFirstName" name="MotherFirstName"
+                              maxlength="50" required  (ngModelChange)="AddMoreInformation.MotherFirstName">
+                          </mat-form-field>
+                        </div>
+                        <div class="col-lg-3">
+                          <mat-form-field>
+                            <mat-lable>كنية الام</mat-lable>
+                            <input matInput [(ngModel)]="AddMoreInformation.MotherLastName" name="MotherLastName"
+                              maxlength="50" required  (ngModelChange)="AddMoreInformation.MotherLastName">
+                          </mat-form-field>
+                        </div>
+                        <div class="col-lg-3">
+                          <mat-form-field>
+                            <mat-lable>مواليد الأم</mat-lable>
+                            <input matInput [matDatepicker]="Motherpicker"
+                              [(ngModel)]="AddMoreInformation.MotherBirthDay"  name="MotherBirthDay"
+                              [value]="Motherpicker"
+                              (ngModelChange)="Age(AddMoreInformation.MotherBirthDay,'MotherAge')"
+                              [readonly]="true">
+                            <mat-datepicker-toggle matSuffix [for]="Motherpicker"></mat-datepicker-toggle>
+                            <mat-datepicker #Motherpicker></mat-datepicker>
+                          </mat-form-field>
+                        </div>
+                        <div class="col-lg-3">
+
+                          <mat-form-field style="width: 150px;">
+                            <mat-lable>عمر الأم</mat-lable>
+                            <input matInput type="text"  InputRange  [minValue]="'0'"   [(ngModel)]="AddMoreInformation.MotherAge" name="MotherAge"
+                              maxlength="3"(ngModelChange)="BirthOfDate(AddMoreInformation.MotherAge,'MotherAge')" >
+                          </mat-form-field>
+                        </div>
+
+                      </div>
+                      <div class="row">
+                        <div class="col-lg-3">
+                          <mat-form-field>
+                            <mat-lable>عمل الام </mat-lable>
+                            <input matInput [(ngModel)]="AddMoreInformation.MotherWork" name="MotherWork" maxlength="50"
+                              >
+                          </mat-form-field>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div> 
+                <br>
+                <div class="card">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-lg-6" >
+                        <h2 style="text-align: right;">الأزواج </h2>
+                        <small style="color: blue;text-align: right;">يمكن اضافة اكثر من قيمة</small>
+                        <div class="row">
+
+                          <div class="col-lg-6">
+
+                            <mat-form-field style="width: 85%;">
+                              <mat-lable>اسم الزوج/ة</mat-lable>
+                              <input matInput [(ngModel)]="AddPartners.Name" (ngModelChange)="AddPartners.Name"
+                                name="Name" maxlength="50">
+                            </mat-form-field>
+                          </div>
+                          <div class="col-lg-6">
+                            <mat-form-field style="width: 85%;">
+                              <mat-lable>جنسية الزوج/ة</mat-lable>
+                              <mat-select [(ngModel)]="AddPartners.Nationaliry" name="Nationaliry"
+                                (ngModelChange)="AddPartners.Nationaliry" [disabled]="checkWritePartnerName()" >
+                                <mat-option *ngFor="let item of NationaltyService.nationaltyall" [value]="item">
+                                  {{item.Name}}
+                                </mat-option>
+                              </mat-select>
+                            </mat-form-field>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-lg-6">
+                            <mat-form-field style="width: 85%;">
+                              <mat-lable>عمل الزوج/ة</mat-lable>
+                              <input matInput [(ngModel)]="AddPartners.PartnerWork" name="PartnerWork"
+                                (ngModelChange)="AddPartners.PartnerWork" [disabled]="checkWritePartnerName()"
+                                maxlength="50" >
+                            </mat-form-field>
+                          </div>
+
+                          <div class="col-lg-6">
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <small style="color: red;" *ngIf="checkAddPartner()">{{errormessage}}</small>
+                            <br>
+                            <button type="button" class="btn btn-outline-primary" [disabled]="checkAddPartner()"
+                              (click)="AddPartner()">
+                              +
+                            </button>
+
+                          </div>
+                        </div>
+                        <div class="row">
+                          <table class="table">
+                            <thead>
+                              <th>اسم الزوج/ة</th>
+                              <th>جنسية الزوج/ة</th>
+                              <th>عمل الزوج/ة</th>
+                              <th></th>
+                            </thead>
+                            <tbody>
+                              <tr *ngFor="let item of GetPartners">
+                                <td>
+                                  {{item.Name}}
+                                </td>
+                                <td>
+                                  {{item.Nationaliry.Name}}
+                                </td>
+                                <td>
+                                  {{item.PartnerWork}}
+                                </td>
+                                <td>
+                                  <button class="btn btn-dark" (click)="DeletePartner(item)">X</button>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                      <div class="col-lg-6">
+                        <h2 style="text-align: right;">الأشقاء </h2>
+                        <small style="color: blue;text-align: right;">يمكن اضافة اكثر من قيمة</small>
+                        <div class="row">
+                          <div class="col-lg-6">
+                            <mat-form-field style="width: 85%;">
+                              <mat-lable>الاسم</mat-lable>
+                              <input matInput [(ngModel)]="AddSiblings.Name" (ngModelChange)="AddSiblings.Name"
+                                name="NameSiblings" maxlength="50" >
+                            </mat-form-field>
+                          </div>
+                          <div class="col-lg-6">
+                            <mat-form-field style="width: 85%;">
+                              <mat-lable>العنوان</mat-lable>
+                              <input matInput [(ngModel)]="AddSiblings.Address" [disabled]="checkWriteSiblingsName()"
+                                (ngModelChange)="AddSiblings.Address" name="Address" maxlength="50" >
+                            </mat-form-field>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-lg-6">
+                            <mat-form-field style="width: 85%;">
+                              <mat-lable>العمل</mat-lable>
+                              <input matInput [(ngModel)]="AddSiblings.Work" name="Work"
+                                [disabled]="checkWriteSiblingsName()" (ngModelChange)="AddSiblings.Address"
+                                maxlength="50" >
+                            </mat-form-field>
+                          </div>
+
+                          <div class="col-lg-6">
+                            <mat-form-field style="width: 85%;">
+                              <mat-lable>الحالة الاجتماعية</mat-lable>
+                              <mat-select [(ngModel)]="AddSiblings.getSocialState" [disabled]="checkWriteSiblingsName()"
+                                (ngModelChange)="AddSiblings.Address" name="getSocialState" >
+                                <mat-option *ngFor="let item of SocialStateServic.socialstateall" [value]="item">
+                                  {{item.Name}}
+                                </mat-option>
+                              </mat-select>
+                            </mat-form-field>
+                            <br>
+                            <small style="color: red;" *ngIf="checkAddSiblings()">{{errormessage}}</small><br>
+                            <button type="button" (click)="AddSibling()" [disabled]="checkAddSiblings()"
+                              class="btn btn-outline-primary">
+                              +
+                            </button>
+
+                          </div>
+                        </div>
+                        <div class="row">
+                          <table class="table">
+                            <thead>
+                              <th>اسم </th>
+                              <th>العنوان</th>
+                              <th>العمل</th>
+                              <th>الحالة الاجتماعية</th>
+                              <th></th>
+                            </thead>
+                            <tbody>
+                              <tr *ngFor="let item of GetSiblings">
+                                <td>
+                                  {{item.Name}}
+                                </td>
+                                <td>
+                                  {{item.Address}}
+                                </td>
+                                <td>
+                                  {{item.Work}}
+                                </td>
+                                <td>
+                                  {{item.getSocialState.Name}}
+                                </td>
+                                <td>
+                                  <button class="btn btn-dark" (click)="DeleteSibling(item)">X</button>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+
+                    </div>
+</div>
+                </div>
+<br>
+                    <div class="card">
+                      <div class="card-body">
+                    <div class="row">
+                      <div class="col-lg-6" >
+                        <h2 style="text-align: right; ">اشخاص مقربون</h2>
+                        <small style="color: blue;text-align: right;">يمكن اضافة اكثر من قيمة</small>
+                        <div class="row">
+                          <div class="col-lg-6">
+                            <mat-form-field style="width: 85%;">
+                              <mat-lable>الاسم</mat-lable>
+                              <input matInput [(ngModel)]="AddClosesetPersons.Name" (ngModelChange)="AddClosesetPersons.Name" name="NameAddClosesetPersons"
+                                maxlength="50" >
+                            </mat-form-field>
+                          </div>
+                          <div class="col-lg-6">
+                            <mat-form-field style="width: 85%;">
+                              <mat-lable>العنوان</mat-lable>
+                              <input matInput [(ngModel)]="AddClosesetPersons.Address" (ngModelChange)="AddClosesetPersons.Address" name="AddressAddClosesetPersons"
+                                maxlength="50" >
+                            </mat-form-field>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-lg-6">
+                            <button type="button" class="btn btn-outline-primary" data-toggle="modal"
+                              data-target="#Edit">
+                              اضافة رقم هاتف
+                            </button>
+                            <div class="modal fade" id="Edit" data-backdrop="static" data-keyboard="false">
+                              <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+
+                                  <!-- Modal Header -->
+                                  <div class="modal-header">
+                                    <h4 class="modal-title"></h4>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                  </div>
+
+                                  <!-- Modal body -->
+                                  <div class="modal-body">
+                                    <div class="row">
+                                      <div class="col-lg-6">
+                                        <mat-form-field style="width: 85%;">
+                                          <mat-lable>نوع الرقم</mat-lable>
+                                          <mat-select [(ngModel)]="AddPersonPhone.PhoneType" (ngModelChange)="AddPersonPhone.PhoneType" name="AddPersoPhoneType" >
+                                            <mat-option *ngFor="let item of PhoneTypeService.phonetypeall" [value]="item">
+                                              {{item.Name}}
+                                            </mat-option>
+                                          </mat-select>
+                                        </mat-form-field>
+                                      </div>
+                                      <div class="col-lg-6">
+                                        <mat-form-field style="width: 85%;">
+                                          <mat-lable>الرقم</mat-lable>
+                                          <span matPrefix> &nbsp;</span>
+                                          <input type="text" matInput [(ngModel)]="AddPersonPhone.Phone" name="AddPersonPhone"
+                                            maxlength="10"(ngModelChange)="AddPersonPhone.Phone" >
+                                          <mat-icon matSuffix></mat-icon>
+                                        </mat-form-field>
+                                      </div>
+                                    </div>
+                                    <div class="row">
+                                      <div class="col-lg-6">
+
+                                      </div>
+
+                                      <div class="col-lg-6">
+                                        <br>
+                                        <button type="button" class="btn btn-outline-primary"
+                                          (click)="AddPersonPhones()" [disabled]="checkclosesPersonphone()">
+                                          +
+                                        </button>
+
+                                      </div>
+                                    </div>
+                                    <div class="row">
+                                      <table class="table">
+                                        <thead>
+                                          <th>نوع الرقم </th>
+                                          <th>الرقم</th>
+
+                                          <th></th>
+                                        </thead>
+                                        <tbody>
+                                          <tr *ngFor="let item of GetPersonPhone">
+                                            <td>
+                                              {{item.PhoneType.Name}}
+                                            </td>
+                                            <td>
+                                              {{item.Phone}}
+                                            </td>
+                                            <td>
+                                              <button class="btn btn-dark" (click)="DeletePersonPhones(item)">X</button>
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </div>
+                                    <button type="button" class="btn btn-outline-primary" data-dismiss="modal">حفظ</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="col-lg-6">
+                            <small style="color: red;" *ngIf="checkAddSiblings()">{{errormessage}}</small>
+                            <br>
+                            <button type="button" class="btn btn-outline-primary" [disabled]="checkAddClosesPresone()" (click)="AddClosesetPerson()">
+                              +
+                            </button>
+
+                          </div>
+                        </div>
+                        <div class="row">
+                          <table class="table">
+                            <thead>
+                              <th>اسم </th>
+                              <th>العنوان</th>
+
+                              <th></th>
+                            </thead>
+                            <tbody>
+                              <tr *ngFor="let item of GetClosesetPersons">
+                                <td>
+                                  {{item.Name}}
+                                </td>
+                                <td>
+                                  {{item.Address}}
+                                </td>
+                                <td>
+
+                                  <button class="btn btn-dark" (click)="DeleteClosesetPerson(item)">X</button>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                      <div class="col-lg-6" >
+                        <h2 style="text-align: right;">رقم هاتف الطالب</h2>
+                        <small style="color: blue;text-align: right;">يمكن اضافة اكثر من قيمة</small>
+                        <div class="row">
+                          <div class="col-lg-6">
+                            <mat-form-field style="width: 85%;">
+                              <mat-lable>نوع الرقم</mat-lable>
+                              <mat-select [(ngModel)]="AddStudentPhone.PhoneType"(ngModelChange)="AddStudentPhone.PhoneType" name="PhoneType" >
+                                <mat-option *ngFor="let item of PhoneTypeService.phonetypeall" [value]="item">
+                                  {{item.Name}}
+                                </mat-option>
+                              </mat-select>
+                            </mat-form-field>
+                          </div>
+                          <div class="col-lg-6">
+                            <mat-form-field style="width: 85%;">
+                              <mat-lable>الرقم</mat-lable>
+                              <input type="text" matInput [(ngModel)]="AddStudentPhone.Phone" name="Phone" (ngModelChange)="AddStudentPhone.Phone" maxlength="10">
+                            </mat-form-field>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-lg-6">
+
+                          </div>
+
+                          <div class="col-lg-6">
+                            <small style="color: red;" >{{errormessage}}</small>
+                            <br>
+                            <button type="button" class="btn btn-outline-primary"[disabled]="checkAddPhone()" (click)="AddStudentPhones()">
+                              +
+                            </button>
+
+                          </div>
+                        </div>
+                        <div class="row">
+                          <table class="table">
+                            <thead>
+                              <th>نوع الرقم </th>
+                              <th> الرقم</th>
+
+                              <th></th>
+                            </thead>
+                            <tbody>
+                              <tr *ngFor="let item of GetStudentPhone">
+                                <td>
+                                  {{item.PhoneType.Name}}
+                                </td>
+                                <td>
+                                  {{item.Phone}}
+                                </td>
+                                <td>
+                                  <button class="btn btn-dark" (click)="DeleteStudentPhones(item)">X</button>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </mat-expansion-panel>
+            </mat-accordion>
+          </div>
+          <br>
+
+          <div class=" mat-elevation-z8">
+            <div class="card">
+              <div class="card-body">
+                <h1 style="text-align: right;">معلومات التسجيل</h1>
+                <div class="row">
+                  <div class="col-lg-3">
+                    <mat-form-field>
+                      <mat-lable><a class="star">*</a>رقم الوصل</mat-lable>
+                      <input matInput type="text" [(ngModel)]="AddRegsteration.CardNumber" name="CardNumber"
+                        maxlength="50" required InputRange  [minValue]="'0'" (ngModelChange)="AddRegsteration.CardNumber">
+                    </mat-form-field>
+                  </div>
+                  <div class="col-lg-3">
+                    <mat-form-field>
+                      <mat-lable><a class="star">*</a>تاريخ الوصل</mat-lable>
+                      <input matInput [matDatepicker]="CardDate" [readonly]="true" required
+                        [(ngModel)]="AddRegsteration.CardDate" name="CardDate"  (ngModelChange)="AddRegsteration.CardDate">
+                      <mat-datepicker-toggle matSuffix [for]="CardDate"></mat-datepicker-toggle>
+                      <mat-datepicker #CardDate></mat-datepicker>
+                    </mat-form-field>
+                  </div>
+                  <div class="col-lg-3">
+
+
+
+                  </div>
+
+                </div>
+                <div class="row">
+
+
+                  <div class="col-lg-3">
+                    <mat-form-field style="width: 150px;">
+                      <mat-lable>*العام الدراسي </mat-lable>
+                      <mat-select [(ngModel)]="AddRegsteration.YearId" name="YearId"
+                        (ngModelChange)="AddRegsteration.YearId" required  (ngModelChange)="AddRegsteration.YearId;DateAndYear()">
+                        <mat-option *ngFor="let item of YearService.yearall" [value]="item.Id">
+                          {{item.FirstYear}}\{{item.SecondYear}}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                    <!--   <mat-form-field>
+                         <mat-lable> السنة الدراسية</mat-lable>
+                         <mat-select [(ngModel)]="AddRegsteration.StudyYearId" name="StudyYearId"  required>
+                           <mat-option  [value]="1">
+                             السنةالأولى
+                           </mat-option>
+                           <mat-option  [value]="2">
+                             السنة الثانية
+                           </mat-option>
+                       </mat-select>
+                       </mat-form-field>
+                    -->
+
+                  </div>
+                  <div class="col-lg-3">
+                    <mat-form-field style="width: 150px;">
+                      <mat-lable><a class="star">*</a>الاختصاص</mat-lable>
+                      <mat-select [(ngModel)]="AddStudent.SpecializationId" name="SpecializationId" required  (ngModelChange)="AddStudent.SpecializationId">
+                        <mat-option *ngFor="let item of SpecializationService.specialall" [value]="item.Id">
+                          {{item.Name}}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </div>
+                  <div class="col-lg-3">
+
+                    <mat-form-field>
+                      <mat-lable> <small style="color: blue;" *ngIf="showMessage">(تحويل مماثل)</small>&nbsp; نقل من جامعة
+                      </mat-lable>
+                      <mat-select [(ngModel)]="AddStudent.TransformedFromId"
+                        (ngModelChange)="showMessage=true;"
+                        name="TransformedFromId" >
+                        <mat-option (click)="showMessage=false" selected>اختر جامعة</mat-option>
+                        <mat-option *ngFor="let item of CollegeService.collageall" [value]="item.Id"> {{item.Name}}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </div>
+                  <div class="col-lg-3">
+
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-3">
+                    <mat-form-field>
+                      <mat-lable><a class="star">*</a>نوع التسجيل </mat-lable>
+                      <mat-select [(ngModel)]="AddStudent.TypeOfRegistarId" name="TypeOfRegistarId" required (ngModelChange)="AddStudent.TypeOfRegistarId"> 
+                        <mat-option *ngFor="let item of TypeOfRegesterService.typeofregisterall" [value]="item.Id">
+                          {{item.Name}}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                    <!--     <mat-form-field>
+                      <mat-lable> حالة الطالب</mat-lable>
+                      <mat-select [(ngModel)]="AddRegsteration.StudentStateId" name="StudentStateId"  required >
+                       <mat-option *ngFor="let item of StudentService.StudentState" [value]="item.Id">{{item.Name}}
+                       </mat-option>
+                   </mat-select>
+                    </mat-form-field>-->
+
+                  </div>
+
+                  <div class="col-lg-3">
+                    <mat-form-field>
+                      <mat-lable><a class="star">*</a>اللغة </mat-lable>
+                      <mat-select [(ngModel)]="AddStudent.LanguageId" name="LanguageId" required (ngModelChange)="AddStudent.LanguageId">
+                        <mat-option *ngFor="let item of LanguageService.languageall" [value]="item.Id">{{item.Name}}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </div>
+                  <div class="col-lg-3">
+                    <mat-form-field>
+                      <mat-lable>تاريخ الخدمة العسكرية</mat-lable>
+                      <input matInput [matDatepicker]="SoldierDate" [readonly]="true"
+                        [(ngModel)]="AddRegsteration.SoldierDate"  name="SoldierDate" [value]="SoldierDate">
+                      <mat-datepicker-toggle matSuffix [for]="SoldierDate"></mat-datepicker-toggle>
+                      <mat-datepicker #SoldierDate></mat-datepicker>
+                    </mat-form-field>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-12">
+                    <mat-form-field class="example-full-width " style="width: 100%;">
+                      <mat-lable>ملاحظات</mat-lable>
+                      <textarea matInput [(ngModel)]="AddRegsteration.Note" name="Note"></textarea>
+                    </mat-form-field>
+                  </div>
+                </div>
+                <br>
+                <h1 style="text-align: right;">الشهادة</h1>
+                <div class="row">
+                  <div class="col-lg-3">
+                    <mat-form-field style="width: 150px;">
+                      <mat-lable><a class="star">*</a>نوع الشهادة</mat-lable>
+                      <mat-select [(ngModel)]="AddStudentDegree.DegreeId" name="DegreeId" required (ngModelChange)="AddStudentDegree.DegreeId">
+                        <mat-option *ngFor="let item of DegreeService.degreeall" [value]="item.Id">{{item.Name}}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </div>
+                  <div class="col-lg-3">
+                    <mat-form-field style="width: 150px;">
+                      <mat-lable><a class="star">*</a>مصدر الشهادة</mat-lable>
+                      <mat-select [(ngModel)]="AddStudentDegree.Source" name="Source" required (ngModelChange)="AddStudentDegree.Source">
+                        <mat-option *ngFor="let item of CountryServic.maincountryall " [value]="item.Id">{{item.Name}}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </div>
+                  <div class="col-lg-3">
+                    <mat-form-field style="width: 150px;">
+                      <mat-lable><a class="star">*</a>سنة اصدار الشهادة</mat-lable>
+                      <mat-select [(ngModel)]="AddStudentDegree.Date" name="Date" required (ngModelChange)="AddStudentDegree.Date">
+                        <mat-option *ngFor="let item of YearService.years" [value]="item.Id">
+                          {{item.FirstYear}}\{{item.SecondYear}}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </div>
+                  <div class="col-lg-3">
+                    <mat-form-field style="width: 150px;">
+                      <mat-lable><a class="star">*</a>المجموع</mat-lable>
+                      <input matInput type="text"  InputRange  [minValue]="'0'"  [(ngModel)]="AddStudentDegree.Degree" name="Degree" maxlength="50"
+                        required (ngModelChange)="AddStudentDegree.Degree">
+
+                    </mat-form-field>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br>
+
+
+          <br>
+          <div>
+            <button mat-button matStepperNext class="btn btn-outline-primary">التالي</button>
+          </div>
+          <br>
+          <div style="padding-left:40%;">
+            <button  mat-button (click)="PostStudent(myform)" class="btn btn-outline-primary" style="width: 300px;"[disabled]="ChackAddStudent()" >اضافة</button>
+          
+          </div>
+       
+      </mat-step>
+      <mat-step #stepper>
+        
+           
+
+              <ng-template   style="color: black;">المرفقات</ng-template>
+              <div class="card">
+                <div class="card-body">
+              <h1 style="text-align: right;">المرفقات</h1>
+              <div class="row">
+    
+    
+                <div class="col-lg-3">
+    
+                  <mat-form-field style="width: 150px;">
+                    <mat-lable><a class="star">*</a>نوع المرفق</mat-lable>
+                    <mat-select [(ngModel)]="AddStudentAttachment.getAttachment" name="getAttachment" >
+                      <mat-option *ngFor="let item of AttachmentService.attachmentall" [value]="item">{{item.Name}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+    
+                </div>
+                <input type="file" #fileInput id="fileInput" (change)="stageFile()"
+                accept="csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel">
+               <!-- <div class="file-upload "style="padding-top: 4%;padding-left:1%;wdith:300px;">
+                  <div class="file-select">
+                    <div class="file-select-button" id="fileName">*اختر مرفق</div>
+                   
+                    <input type="file" name="chooseFile" id="chooseFile"
+                    (change)="readUrl($event)"accept="image/*" [(ngModel)]="AddStudentAttachment.Attachemnt">
+                  </div>
+                </div>-->
+                <div class="col-lg-3">
+                  <mat-form-field class="example-full-width" style="width: 175%;">
+                    <mat-lable>ملاحظات</mat-lable>
+                    <textarea matInput [(ngModel)]="AddStudentAttachment.Note" name="Note"></textarea>
+                  </mat-form-field>
+                </div>
+    
+                <div class="col-lg-3">
+                  <br>
+                  <button class="btn btn-outline-primary" (click)="AddStudentAttachments()">+</button>
+                </div>
+              </div>
+              <div class="row">
+                <table class="table">
+                  <thead>
+                    <th>نوع المرفق </th>
+                    <th> المرفق</th>
+                    <th>ملاحظات</th>
+                    <th></th>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let item of GetStudentAttachment">
+                      <td>
+                        {{item.getAttachment.Name}}
+                      </td>
+                      <td><img [src]="item.Attachemnt.name" style="width:150px ; height: 150px;"></td>
+                      <td>{{item.Note}}</td>
+                      <td>
+                        <button class="btn btn-dark" (click)="DeleteStudentAttachments(item)">X</button>
+                      </td>
+                    </tr>
+                  
+                  </tbody>
+                </table>
+              </div>
+              <br>
+             </div>
+              </div>  <br>
+              <div>
+                <button mat-button matStepperPrevious class="btn btn-outline-primary">السابق</button>&nbsp;
+    
+              </div>
+              <br>
+    <div style="padding-left:40%;">
+      <button  mat-button (click)="PostStudent(myform)" class="btn btn-outline-primary" style="width: 300px;" [disabled]="ChackAddStudent()">اضافة</button>
+    
+    </div>
+              
+           
+         
+      
+      </mat-step>
+    </form>
+    </mat-horizontal-stepper>
+  </div>
+
+</div>

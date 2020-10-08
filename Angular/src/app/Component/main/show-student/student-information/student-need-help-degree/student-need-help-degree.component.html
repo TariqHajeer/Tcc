@@ -1,0 +1,61 @@
+<div class="panel-body mat-elevation-z8">
+  <div class="card">
+      <div class="card-body">
+          <div class="row">
+              <div class="col-lg-6" style="text-align:right;">
+                  <h1>علامات الطالب</h1>
+              </div>
+              <div class="col-lg-6">
+
+              </div>
+          </div>
+
+          <table class="table">
+              <thead>
+                  <th>المادة</th>
+                  <th>علامة العملي</th>
+                  <th>علامة النظري</th>
+                  <th>
+                      وضع علامات المساعدة
+                  </th>
+                  <th>ملاحظة</th>
+
+              </thead>
+              <tbody>
+                  <tr *ngFor="let subject of SubjectsNeedHelpDegree.StudentSubjects">
+                      <td>
+
+                          <h2>{{subject.Subject.Name}}</h2>
+                      </td>
+                      <td>
+                          <h2>{{subject.PracticalDegree}}</h2>
+
+                      </td>
+                      <td>
+                          <h2>{{subject.TheoreticlaDegree}}</h2>
+
+                      </td>
+                      <td>
+                          <input type="checkbox" class="custom-checkbox" (change)="SetOrUnSetHelpDegree(subject)" [disabled]='subject.disabledHelpDegree'>
+                          <br> {{GetGivenHelpDegee(subject)}}
+                      </td>
+                      <td>
+
+                          <mat-form-field class="example-full-width " style="width: 100%;">
+                              <mat-lable>ملاحظة</mat-lable>
+                              <textarea matInput [(ngModel)]="subject.Note" name="Note"></textarea>
+                          </mat-form-field>
+                      </td>
+
+                  </tr>
+              </tbody>
+          </table>
+          <h2 *ngIf="StudentInformation.HiddenMessage" style="margin: 10px;text-align: center;"> {{StudentInformation.NoDataFound}}</h2>
+
+          <br>
+          <div style="padding-left:40%;">
+              <button class="btn btn-outline-primary" style="width: 300px;" [disabled]='false'(click)="SetHelpDegree()" [hidden]="hiddenSave">حفظ</button>
+          </div>
+      </div>
+  </div>
+</div>

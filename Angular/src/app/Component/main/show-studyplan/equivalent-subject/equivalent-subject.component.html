@@ -1,0 +1,104 @@
+<div class="panel-default panel  mat-elevation-z8">
+    <div class="card">
+      <div class="card-body">
+        <div class="panel-heading">
+          <h1>المواد المكافئة </h1>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-lg-3  mt-4">
+              <div class="form-group">
+                <h3 for="SpecializationId">الإختصاص</h3>
+                <select class="form-control" name="SpecializationId"
+                  [(ngModel)]="oldSelectedspechaliztion"
+                  (ngModelChange)="ShowStudyPlan.GetStudyPlanForSpechaliztion()">
+                  <option
+                    *ngFor="let item of ShowStudyPlan.SpecialzationService.specialall"
+                    [ngValue]="item">
+                    {{item.Name}}
+                  </option>
+                </select>
+                <br>
+
+              </div>
+            </div>
+            <div class="col-lg-3  mt-4">
+              <div class="form-group">
+                <h3>تاريخ الخطة</h3>
+
+                <select class="form-control" name="YearId"
+                  [(ngModel)]="selectedOldYear"(ngModelChange)="GetSemestet()">
+                  <option value="">-----اختر----</option>
+                  <option *ngFor="let item of ShowStudyPlan.getYear" [ngValue]="item">
+                    {{item.FirstYear}}/ {{item.SecondYear}}
+                  </option>
+                </select>
+                <br>
+
+
+              </div>
+            </div>
+            <div class="col-lg-3  mt-4">
+              <h3>الفصل</h3>
+              <select [(ngModel)]="selectedoldStudySemeser"
+                class="form-control" name="studySemester"
+                style="width: 150px;">
+                <option>--اختر--</option>
+                <option *ngFor="let item of getStudyPlan.StudySemester" [ngValue]="item">
+                  فصل{{item.Number}} سنة {{item.StudyYear.Name}}
+                </option>
+              </select>
+            </div>
+            <div class="col-lg-3  mt-4">
+              <h3>المادة</h3>
+              <select class="form-control" [(ngModel)]="equalSubjectsId"
+                name="equalSubjectsId">
+                <option *ngFor="let subject of GetSubjects()"
+                  [value]="subject.Id">
+                  {{subject.Name||subject.Code}}
+                </option>
+              </select>
+              <button class="btn btn-outline-primary"
+                
+                (click)="AddEquivalentSubject()">اضافة مادة
+                مكافئة</button>
+
+            </div>
+          </div>
+          <div class="row">
+            <div class="col lg-12" style="height: 200px; overflow: auto;">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>اسم المادة</th>
+                    <th>إختصاص</th>
+                    <th>تاريخ الخطة</th>
+                    <th></th>
+                  </tr>
+                  <tr *ngFor="let item of ShowStudyPlan.equivalentSubjects">
+                    <td>
+                      {{item.Subject.Name}}
+                    </td>
+
+                    <td>
+                      {{item.SpecialzationName}}
+                    </td>
+                    <td>
+                      {{item.StudyPlanYear}}
+                    </td>
+                    <td>
+                      <button class="btn btn-outline-danger"
+                        (click)="DeleteEquivalSubject(item)">x</button>
+                    </td>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>

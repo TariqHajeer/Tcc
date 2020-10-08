@@ -1,0 +1,239 @@
+<p class="font-weight-bold"> نظام سنة</p>
+    <mat-tab-group mat-stretch-tabs (selectedTabChange)="resetformadd()">
+      <mat-tab label="{{titleAddOrEdit}}"  id="mat-tab-label-0-0">
+
+        <div class="panel-body mat-elevation-z8" *ngIf="roleservic.CanAddYearSystem()||roleservic.CanUpdateYearSystem()" id="formAddOrEdit">
+          <div class="card">
+            <div class="card-body">
+              <form ngForm="form" #myform="ngForm">
+                <div class="form-row">
+                  <div class="col-md-4 mb-3">
+                    <h3 for="Name">الاسم</h3>
+                    <input type="text" class="form-control" [(ngModel)]="service.yearsystem.Name" name="Name"
+                      #Name="ngModel" [class.is-invalid]="Name.invalid && Name.touched" maxlength="50"
+                      placeholder="" value="" required
+                      autocomplete="off">
+         
+                    <small class="text-danger" [class.d-none]="Name.valid || Name.untouched">ادخل الاسم</small>
+                    <br>
+                   
+                  </div>
+
+                  <div class="form-group">
+                    <h3 for="exampleFormControlTextarea1">ملاحظات</h3>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                      [(ngModel)]="service.yearsystem.Note" name="Note" #Note="ngModel"></textarea>
+                  </div>
+
+                  <div class="col-md-4 mb-3">
+                    <div class="form-group">
+                      <div class="form-check">
+
+                        <!-- The checkbox -->
+                        <ul class="list-group list-group-flush">
+                          <li class="list-group-item">
+                            <!-- Default checked -->
+                            <div class="custom-control custom-checkbox">
+                              <input type="checkbox" class="custom-control-input " id="IsMain"
+                                [(ngModel)]="service.yearsystem.IsMain" [class.is-invalid]="" name="IsMain">
+                              <label class="custom-control-label" for="IsMain">اساسي</label>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- let item of service.yearsystem.Settings -->
+                  <table class="table table-bordered table-hover mat-elevation-z8"
+                     >
+
+                    <thead>
+
+                      <th>النظام </th>
+                      <th>العدد </th>
+                      <th>ملاحظات </th>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let item of service.yearsystem.Settings">
+                        <td  >{{  item.Name }}</td>
+                        <td> <h3 for="Count"> </h3>
+                          <input type="text" class="form-control" [(ngModel)]="item.Count" name="Count" 
+                            (ngModelChange)="chechAdministrativeleadership(item)"required [ngModelOptions]="{standalone:true}">
+                        </td>
+                        <td> <h3 for="Note"> </h3>
+                          <input type="text" class="form-control" [(ngModel)]="item.Note" name="Note"
+                            maxlength="50" placeholder="" value="" required><br>
+                        </td>
+                      
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <button class="btn btn-outline-primary" (click)="submit(myform)"[hidden]="checkAdd" >اضافة</button>
+                &nbsp;     <button class="btn btn-outline-primary" (click)="Edit(myform,service.yearsystem.Id)" [hidden]="checkEdit">تعديل</button>
+                &nbsp;   <button class="btn btn-dark" (click)="RetreatEdit()" [hidden]="checkEdit">التراجع عن التعديل</button>
+               
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </mat-tab>
+     <mat-tab label="عرض نظام السنة"  [hidden]="checkAdd">
+        <mat-form-field>
+          <mat-label>البحث</mat-label>
+          <input matInput (keyup)="applyFilter($event)" placeholder="" class="form-control" aria-label="Search"
+            *ngIf="roleservic.CanShowYearSystem()">
+        </mat-form-field>
+        <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8" *ngIf="roleservic.CanShowYearSystem()">
+
+
+          <ng-container matColumnDef="Name">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> الاسم </th>
+            <td mat-cell *matCellDef="let element"> {{element.Name}} </td>
+          </ng-container>
+          <ng-container matColumnDef="IsMain">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> اساسي </th>
+            <td mat-cell *matCellDef="let element"> 
+              <div class="custom-control custom-checkbox " style="margin-right: -10px;">
+                <input type="checkbox" class="custom-control-input" [(ngModel)]="element.IsMain" name="IsEnabled">
+                <label class="custom-control-label" for="IsEnabled"></label>
+              </div>   
+            </td>
+          </ng-container>
+          <ng-container matColumnDef="Note">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> ملاحظات </th>
+            <td mat-cell *matCellDef="let element"> {{element.Note}} </td>
+          </ng-container>
+
+
+          <ng-container matColumnDef="Created">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> تاريخ الإنشاء </th>
+            <td mat-cell *matCellDef="let element"> {{element.Created | date: 'yyyy/MM/dd'}} </td>
+          </ng-container>
+
+
+          <ng-container matColumnDef="CreatedBy">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> تم الانشاء بواسطة </th>
+            <td mat-cell *matCellDef="let element"> {{element.CreatedBy }} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="Modified">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> تاريخ التعديل </th>
+            <td mat-cell *matCellDef="let element"> {{element.Modified | date: 'yyyy/MM/dd'}} </td>
+          </ng-container>
+
+
+          <ng-container matColumnDef="ModifiedBy">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> تم التعديل بواسطة </th>
+            <td mat-cell *matCellDef="let element"> {{element.ModifiedBy}} </td>
+          </ng-container>
+          <ng-container matColumnDef="More">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> خيارات</th>
+            <td mat-cell *matCellDef="let element">
+              <button type="button" class="btn btn-outline-dark"
+              data-toggle="modal"  data-target="#Edit" (click)="fillDataShow(element)">
+              عرض
+            </button>
+        
+              <button class="btn btn-outline-primary"
+              (click)="fillData(element)" *ngIf="roleservic.CanUpdateYearSystem()" [disabled]="!element.Updateable">
+              <abbr *ngIf="!element.Updateable" title="لايمكن التعديل او الحذف">
+                .
+                      </abbr>      تعديل
+              </button>
+              &nbsp; 
+              <button class="btn btn-outline-danger" [disabled]="!element.Updateable" (click)="delete(element.Id)" *ngIf="roleservic.CanDeleteYearSystem()"
+              >حذف 
+              <abbr *ngIf="!element.Updateable" title="لايمكن التعديل او الحذف">
+                .
+                      </abbr>  
+            </button>
+            </td>
+          </ng-container>
+
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        <h2 *ngIf="HiddenMessage" style="margin: 10px;text-align: center;"> {{NoDataFound}}</h2>
+
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+      </mat-tab> 
+
+    </mat-tab-group> 
+      <!--start edit model-->
+      <div class="modal fade" id="Edit"  aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-lg">
+          <div class="modal-content">
+      
+            <!-- Modal Header -->
+            <div class="modal-header"> 
+              <button type="button" class="close"  data-dismiss="modal">&times;</button>
+            </div>
+      
+            <!-- Modal body -->
+            <div class="modal-body">
+              <h1 class="modal-title">عرض نظام السنة</h1>
+      
+              <div class="form-row">
+                <div class="col-md-4 mb-3">
+                  <h3 for="Name">الاسم</h3>
+                  {{service.yearsystem.Name}}
+                
+                  <br>
+                 
+                </div>
+
+                <div class="form-group">
+                  <h3 for="exampleFormControlTextarea1">ملاحظات</h3>
+                  {{service.yearsystem.Note}}
+                 
+                </div>
+
+                <div class="col-md-4 mb-3">
+                  <div class="form-group">
+                    <div class="form-check">
+
+                      <!-- The checkbox -->
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                          <!-- Default checked -->
+                          <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input "[disabled]
+                              [(ngModel)]="service.yearsystem.IsMain" [class.is-invalid]="" name="IsMain">
+                            <label class="custom-control-label" for="IsMain">اساسي</label>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <!-- let item of service.yearsystem.Settings -->
+                <table class="table table-bordered table-hover mat-elevation-z8"
+                   >
+
+                  <thead>
+
+                    <th>النظام </th>
+                    <th>العدد </th>
+                    <th>ملاحظات </th>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let item of service.yearsystem.Settings">
+                      <td  >{{  item.Name }}</td>
+                      <td> <h3 for="Count"> {{item.Count}}</h3>
+                        </td>
+                      <td> <h3 for="Note"> {{item.Note}}</h3>
+                       </td>
+                    
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--end edit model-->&nbsp;

@@ -1,0 +1,21 @@
+.head{
+    background-color: #ffffff;
+    background-image: url(src\assets\img\student.jpg);
+    background-repeat: no-repeat;
+    background-size: 300px 200px;
+    width: 100%;
+    height: 150px;
+    margin-top: 0%;
+    color: black;
+    text-align: center;
+   font-size: 30px;
+   padding-top: 7%;
+   box-shadow: black;
+   
+  }
+ mat-tab{
+font-size: 20px;
+  }
+  h2{
+    color: darkblue;
+  }

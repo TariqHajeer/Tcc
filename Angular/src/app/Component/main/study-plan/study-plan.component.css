@@ -1,0 +1,15 @@
+label{text-align: right;}
+h1{text-align: right;}
+.disabled-contenct {
+    pointer-events: none;
+    opacity: 0.1;
+  }
+  .btn-group-xs > .btn, .btn-xs {
+    padding: .25rem .4rem;
+    font-size: .875rem;
+    line-height: .5;
+    border-radius: .2rem;
+  }
+  .errorcode{
+    border-color: red;
+  }

@@ -1,0 +1,253 @@
+
+<p class="font-weight-bold"> المجموعات	  </p>
+<div class="panel-body mat-elevation-z8" *ngIf="roleservic.CanAddGroup()">
+  <div class="card">
+    <div class="card-body">
+  <form  #myform="ngForm" >
+    <div class="form-row">
+      <div class="col-md-4 mb-3">
+        <h3 for="Name">الاسم</h3>
+        <input type="text" class="form-control" [(ngModel)]="service.group.Name" name="Name" #Name="ngModel"
+          [class.is-invalid]="Name.invalid && Name.touched" maxlength="50" (keyup)="GetSimilarForAdd(service.group)"
+          placeholder="" value="" required autocomplete="off">
+        <a [routerLink]="['/routePath']" routerLinkActive="router-link-active" *ngIf="semelar!=null"> يوجد مشابه و هي : {{semelar.Name}}</a>
+        <small class="text-danger" [class.d-none]="Name.valid || Name.untouched">ادخل الاسم</small>
+        <br>
+        <h4 *ngIf="error()" style="color:red;">{{errorMessage}} </h4>
+      </div>
+      
+        <div class="col-md-4 mb-3">
+          <div class="form-group">
+             
+            <h3 style="padding-right: 25px;">السماحيات</h3>
+
+<mat-form-field style="width: 225px;">
+  <mat-lable></mat-lable>
+  <mat-select multiple [(ngModel)]="service.group.Priveleges" name="Priveleges">
+      <mat-option  *ngFor="let item of privilegeservice.Privilage" [value]="item.Id">
+          {{item.Description}}
+      </mat-option>
+  </mat-select>
+</mat-form-field>
+            </div></div>
+    </div>
+
+    <button class="btn btn-outline-primary"   (click)="submit(myform)" [disabled]="error()">اضافة</button>
+  </form>
+</div></div>
+
+</div>
+
+<br> <br> <br>
+<mat-form-field>
+<mat-h3></mat-h3>
+<input matInput (keyup)="applyFilter($event)" placeholder="البحث" class="form-control" aria-label="Search" 
+*ngIf="roleservic.CanShowGroup()">
+</mat-form-field>
+
+
+
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8" *ngIf="roleservic.CanShowGroup()">
+
+<!-- Position Column -->
+<ng-container matColumnDef="Name">
+<th mat-header-cell *matHeaderCellDef mat-sort-header> الاسم </th>
+<td mat-cell *matCellDef="let element"> {{element.Name}}  </td>
+</ng-container>
+
+
+  <!--  Column -->
+  <ng-container matColumnDef="Created">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> تاريخ الإنشاء </th>
+    <td mat-cell *matCellDef="let element"> {{element.Created | date: 'yyyy/MM/dd'}} </td>
+  </ng-container>
+
+  <!--  Column -->
+  <ng-container matColumnDef="CreatedBy">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> تم الانشاء بواسطة </th>
+    <td mat-cell *matCellDef="let element"> {{element.CreatedBy }} </td>
+  </ng-container>
+  <!--  Column -->
+  <ng-container matColumnDef="Modified">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> تاريخ التعديل </th>
+    <td mat-cell *matCellDef="let element"> {{element.Modified | date: 'yyyy/MM/dd'}} </td>
+  </ng-container>
+
+  <!--  Column -->
+  <ng-container matColumnDef="ModifiedBy">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> تم التعديل بواسطة </th>
+    <td mat-cell *matCellDef="let element"> {{element.ModifiedBy}} </td>
+  </ng-container>
+  <!--  Column -->
+
+
+<ng-container matColumnDef="More">
+  <th mat-header-cell *matHeaderCellDef mat-sort-header> خيارات </th>
+  <td mat-cell *matCellDef="let element;index as p ;let u=index"> 
+    <a class="dropdown-toggle" data-toggle="dropdown"><li class="ti-more-alt"></li><h1 style="font-size: 30px;cursor: context-menu;">...</h1></a>
+    <div  class=" dropdown-menu dropdown-menu-right">
+    <a class="dropdown-item" style="color: black;text-align: center;" 
+    data-toggle="modal"  (click)="filter(element)" [attr.data-target]="'#'+p" *ngIf="roleservic.CanUpdateGroup()" >
+      السماحيات
+  </a>
+  <a class="dropdown-item" style="color: black;text-align: center;" 
+  data-toggle="modal"   [attr.data-target]="'#item'+u" *ngIf="roleservic.CanUpdateGroup()" >
+    المستخدمون
+  </a>  
+  <a class="dropdown-item" style="color: black;text-align: center;" 
+  data-toggle="modal" data-target="#edit" tabindex="-1"
+  (click)="fillData(element)" *ngIf="roleservic.CanDeleteGroup()" data-backdrop="static" data-keyboard="false" >
+    تعديل
+  </a>  
+  <a class="dropdown-item" style="color: black;text-align: center;"  
+  (click)="delete(element.Id)"
+  *ngIf="roleservic.CanDeleteGroup()" >
+    حذف
+  </a>      
+    </div>
+   
+  <!-- <button type="button" class="btn btn-outline-dark" data-toggle="modal"  (click)="filter(element)" [attr.data-target]="'#'+p" *ngIf="roleservic.CanUpdateGroup()">
+      السماحيات
+      </button>--> 
+      <!--السماحيات-->
+      <div class="modal fade" [attr.id]="p" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="modal-body">
+          <h1 class="modal-title" id="exampleModalScrollableTitle">السماحيات</h1>
+
+          <div class="card">
+            <div class="card-body">
+          <form  #myform="ngForm" (submit)="AddPriveleges(element)">
+            <div class="form-row">
+             
+             
+          <div class="col-md-4 mb-3">
+          <div class="form-group">
+        
+          <select  [(ngModel)]="service.group.privelegeId" name="privelegeId" id="privelegeId-{{p}}" class="form-control" >
+            <option *ngFor="let item of fiteredPriv" [value]="item.Id">{{item.Description}}</option>
+          </select>
+          </div></div>
+          
+          
+            </div>
+            <button class="btn btn-outline-primary" type="submit" >اضافة سماحية </button>
+          </form>
+          </div></div>
+           عدد السماحيات :{{element.PrivilagesCount}}
+          <table class="table table-bordered table-hover mat-elevation-z8">
+           
+            <thead>  
+               
+                <th>سماحية</th>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of element.Privilages">
+                  <td>{{  item.Description }}</td>
+                 <td><button class="btn btn-outline-danger" (click)="deletePriveleges(item,element)"
+                  *ngIf="roleservic.checkRole('UpdateGroup')" >حذف </button></td>
+                </tr></tbody></table>
+        </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        
+        </div>
+        </div>
+        </div>
+        </div>
+
+        &nbsp;
+<!--   <button type="button" class="btn btn-outline-dark" data-toggle="modal"   [attr.data-target]="'#item'+u" *ngIf="roleservic.CanUpdateGroup()">
+      المستخدمون
+      </button>--> 
+         <!--المستخدمون-->
+      <div class="modal fade" [attr.id]="'item'+u" tabindex="-1" role="dialog" aria-labelledby="user" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="modal-body">
+          <h1 class="modal-title" id="user">المستخدمون</h1>
+
+           عدد المستخدمون :{{element.UserCount}}
+          <table class="table table-bordered table-hover mat-elevation-z8">
+           
+            <thead>  
+               
+                <th>اسم المستخدم</th>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of element.User">
+                  <td>{{  item.Name }}</td>
+                 
+                </tr></tbody></table>
+        </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        
+        </div>
+        </div>
+        </div>
+        </div>
+ 
+  <!-- <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#edit" tabindex="-1"
+    (click)="fillData(element)" *ngIf="roleservic.CanDeleteGroup()" data-backdrop="static" data-keyboard="false">
+      تعديل
+      </button>--> 
+      
+      <!-- تعديل -->
+      <div class="modal fade" id="edit" tabindex="-1" role="dialog"
+     aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-scrollable" role="document">
+      <div class="modal-content">
+      <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+      </button>
+      </div>
+      <div class="modal-body">
+        <h1 class="modal-title" id="exampleModalScrollableTitle">تعديل</h1>
+
+   <form  #myform="ngForm" >
+          <div class="form-row">
+            <div class="col-md-4 mb-3">
+              <!-- <input type="hidden" name="Id" [(ngModel)]="service.group.Id"> -->
+              <h3 for="name">الاسم</h3>
+              <input type="text" class="form-control"  [(ngModel)]="service.group.Name" name="Name" 
+              #name="ngModel"  (keyup)="GetSimilarForUpdate(service.group)"
+               [class.is-invalid]="name.invalid && name.touched" maxlength="50"  placeholder="" value="Mark" required >
+             <small class="text-danger" [class.d-none]="name.valid || name.untouched ">ادخل الاسم</small>
+             <a [routerLink]="['/routePath']" routerLinkActive="router-link-active" *ngIf="semelar!=null">
+              يوجد مشابه و هي : {{semelar.Name}}</a>
+            </div>
+          </div>
+          <button class="btn btn-outline-primary"   (click)="update(myform)" [disabled]="!UpdateValidation(service.group)" data-dismiss="modal" >تعديل</button>
+        </form>
+      </div>
+      </div>
+      </div>
+      </div> &nbsp;
+ <!--   <button class="btn btn-outline-danger" (click)="delete(element.Id)"
+    *ngIf="roleservic.checkRole('DeleteGroup')" >حذف </button> 
+    &nbsp;-->
+           
+                
+
+  </td>
+  </ng-container>
+<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+<tr mat-row *matRowDef="let row; columns: displayedColumns;" ></tr>
+</table>
+<h2 *ngIf="HiddenMessage" style="margin: 10px;text-align: center;"> {{NoDataFound}}</h2>
+
+<mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons ></mat-paginator>
+

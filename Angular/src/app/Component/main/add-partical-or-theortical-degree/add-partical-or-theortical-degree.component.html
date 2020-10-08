@@ -1,0 +1,100 @@
+
+
+<div class="container">
+  <div class="panel-body mat-elevation-z8">
+    <div class="card">
+      <div class="card-body">
+        <div class="radio" style="text-align: center;">
+         عرض جميع الطلاب
+          <input type="radio" name="optradio"(click)="get()" checked>
+          &nbsp;
+          عرض الطلاب المترشحين
+          <input type="radio" name="optradio" (click)="showNominateStudent()">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<div class="container">
+  <div class="panel-body mat-elevation-z8">
+    <div class="card">
+      <div class="card-body">
+        <h1>المادة :{{studentSubjectDgree.Subject.Name}}</h1>
+        <mat-form-field>
+          <mat-h3></mat-h3>
+          <input matInput (keyup)="applyFilter($event)" placeholder="البحث" class="form-control" aria-label="Search">
+        </mat-form-field>
+
+        <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+          <ng-container matColumnDef="Ssn">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>رقم الطالب </th>
+            <td mat-cell *matCellDef="let element"> {{element.SSN}} </td>
+          </ng-container>&nbsp;
+          <ng-container matColumnDef="StudentName">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>اسم الطالب </th>
+            <td mat-cell *matCellDef="let element"> {{element.StudentName}} </td>
+          </ng-container>&nbsp;
+          
+          <ng-container matColumnDef="PracticalDegree">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> علامة العملي </th>
+            <td mat-cell *matCellDef="let element">
+             <!--  <div [formGroup]="formDgree">
+                <input type="text"  InputRange  [minValue]="'0'"  class="form-control" formControlName="practicalDegree"  required
+                style="width: 100px;">
+               </div>  -->
+               <input type="text"style="width: 200px;"[(ngModel)]="element.PracticalDegree" maxlength="2" minlength="1"
+               #parialDegree  class="form-control" InputRange [maxValue]="element.Subject.SubjectType.PracticalDegree" [minValue]="'0'"[ngModelOptions]="{standalone:true}"
+               (ngModelChange)="CheckParticalDgree(element)"[disabled]="DisabledPracticalDegree(element)||element.disabledPracticalDegree">
+               <!-- (ngModelChange)="checkParticalDgree()" -->
+           
+            </td>
+          </ng-container>&nbsp;
+          <ng-container matColumnDef="TheoreticlaDegree">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> علامة النظري </th>
+            <td mat-cell *matCellDef="let element">
+              
+                <input type="text"style="width: 200px;"[(ngModel)]="element.TheoreticlaDegree"maxlength="3"
+      minlength="1" InputRange [maxValue]="element.Subject.SubjectType.TheoreticalDegree" [minValue]="'0'"
+                 #theoreticlaDegree  class="form-control" [disabled]="element.disabledTheoreticlaDegree">
+                       <!--  (keypress)="numberOnly(theoreticlaDegree,$event,0,element.TheoreticlaDegree)" -->
+               <!-- 
+                <div [formGroup]="formDgree"> 
+                <input type="text"  InputRange  [minValue]="'0'"   class="form-control" formControlName="theoreticlaDegree" required
+                  style="width: 200px;" [customMin]="minnum" [customMax]="maxnum">
+                <div *ngIf="form.errors " [ngClass]="'error'">
+                  <div *ngIf="form.errors.required">
+                    Enter your number.
+                  </div>
+                  <div *ngIf="form.errors.min || form.errors.max">
+                    Number must be between {{minnum}} and {{maxnum}}.
+                  </div>
+                </div>
+              </div> -->
+
+            </td>
+          </ng-container>&nbsp;
+          <ng-container matColumnDef="Note">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>ملاحظة </th>
+            <td mat-cell *matCellDef="let element"> 
+            
+              <mat-form-field class="example-full-width" style="width: 100%;">
+                <mat-h3></mat-h3>
+                <textarea matInput [(ngModel)]="element.Note" name="Note"
+                   ></textarea>
+              </mat-form-field>
+            </td>
+          </ng-container>&nbsp;
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        <h2 *ngIf="HiddenMessage" style="margin: 10px;text-align: center;"> {{NoDataFound}}</h2>
+
+        <button class="btn btn-dark" (click)="AddSubjectDegrees()">حفظ</button>
+
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+
+      </div>
+    </div>
+  </div>
+</div>
