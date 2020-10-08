@@ -1351,7 +1351,8 @@ namespace System.Controllers
            .ThenInclude(c=>c.StudySemester)
            .ToList();
            var studentCnaDownload = students.Where(c=>c.StudentSubjectWithoutDuplicate.Where(k=>k.PracticalDegree!=null&&k.TheoreticlaDegree!=null&& k.Subject.StudySemester.StudyYearId==(int)StudyYearEnum.FirstYear).ToList().Where(s=>!s.IsSuccess()).Count()<BusinessLogicHelper.NumberOfDownloadableSubject).ToList();
-            return  Ok(studentCnaDownload.Select(c=>c.Ssn).Count());
+           var studnetSSn =  studentCnaDownload.Select(c=>c.Ssn).ToList();
+            return  Ok(studnetSSn);
         }
     }
 }
